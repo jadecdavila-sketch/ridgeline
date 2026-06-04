@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ridgeline · Cypress Dental Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --slate:#415A68;--slate-d:#374e5a;
+  --blue:#2B76A5;--blue-d:#1F5F87;
+  --teal:#ADD0D2;--teal-tint:#EAF2F2;
+  --green:#81AE40;--green-d:#5f8a2a;
+  --amber:#C98A2B;--amber-tint:#F6EEDD;--red:#B04A43;--red-tint:#F4E6E4;
+  --surf:#FAFBFB;--surf-low:#F4F6F7;--surf-con:#EEF1F2;--surf-high:#E6EAEC;
+  --w:#fff;--on:#1F2A30;--onv:#5C6B73;--out:#9AA6AC;--outv:#C9D1D5;--haze:#E6EAEC;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Calibri','Aptos','Segoe UI',system-ui,-apple-system,sans-serif;background:var(--surf);color:var(--on);-webkit-font-smoothing:antialiased;line-height:1.55}
+.serif{font-family:'Libre Caslon Text',Georgia,serif}
+.lc{font-family:'Barlow Semi Condensed',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--out)}
+.lc-b{color:var(--blue)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+
+/* top bar */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1000px;margin:0 auto;border-bottom:1px solid var(--outv)}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand .mk{font-family:'Libre Caslon Text',Georgia,serif;font-size:20px;color:var(--on);letter-spacing:-.01em}
+.brand .sub{font-family:'Barlow Semi Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--out)}
+.crumb{font-family:'Barlow Semi Condensed',sans-serif;font-size:12.5px;font-weight:500;letter-spacing:.04em;color:var(--onv);display:flex;align-items:center;gap:8px}
+.crumb a{color:var(--blue);text-decoration:none}
+.crumb svg{width:13px;height:13px;stroke:var(--out)}
+
+/* hero / verdict band */
+.hero{background:var(--slate);color:#fff;padding:40px 44px;margin-top:28px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-120px;right:-120px;width:420px;height:420px;background:rgba(255,255,255,.035);border-radius:50%}
+.hero-inner{position:relative;z-index:1}
+.hero-eyebrow{font-family:'Barlow Semi Condensed',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px}
+.hero-name{font-family:'Libre Caslon Text',Georgia,serif;font-size:38px;font-weight:400;letter-spacing:-.01em;line-height:1.06;margin-bottom:8px}
+.hero-desc{font-size:14px;color:rgba(255,255,255,.66);max-width:560px;line-height:1.6}
+.verdict-row{display:flex;align-items:flex-end;gap:40px;margin-top:30px;flex-wrap:wrap}
+.verdict{display:flex;align-items:center;gap:14px}
+.v-pill{font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:8px 18px;border-radius:2px;background:rgba(43,118,165,.9);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.v-pill.go{background:rgba(129,174,64,.92)}
+.v-label{font-family:'Barlow Semi Condensed',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:4px}
+.v-score{font-family:'Libre Caslon Text',Georgia,serif;font-size:34px;line-height:1}
+.v-score small{font-size:16px;color:rgba(255,255,255,.45)}
+.dualreads{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.dr{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:14px 18px;min-width:210px;flex:1}
+.dr .lc{color:rgba(255,255,255,.45)}
+.dr .val{font-family:'Libre Caslon Text',Georgia,serif;font-size:21px;margin-top:7px}
+.dr .note{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:3px}
+.dr.q{border-left:3px solid var(--green)}
+.dr.p{border-left:3px solid var(--amber)}
+.reasons{margin-top:26px;font-size:14.5px;color:rgba(255,255,255,.82);line-height:1.65;max-width:660px}
+.reasons b{color:#fff;font-weight:600}
+
+/* sections */
+.sec{padding:42px 0 6px;border-bottom:1px solid var(--haze)}
+.sec:last-of-type{border-bottom:none}
+.sec-hd{margin-bottom:22px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.sec-hd h2{font-family:'Libre Caslon Text',Georgia,serif;font-weight:400;font-size:23px;letter-spacing:-.01em;margin-top:8px}
+.legend{font-family:'Barlow Semi Condensed',sans-serif;font-size:12px;letter-spacing:.04em;color:var(--out);display:flex;gap:18px}
+.legend span{display:flex;align-items:center;gap:6px}
+.dot-rule{width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.dot-jud{width:9px;height:9px;background:var(--amber);transform:rotate(45deg)}
+
+/* spine axes */
+.axis{display:grid;grid-template-columns:200px 1fr 132px;gap:18px;align-items:start;padding:18px 2px;border-top:1px solid var(--haze)}
+.axis:first-of-type{border-top:none}
+.axis-name{font-family:'Libre Caslon Text',Georgia,serif;font-size:17px}
+.axis-name .ai{font-family:'Barlow Semi Condensed',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--out);display:block;margin-top:3px}
+.axis-read{font-size:13.5px;color:var(--onv);line-height:1.6}
+.axis-assess{text-align:right}
+.chip{font-family:'Barlow Semi Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:2px;display:inline-block}
+.chip.strong{background:var(--teal-tint);color:var(--blue-d);border:1px solid var(--teal)}
+.chip.range{background:#eaf3e0;color:var(--green-d);border:1px solid #cfe3b3}
+.chip.mon{background:var(--amber-tint);color:var(--amber);border:1px solid #e8d3a6}
+.chip.above{background:var(--red-tint);color:var(--red);border:1px solid #e6c4c0}
+.bar{height:5px;background:var(--surf-high);margin-top:9px;border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--blue);border-radius:3px}
+
+/* citations */
+.cite{font:inherit;color:var(--blue-d);background:none;border:none;padding:0 1px;cursor:pointer;border-bottom:1px dotted var(--blue);transition:background .15s;white-space:nowrap}
+.cite:hover{background:var(--teal-tint)}
+.cite.active{background:var(--teal-tint)}
+.cite .tg{font-family:'Barlow Semi Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.06em;vertical-align:super;margin-left:2px;color:var(--blue)}
+.ev{max-height:0;overflow:hidden;opacity:0;transition:max-height .3s ease,opacity .25s ease,margin .25s ease}
+.ev.open{max-height:340px;opacity:1;margin:10px 0 4px}
+.ev-card{background:var(--surf-low);border:1px solid var(--outv);border-left:3px solid var(--blue);padding:14px 16px}
+.ev-card .src{font-family:'Barlow Semi Condensed',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-d);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.ev-card .srctag{background:var(--blue);color:#fff;padding:1px 7px;border-radius:2px;font-size:9.5px}
+.ev-card .doc{font-size:12px;color:var(--out);font-weight:400;letter-spacing:.04em}
+.ev-card .snip{font-size:13.5px;color:var(--on);line-height:1.6}
+.ev-card .snip .hl{background:#fbf2cf;padding:0 2px}
+.ev-card .prov{font-size:12px;color:var(--onv);margin-top:8px;display:flex;align-items:center;gap:6px}
+.ev-card .prov svg{width:13px;height:13px;stroke:var(--green-d)}
+.ev-card.t-chrono{border-left-color:var(--blue-d)} .ev-card.t-chrono .srctag{background:var(--blue-d)} .ev-card.t-chrono .src{color:var(--blue-d)}
+.ev-card.t-comp{border-left-color:var(--green-d)} .ev-card.t-comp .srctag{background:var(--green-d)} .ev-card.t-comp .src{color:var(--green-d)}
+.ev-card.t-qoe{border-left-color:#3f8e8a} .ev-card.t-qoe .srctag{background:#3f8e8a} .ev-card.t-qoe .src{color:#357472}
+.ev-card.t-ic{border-left-color:var(--slate)} .ev-card.t-ic .srctag{background:var(--slate)} .ev-card.t-ic .src{color:var(--slate-d)}
+
+/* gates */
+.gates{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px}
+.gate{background:var(--w);border:1px solid var(--outv);padding:16px 18px;border-top:3px solid var(--green)}
+.gate.watch{border-top-color:var(--amber);background:var(--amber-tint)}
+.gate .gh{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.gate .gh svg{width:16px;height:16px}
+.gate.pass-ok .gh svg{stroke:var(--green-d)} .gate.watch .gh svg{stroke:var(--amber)}
+.gate .gt{font-family:'Barlow Semi Condensed',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.gate .gb{font-size:13px;color:var(--onv);line-height:1.55}
+.gate-note{font-size:12.5px;color:var(--out);margin-top:14px;font-style:italic}
+
+/* comparable deals */
+.moat-note{background:var(--slate);color:#fff;padding:16px 20px;margin-bottom:18px;font-size:13.5px;line-height:1.6}
+.moat-note b{color:var(--teal)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{font-family:'Barlow Semi Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--out);text-align:left;padding:8px 12px;border-bottom:1px solid var(--outv)}
+tbody td{padding:11px 12px;border-bottom:1px solid var(--haze);color:var(--onv)}
+tbody td.name{color:var(--on);font-weight:500}
+tbody tr.subj{background:var(--teal-tint)}
+tbody tr.subj td{color:var(--blue-d);font-weight:600}
+.mtag{font-family:'Barlow Semi Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:2px}
+.mtag.up{background:#eaf3e0;color:var(--green-d)} .mtag.dn{background:var(--red-tint);color:var(--red)} .mtag.held{background:var(--surf-high);color:var(--onv)}
+
+/* judgment block */
+.jud{background:var(--surf-low);border:1px solid var(--outv);border-left:3px solid var(--amber);padding:20px 22px;margin-top:6px}
+.jud h3{font-family:'Barlow Semi Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.jud h3::before{content:'';width:9px;height:9px;background:var(--amber);transform:rotate(45deg);display:inline-block}
+.jud .item{display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--haze)}
+.jud .item:first-of-type{border-top:none}
+.jud .qmk{font-family:'Libre Caslon Text',Georgia,serif;color:var(--amber);font-size:18px;line-height:1.2}
+.jud .qtx{font-size:14px;color:var(--on);line-height:1.55}
+
+/* banker questions */
+.bq{display:flex;gap:14px;padding:13px 0;border-top:1px solid var(--haze);align-items:baseline}
+.bq:first-of-type{border-top:none}
+.bq .num{font-family:'Libre Caslon Text',Georgia,serif;font-size:16px;color:var(--out);min-width:24px}
+.bq .qx{font-size:14px;color:var(--on);line-height:1.55;flex:1}
+.bq .imp{font-family:'Barlow Semi Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:2px;white-space:nowrap}
+.imp.hi{background:var(--blue);color:#fff} .imp.md{background:var(--surf-high);color:var(--onv)}
+
+/* decision record */
+.dec{background:var(--w);border:1px solid var(--outv);padding:26px 28px}
+.dec .rec{font-size:13px;color:var(--onv);margin-bottom:16px}
+.dec .rec b{color:var(--blue-d)}
+.seg{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.seg button{font-family:'Barlow Semi Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:11px 24px;border:1px solid var(--outv);background:var(--w);color:var(--onv);cursor:pointer;border-radius:2px;transition:all .15s;position:relative}
+.seg button:hover{border-color:var(--blue)}
+.seg button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.seg button .eng{position:absolute;top:-9px;right:8px;font-size:8.5px;letter-spacing:.06em;background:var(--green);color:#fff;padding:1px 6px;border-radius:2px}
+textarea{width:100%;border:1px solid var(--outv);background:var(--surf);padding:12px 14px;font-family:inherit;font-size:14px;color:var(--on);resize:vertical;min-height:78px;border-radius:2px}
+textarea:focus{outline:none;border-color:var(--blue)}
+.logbtn{margin-top:16px;font-family:'Barlow Semi Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--slate);color:#fff;border:none;padding:13px 30px;border-radius:2px;cursor:pointer;transition:background .15s}
+.logbtn:hover{background:var(--slate-d)}
+.logged{background:var(--teal-tint);border:1px solid var(--teal);border-left:3px solid var(--blue);padding:18px 20px;font-size:14px;color:var(--on);line-height:1.6}
+.logged .lh{font-family:'Barlow Semi Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-d);margin-bottom:7px;display:flex;align-items:center;gap:8px}
+.logged .lh svg{width:15px;height:15px;stroke:var(--blue-d)}
+
+/* footer */
+.foot{margin-top:40px;padding-top:22px;border-top:1px solid var(--outv);font-size:11.5px;color:var(--out);line-height:1.7}
+.foot .lc{display:block;margin-bottom:6px}
+
+/* load anim */
+.fade{opacity:0;transform:translateY(8px);animation:rise .6s ease forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}.ev{transition:none}}
+@media(max-width:720px){.axis{grid-template-columns:1fr;gap:8px}.axis-assess{text-align:left}.gates{grid-template-columns:1fr}.hero{padding:30px 24px}.hero-name{font-size:30px}}
+
+/* ---- app shell (matches pipeline) ---- */
+.app{display:flex;min-height:100vh}
+.side{width:252px;flex:none;background:var(--slate);color:#fff;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;transition:width .22s ease}
+.app.collapsed .side{width:66px}
+.side-brand{display:flex;align-items:center;gap:12px;padding:22px 18px 16px;white-space:nowrap}
+.bmark{width:34px;height:34px;flex:none;border-radius:8px;background:rgba(173,208,210,.16);border:1px solid rgba(173,208,210,.34);color:var(--teal);font-family:'Libre Caslon Text',Georgia,serif;font-size:19px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s,border-color .15s}
+.bmark:hover{background:rgba(173,208,210,.28);border-color:rgba(173,208,210,.6)}
+.bmark:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.bword{display:flex;flex-direction:column}
+.bword .mk{font-family:'Libre Caslon Text',Georgia,serif;font-size:20px;letter-spacing:-.01em;line-height:1.05}
+.bword .tag{font-family:'Barlow Semi Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-top:2px}
+.nav{flex:1;overflow-y:auto;overflow-x:hidden;padding:6px 12px}
+.nav-grp{margin-top:18px}
+.nav-grp-l{font-family:'Barlow Semi Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.34);padding:0 10px 8px;white-space:nowrap}
+.nav-i{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:3px;font-size:13.5px;color:rgba(255,255,255,.74);cursor:pointer;border-left:2px solid transparent;white-space:nowrap;transition:background .15s,color .15s}
+.nav-i:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-i.active{background:rgba(173,208,210,.14);color:#fff;border-left-color:var(--teal)}
+.nav-i .ic{width:18px;height:18px;flex:none;opacity:.85}
+.nav-i .ic svg{width:18px;height:18px;display:block;stroke:currentColor;fill:none;stroke-width:1.6}
+.nav-i.soon{color:rgba(255,255,255,.4);cursor:default}
+.nav-i.soon:hover{background:transparent;color:rgba(255,255,255,.4)}
+.lbl{flex:1}
+.badge{font-family:'Barlow Semi Condensed',sans-serif;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px}
+.badge.soon{background:rgba(255,255,255,.08);color:rgba(255,255,255,.5)}
+.dot-live{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(129,174,64,.18);flex:none}
+.side-user{padding:14px 16px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:11px;white-space:nowrap}
+.av{width:32px;height:32px;border-radius:50%;background:rgba(173,208,210,.2);border:1px solid rgba(173,208,210,.35);display:flex;align-items:center;justify-content:center;font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.04em;color:var(--teal);flex:none}
+.side-user .nm{font-size:13px;color:#fff;line-height:1.2}
+.side-user .rl{font-size:11px;color:rgba(255,255,255,.45)}
+.app.collapsed .bword,.app.collapsed .lbl,.app.collapsed .nav-grp-l,.app.collapsed .badge,.app.collapsed .dot-live,.app.collapsed .uinfo{display:none}
+.app.collapsed .side-brand{justify-content:center;padding:22px 0 16px;gap:0}
+.app.collapsed .nav-i{justify-content:center;gap:0;padding:11px 0}
+.app.collapsed .side-user{justify-content:center;padding:14px 0}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+.topbar2{display:flex;align-items:center;gap:16px;padding:14px 30px;border-bottom:1px solid var(--haze);background:var(--w);position:sticky;top:0;z-index:5}
+.navtoggle{flex:none;width:34px;height:34px;border:1px solid var(--outv);background:var(--w);border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--onv)}
+.navtoggle:hover{background:var(--surf-low);border-color:var(--blue)}
+.navtoggle svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8}
+.backlink{display:flex;align-items:center;gap:6px;font-family:'Barlow Semi Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-d);text-decoration:none;border:1px solid var(--outv);border-radius:3px;padding:7px 13px}
+.backlink:hover{background:var(--surf-low);border-color:var(--blue)}
+.backlink svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2}
+.crumb2{font-family:'Barlow Semi Condensed',sans-serif;font-size:12.5px;font-weight:500;letter-spacing:.04em;color:var(--onv);display:flex;align-items:center;gap:9px}
+.crumb2 a{color:var(--blue);text-decoration:none}.crumb2 .sep{color:var(--outv)}.crumb2 .cur{color:var(--on)}
+.wrap{padding-top:30px}
+/* ---- drill-in: letter unfold (panels peel down to reveal content beneath) ---- */
+.hero{box-shadow:0 1px 2px rgba(31,42,48,.05),0 14px 32px rgba(31,42,48,.08);margin-bottom:0}
+.sec{position:relative;perspective:1200px;background:var(--w);padding:34px 40px;margin:0;border-top:1px solid var(--haze);border-bottom:none}
+.sec:first-of-type{border-top:none}
+.sec::before{content:'';position:absolute;inset:-1px 0 0;background:linear-gradient(180deg,#fcfdfd 0%,#eef2f3 60%,#e4eaec 100%);box-shadow:0 6px 16px rgba(31,42,48,.10),inset 0 1px 0 rgba(255,255,255,.7);transform-origin:center bottom;transform:rotateX(90deg);opacity:0;backface-visibility:hidden;will-change:transform,opacity;pointer-events:none;z-index:4}
+.fade{animation:none;opacity:1;transform:none}
+body.anim .sec::before{transition:transform 1.5s cubic-bezier(.62,.04,.24,1),opacity .5s ease 1s,filter 1.5s cubic-bezier(.62,.04,.24,1)}
+body.anim .hero{transition:opacity .8s ease,transform .8s ease}
+body.folding .hero{opacity:0;transform:translateY(10px)}
+body.folding .hero.in{opacity:1;transform:none}
+body.folding .sec::before{transform:rotateX(0deg);opacity:1;filter:brightness(1)}
+body.folding .sec.in::before{transform:rotateX(90deg);opacity:0;filter:brightness(.82)}
+@media (prefers-reduced-motion:reduce){.sec::before{display:none}}
+</style>
+</head>
+<body>
+<div class="app collapsed">
+  <aside class="side">
+    <div class="side-brand">
+      <span class="bmark" id="navtoggle" role="button" tabindex="0" title="Toggle navigation">R</span>
+      <span class="bword"><span class="mk">Ridgeline</span><span class="tag">Deal Intelligence</span></span>
+    </div>
+    <nav class="nav">
+      <div class="nav-grp">
+        <div class="nav-grp-l">Deal Assistant</div>
+        <div class="nav-i active" title="Pipeline"><span class="ic"><svg viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg></span><span class="lbl">Pipeline</span></div>
+        <div class="nav-i" title="Watchlist"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 4 1 5.4L12 21l-5 2.6 1-5.4-4-4 5.5-.8z"/></svg></span><span class="lbl">Watchlist</span></div>
+        <div class="nav-i" title="Scored deals"><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg></span><span class="lbl">Scored deals</span></div>
+      </div>
+      <div class="nav-grp">
+        <div class="nav-grp-l">Platform</div>
+        <div class="nav-i soon" title="Framework Library"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 19.5V5a2 2 0 012-2h12v18H6a2 2 0 01-2-2z"/></svg></span><span class="lbl">Framework Library</span></div>
+        <div class="nav-i soon" title="Data Catalog"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3zM4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/></svg></span><span class="lbl">Data Catalog</span></div>
+        <div class="nav-i soon" title="Audit Log"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span><span class="lbl">Audit Log</span></div>
+        <div class="nav-i soon" title="Access & Roles (Admin)"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"/></svg></span><span class="lbl">Access &amp; Roles</span><span class="badge soon">Admin</span></div>
+      </div>
+    </nav>
+    <div class="side-user">
+      <div class="av">DR</div>
+      <div class="uinfo"><div class="nm">Dana Reed</div><div class="rl">Healthcare · Principal</div></div>
+    </div>
+  </aside>
+<main class="main">
+<div class="topbar2">
+  <a class="backlink" href="ridgeline_pipeline.html"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg> Back to pipeline</a>
+  <div class="crumb2">Deal Assistant <span class="sep">/</span> <a href="ridgeline_pipeline.html">Pipeline</a> <span class="sep">/</span> <span class="cur">Cypress Dental Partners</span></div>
+</div>
+
+<div class="wrap">
+
+  <!-- VERDICT BAND -->
+  <div class="hero fade">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">NDA Scorecard · Healthcare Services</div>
+      <h1 class="hero-name">Cypress Dental Partners</h1>
+      <p class="hero-desc">Multi-region dental services organization. ~140 affiliated practices across 9 states, doctor-led clinical model, hygiene and recare-driven recurring revenue.</p>
+
+      <div class="verdict-row">
+        <div class="verdict">
+          <span class="v-pill go">Pursue</span>
+        </div>
+        <div>
+          <div class="v-label">Fit score</div>
+          <div class="v-score">82<small>&thinsp;/&thinsp;100</small></div>
+        </div>
+        <div>
+          <div class="v-label">Implied entry</div>
+          <div class="v-score" style="font-size:26px">9.2<small>x EBITDA</small></div>
+        </div>
+      </div>
+
+      <div class="dualreads">
+        <div class="dr q">
+          <div class="lc">Asset quality</div>
+          <div class="val">High &middot; A</div>
+          <div class="note">Recurring hygiene revenue, diversified payors, steady same-practice growth.</div>
+        </div>
+        <div class="dr q">
+          <div class="lc">Price</div>
+          <div class="val">In range</div>
+          <div class="note">9.2x sits mid-band against Ridgemont's 8 to 10x healthcare-services range.</div>
+        </div>
+      </div>
+
+      <p class="reasons"><b>Why pursue.</b> A durable, cash-generative asset in a deeply fragmented market, offered at an entry inside the band that has worked for the firm. The recurring hygiene and recare base and clean payor diversification carry the score, and Ridgemont holds a realized template for exactly this play. The one live caution is competitive rather than fundamental: two sponsors are active in adjacent assets, so the task is moving decisively, not debating fit.</p>
+    </div>
+  </div>
+
+  <!-- SPINE -->
+  <div class="sec fade" style="animation-delay:.06s">
+    <div class="sec-hd">
+      <div><span class="lc lc-b">Scored against Ridgemont's framework</span><h2>The five-axis read</h2></div>
+      <div class="legend">
+        <span><i class="dot-rule"></i> scored by rule</span>
+        <span><i class="dot-jud"></i> surfaced for your judgment</span>
+      </div>
+    </div>
+
+    <div class="axis">
+      <div class="axis-name">Management<span class="ai">Team &amp; tenure</span></div>
+      <div class="axis-read">A seasoned DSO operator as CEO who <button class="cite" data-ev="e-mgmt">built and exited a prior platform<span class="tg">CIM</span></button>, with a public-company CFO and an integration team already in seat. Operator-led and acquisitive by background.
+        <div class="ev" id="e-mgmt"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Cypress CIM &middot; Management &middot; p.16</span></div><div class="snip">"CEO previously led a <span class="hl">~90-practice DSO to a 2021 exit</span>; CFO joined 2023 from a publicly traded dental services group; integration lead in seat three years."</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Cross-checked against LinkedIn and prior transaction records.</div></div></div>
+      </div>
+      <div class="axis-assess"><span class="chip strong">Strong</span><div class="bar"><i style="width:82%"></i></div></div>
+    </div>
+
+    <div class="axis">
+      <div class="axis-name">Industry &amp; market<span class="ai">Attractiveness</span></div>
+      <div class="axis-read">A large, structurally fragmented field where the <button class="cite" data-ev="e-mkt">ten largest DSOs hold under 15% of practices<span class="tg">COMP</span></button>, with non-cyclical, hygiene-driven recurring demand. Textbook roll-up conditions.
+        <div class="ev" id="e-mkt"><div class="ev-card t-comp"><div class="src"><span class="srctag">Public</span><span class="doc">Sector research &middot; Dental services Q1 2026 + EDGAR comps</span></div><div class="snip">Fragmentation index places the <span class="hl">ten largest DSOs below 15%</span> of US practices; dental spend is non-cyclical and recare visits recur on a 6-month cadence.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Independent of management claims; pulled from public_data.</div></div></div>
+      </div>
+      <div class="axis-assess"><span class="chip strong">Attractive</span><div class="bar"><i style="width:86%"></i></div></div>
+    </div>
+
+    <div class="axis">
+      <div class="axis-name">Valuation<span class="ai">vs benchmark</span></div>
+      <div class="axis-read">The <button class="cite" data-ev="e-val">9.2x entry sits mid-band<span class="tg">DATA</span></button> within the 8 to 10x range Ridgemont has paid for comparable platforms, and dental QoE patterns are typically clean. Priced to work.
+        <div class="ev" id="e-val"><div class="ev-card t-chrono"><div class="src"><span class="srctag">Deal data</span><span class="doc">Ridgemont deal database &middot; healthcare-services entries 2017&ndash;2024</span></div><div class="snip">Median entry for the sub-sector: <span class="hl">9.0x</span>. Range 8.4x to 10.6x. Proposed Cypress entry of 9.2x is <span class="hl">inside the band</span>, near the median.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Sourced from Ridgemont's own realized entries, not a generic comp set.</div></div></div>
+      </div>
+      <div class="axis-assess"><span class="chip range">In range</span><div class="bar"><i style="width:78%;background:var(--green)"></i></div></div>
+    </div>
+
+    <div class="axis">
+      <div class="axis-name">Company<span class="ai">Asset quality</span></div>
+      <div class="axis-read"><button class="cite" data-ev="e-co">Hygiene and recare drive ~38% of revenue<span class="tg">CIM</span></button> with <button class="cite" data-ev="e-co2">~5% same-practice growth<span class="tg">QoE</span></button> and no single-payor concentration. A durable, recurring base.
+        <div class="ev" id="e-co"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Cypress CIM &middot; Revenue quality &middot; p.29</span></div><div class="snip">"Hygiene and recare represent <span class="hl">~38% of TTM revenue</span>; no single payor exceeds ~12%; commercial and out-of-network mix diversified across geographies."</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Payor and patient mix detail requested in banker questions below.</div></div></div>
+        <div class="ev" id="e-co2"><div class="ev-card t-qoe"><div class="src"><span class="srctag">QoE pattern</span><span class="doc">In-sector QoE history &middot; same-practice growth</span></div><div class="snip">Reported <span class="hl">~5% same-practice</span> growth is within the credible band for dental; verify split of pricing vs volume vs hygiene mix in diligence.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Pattern from prior in-sector QoE reports.</div></div></div>
+      </div>
+      <div class="axis-assess"><span class="chip strong">Strong</span><div class="bar"><i style="width:80%"></i></div></div>
+    </div>
+
+    <div class="axis">
+      <div class="axis-name">Right to win<span class="ai">Edge &amp; angle</span></div>
+      <div class="axis-read">A proven de novo and tuck-in playbook, referral relationships, and a realized template in the firm's own record give a real edge. <button class="cite" data-ev="e-rtw">Comparable processes have been won on speed and relationship<span class="tg">IC</span></button>, which argues for moving early.
+        <div class="ev" id="e-rtw"><div class="ev-card t-ic"><div class="src"><span class="srctag">IC memo</span><span class="doc">Ridgemont IC corpus &middot; comparable dental deliberations</span></div><div class="snip">Comparable dental processes were <span class="hl">won on speed and relationship</span> rather than top dollar; auction risk is manageable when the firm moves early with a credible plan.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Pattern across comparable IC presentations.</div></div></div>
+      </div>
+      <div class="axis-assess"><span class="chip strong">Credible edge</span><div class="bar"><i style="width:74%"></i></div></div>
+    </div>
+  </div>
+
+  <!-- GATES -->
+  <div class="sec fade" style="animation-delay:.1s">
+    <div class="sec-hd"><div><span class="lc lc-b">Hard-pass gates</span><h2>None tripped. The asset clears clean.</h2></div></div>
+    <div class="gates">
+      <div class="gate pass-ok">
+        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">EBITDA in range</span></div>
+        <div class="gb">19% margin against the 14% floor. Clear.</div>
+      </div>
+      <div class="gate pass-ok">
+        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">Payor concentration</span></div>
+        <div class="gb"><button class="cite" data-ev="e-gate">No single payor above ~12%<span class="tg">CIM</span></button>, well under the 25% gate. Clear.
+          <div class="ev" id="e-gate"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Cypress CIM &middot; Payor mix footnote &middot; p.31</span></div><div class="snip">Largest single payor approx. <span class="hl">12% of TTM revenue</span>; the gate triggers an automatic pass only at 25% single-payor concentration.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Diversification verified against the payor schedule.</div></div></div>
+        </div>
+      </div>
+      <div class="gate pass-ok">
+        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">Credible value-add path</span></div>
+        <div class="gb">De novo plus tuck-in playbook, proven by this team before. Clear.</div>
+      </div>
+    </div>
+    <p class="gate-note">Any single gate trigger, such as out-of-range EBITDA, single-payor concentration, or no credible value-add path, short-circuits the score to an automatic pass.</p>
+  </div>
+
+  <!-- MOAT: comparable Ridgemont deals -->
+  <div class="sec fade" style="animation-delay:.14s">
+    <div class="sec-hd"><div><span class="lc lc-b">Ridgemont's own record</span><h2>How this compares to deals we have actually done</h2></div></div>
+    <div class="moat-note">This read draws on <b>Ridgemont's realized returns</b>, matched to Cypress on sub-sector, size, and entry multiple. No banker, advisor, or counterparty in this process can run it, because no one else holds this record.</div>
+    <table>
+      <thead><tr><th>Comparable deal</th><th>Entry</th><th>Entry multiple</th><th>Outcome</th><th>MOIC</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Cedar Park Dental</td><td>2018</td><td>8.9x</td><td><span class="mtag up">Outperformed</span></td><td>2.8x</td><td>Exited 2023</td></tr>
+        <tr><td class="name">Maple Grove Dental Group</td><td>2020</td><td>9.3x</td><td><span class="mtag up">In line</span></td><td>2.0x</td><td>Exited 2024</td></tr>
+        <tr><td class="name">Brightwater Dental</td><td>2021</td><td>8.7x</td><td><span class="mtag held">Tracking</span></td><td>&mdash;</td><td>Active</td></tr>
+        <tr><td class="name">Ridgeview Orthodontics</td><td>2019</td><td>10.4x</td><td><span class="mtag dn">Underperformed</span></td><td>1.6x</td><td>Exited 2023</td></tr>
+        <tr class="subj"><td class="name">Cypress Dental Partners</td><td>2026</td><td>9.2x</td><td><button class="cite" data-ev="e-moat" style="color:var(--blue-d)">see the pattern<span class="tg">CHRON</span></button></td><td>&mdash;</td><td>Under review</td></tr>
+      </tbody>
+    </table>
+    <div class="ev" id="e-moat" style="margin-top:0"><div class="ev-card t-chrono"><div class="src"><span class="srctag">Chronograph</span><span class="doc">Ridgemont portfolio returns &middot; healthcare-services bracket</span></div><div class="snip">Entries <span class="hl">below 9.5x produced a median 2.4x MOIC</span>; the single entry above 10x returned 1.6x. Cypress's 9.2x sits inside the bracket that has worked for the firm, and <span class="hl">Cedar Park, the closest structural match, returned 2.8x</span>.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Drawn directly from Ridgemont's Chronograph portfolio.</div></div></div>
+  </div>
+
+  <!-- JUDGMENT -->
+  <div class="sec fade" style="animation-delay:.18s">
+    <div class="sec-hd"><div><span class="lc lc-b">The engine stops here</span><h2>Surfaced for your judgment</h2></div></div>
+    <div class="jud">
+      <h3>Calls the framework deliberately leaves to a partner</h3>
+      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">Can the integration team absorb the current acquisition pace without diluting the clinical model that drives recare retention?</span></div>
+      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">With two sponsors active, what is the real walk-away price, and does moving fast risk underwriting on less diligence than the firm's standard?</span></div>
+    </div>
+  </div>
+
+  <!-- BANKER QUESTIONS -->
+  <div class="sec fade" style="animation-delay:.22s">
+    <div class="sec-hd"><div><span class="lc lc-b">Walk into the call ready</span><h2>The questions that move the decision</h2></div></div>
+    <div class="bq"><span class="num">1</span><span class="qx">Full payor and patient mix; confirm no single payor or geography approaches the concentration threshold by contract and trajectory.</span><span class="imp hi">High impact</span></div>
+    <div class="bq"><span class="num">2</span><span class="qx">De novo and tuck-in unit economics and ramp. How many of the ~140 practices are de novo versus acquired, and what is the payback?</span><span class="imp hi">High impact</span></div>
+    <div class="bq"><span class="num">3</span><span class="qx">Same-practice revenue bridge: pricing versus volume versus hygiene mix. Validates the ~5% organic claim.</span><span class="imp hi">High impact</span></div>
+    <div class="bq"><span class="num">4</span><span class="qx">Hygiene recare retention and provider turnover by cohort year. Speaks to the durability of the recurring base.</span><span class="imp md">Medium</span></div>
+    <div class="bq"><span class="num">5</span><span class="qx">Acquisition pipeline and integration capacity at the current pace; bench depth on the integration team.</span><span class="imp md">Medium</span></div>
+    <div class="bq"><span class="num">6</span><span class="qx">QoE add-backs: owner compensation, one-time integration costs, and capitalized de novo development.</span><span class="imp md">Medium</span></div>
+  </div>
+
+  <!-- DECISION RECORD -->
+  <div class="sec fade" style="animation-delay:.26s">
+    <div class="sec-hd"><div><span class="lc lc-b">Your call, on the record</span><h2>Decision record</h2></div></div>
+    <div class="dec">
+      <div id="dec-form">
+        <p class="rec">The engine recommends <b>Pursue</b>. Record your call and the reasoning. The judgment stays with you; this captures it.</p>
+        <div class="seg" id="seg">
+          <button data-v="Pursue" class="on">Pursue<span class="eng">Engine</span></button>
+          <button data-v="Selective">Selective</button>
+          <button data-v="Pass">Pass</button>
+        </div>
+        <textarea id="note" placeholder="The reasoning behind the call. What would change it?"></textarea>
+        <button class="logbtn" id="logbtn">Log decision</button>
+      </div>
+      <div class="logged" id="logged" style="display:none">
+        <div class="lh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Decision logged</div>
+        <div id="logged-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="lc">Ridgeline &middot; Deal Assistant &middot; Deal Scoring</span>
+    Illustrative prototype on representative data. Cypress Dental Partners and all figures are fictional and for demonstration. Framework benchmarks and gate thresholds shown here are placeholders, to be replaced with the Healthcare team's calibrated framework. Ridgeline is the platform, the Deal Assistant is the product, Deal Scoring is the capability shown.
+  </div>
+</div>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var cites=document.querySelectorAll('.cite');
+  function closeAll(except){
+    document.querySelectorAll('.ev.open').forEach(function(e){ if(e!==except) e.classList.remove('open'); });
+    document.querySelectorAll('.cite.active').forEach(function(c){ c.classList.remove('active'); });
+  }
+  cites.forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var ev=document.getElementById(btn.getAttribute('data-ev'));
+      if(!ev) return;
+      var isOpen=ev.classList.contains('open');
+      closeAll(ev);
+      if(isOpen){ ev.classList.remove('open'); }
+      else{ ev.classList.add('open'); btn.classList.add('active'); }
+    });
+  });
+  document.addEventListener('click',function(){ closeAll(null); });
+
+  var seg=document.getElementById('seg'); var choice='Pursue';
+  seg.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click',function(){
+      seg.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on'); choice=b.getAttribute('data-v');
+    });
+  });
+  document.getElementById('logbtn').addEventListener('click',function(){
+    var note=document.getElementById('note').value.trim();
+    var body=document.getElementById('logged-body');
+    var agree = choice==='Pursue';
+    body.innerHTML='<b>'+choice+'</b>'+(agree?' (in line with the engine).':' (overriding the engine\u2019s Pursue).')+
+      (note?' &mdash; \u201c'+note.replace(/</g,'&lt;')+'\u201d':'')+
+      '<br><br>Captured against the Cypress score and fed back to the data layer. The next Cypress-like deal is scored with this outcome in the firm\u2019s record.';
+    document.getElementById('dec-form').style.display='none';
+    document.getElementById('logged').style.display='block';
+  });
+})();
+</script>
+<script>
+(function(){
+  var motionOK=!matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var hero=document.querySelector('.hero');
+  var secs=[].slice.call(document.querySelectorAll('.sec'));
+  if(motionOK && 'IntersectionObserver' in window){
+    document.body.classList.add('folding');
+    // snap the first section open now, before transitions are enabled, so the hero
+    // and 'The five-axis read' are already revealed on load with no fold animation
+    if(secs[0]) secs[0].classList.add('in');
+    requestAnimationFrame(function(){
+      document.body.classList.add('anim');
+      if(hero) hero.classList.add('in');
+      var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:0,rootMargin:'0px 0px -28% 0px'});
+      secs.forEach(function(s){ if(!s.classList.contains('in')) io.observe(s); });
+    });
+  }
+  var app=document.querySelector('.app'); var tog=document.getElementById('navtoggle');
+  function toggleNav(){ if(app) app.classList.toggle('collapsed'); }
+  if(tog){
+    tog.addEventListener('click',toggleNav);
+    tog.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleNav(); } });
+  }
+})();
+</script>
+</body>
+</html>
