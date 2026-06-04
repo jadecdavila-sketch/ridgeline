@@ -405,6 +405,21 @@ body{font-family:'Calibri','Aptos','Segoe UI',system-ui,-apple-system,sans-serif
   function showAnswer(html){ if(ansText) ansText.innerHTML=html; if(answer) answer.style.display='flex'; }
   function hideAnswer(){ if(answer) answer.style.display='none'; }
 
+  // slow, eased scroll — gentler than native smooth, honors reduced-motion
+  function smoothScrollTo(el, offset, duration){
+    if(!el) return;
+    offset=offset||0; duration=duration||900;
+    var startY=window.pageYOffset||document.documentElement.scrollTop;
+    var maxY=Math.max(0,(document.documentElement.scrollHeight||document.body.scrollHeight)-window.innerHeight);
+    var targetY=Math.max(0,Math.min(maxY, startY+el.getBoundingClientRect().top-offset));
+    var dist=targetY-startY;
+    if(Math.abs(dist)<2 || matchMedia('(prefers-reduced-motion:reduce)').matches){ window.scrollTo(0,targetY); return; }
+    var ease=function(t){ return t<0.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }; // easeInOutCubic
+    var start=null;
+    function step(ts){ if(start===null) start=ts; var p=Math.min(1,(ts-start)/duration); window.scrollTo(0,startY+dist*ease(p)); if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+
   // verdict filter (also exits ask mode)
   chips.forEach(function(c){
     c.addEventListener('click',function(){
@@ -431,7 +446,7 @@ body{font-family:'Calibri','Aptos','Segoe UI',system-ui,-apple-system,sans-serif
       chips.forEach(function(x){x.classList.remove('on');});
       showAnswer(ANS[s.getAttribute('data-id')]||'');
       // land on the answer bar that frames the filtered list, not past it
-      if(answer) answer.scrollIntoView({behavior:'smooth',block:'start'});
+      smoothScrollTo(answer, 18, 950);
     });
   });
 

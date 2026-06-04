@@ -215,16 +215,16 @@ textarea:focus{outline:none;border-color:var(--blue)}
 .wrap{padding-top:30px}
 /* ---- drill-in: letter unfold (panels peel down to reveal content beneath) ---- */
 .hero{box-shadow:0 1px 2px rgba(31,42,48,.05),0 14px 32px rgba(31,42,48,.08);margin-bottom:0}
-.sec{position:relative;perspective:1200px;background:var(--w);padding:34px 40px;margin:0;border-top:1px solid var(--haze);border-bottom:none}
+.sec{position:relative;background:var(--w);padding:34px 40px;margin:0;border-top:1px solid var(--haze);border-bottom:none;overflow:hidden}
 .sec:first-of-type{border-top:none}
-.sec::before{content:'';position:absolute;inset:-1px 0 0;background:linear-gradient(180deg,#fcfdfd 0%,#eef2f3 60%,#e4eaec 100%);box-shadow:0 6px 16px rgba(31,42,48,.10),inset 0 1px 0 rgba(255,255,255,.7);transform-origin:center bottom;transform:rotateX(90deg);opacity:0;backface-visibility:hidden;will-change:transform,opacity;pointer-events:none;z-index:4}
+.sec::before{content:'';position:absolute;inset:-1px 0 0;background:rgba(252,253,253,.55);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 18px);mask-image:linear-gradient(to bottom,transparent 0,#000 18px);transform:translateY(100%);opacity:0;will-change:transform,opacity;pointer-events:none;z-index:4}
 .fade{animation:none;opacity:1;transform:none}
-body.anim .sec::before{transition:transform 1.5s cubic-bezier(.62,.04,.24,1),opacity .5s ease 1s,filter 1.5s cubic-bezier(.62,.04,.24,1)}
+body.anim .sec::before{transition:transform 1.6s cubic-bezier(.4,0,.18,1),opacity .5s ease 1.1s}
 body.anim .hero{transition:opacity .8s ease,transform .8s ease}
 body.folding .hero{opacity:0;transform:translateY(10px)}
 body.folding .hero.in{opacity:1;transform:none}
-body.folding .sec::before{transform:rotateX(0deg);opacity:1;filter:brightness(1)}
-body.folding .sec.in::before{transform:rotateX(90deg);opacity:0;filter:brightness(.82)}
+body.folding .sec::before{transform:translateY(0);opacity:1}
+body.folding .sec.in::before{transform:translateY(100%);opacity:0}
 @media (prefers-reduced-motion:reduce){.sec::before{display:none}}
 </style>
 </head>
