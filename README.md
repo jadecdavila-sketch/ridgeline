@@ -12,20 +12,21 @@ A clickable prototype for **Ridgeline**, a deal-intelligence product for private
 | --- | --- |
 | [`index.html`](index.html) | Redirects to the pipeline (the entry point). |
 | [`ridgeline_pipeline.html`](ridgeline_pipeline.html) | Pipeline of scored deals with an AI briefing, verdicts (Pursue / Selective / Pass), and an "ask the pipeline" bar that filters to the deals a question is about. |
-| [`ridgeline_scorecard.html`](ridgeline_scorecard.html) | Deal scorecard — **Meridian Behavioral Health** (Selective, 73/100). |
-| [`ridgeline_scorecard_cypress.html`](ridgeline_scorecard_cypress.html) | Deal scorecard — **Cypress Dental Partners** (Pursue, 82/100). |
+| [`ridgeline_scorecard_cardinal.html`](ridgeline_scorecard_cardinal.html) | Deal scorecard — **Cardinal Specialty Pharmacy** (Pursue, 8/10, A− asset, in lane). |
+| [`ridgeline_scorecard_cypress.html`](ridgeline_scorecard_cypress.html) | Deal scorecard — **Cypress Dental Partners** (Pursue with discipline, 7/10, B+ asset, out of lane). |
 
 ## The scorecard
 
-Each deal drill-in is built around:
+Deals are scored 1–10 against the REP healthcare framework, with asset quality (a letter grade) and price held on separate tracks against a walk-away ceiling. Each deal drill-in is built around:
 
-1. **Verdict band** — verdict, fit score, implied entry multiple, and an asset-quality-vs-price read.
-2. **Five-axis read** — Management, Industry & Market, Valuation, Company, Right to Win — each with expandable citations tagged by source (CIM, public data, deal data, QoE, IC memo).
-3. **Hard-pass gates** — any single trip (EBITDA out of range, single-payor concentration, no credible value-add path) short-circuits the score to an automatic pass.
+1. **Verdict band** — verdict, REP score (/10), asset-quality grade, and entry multiple, with a two-track quality-vs-price read.
+2. **The read** — five axes (sector & model fit / "in lane?", protected downside, asset quality vs price, value creation, management & data), each with expandable citations tagged by source (CIM, public data, deal data, QoE, IC memo).
+3. **Hard-pass screen** — any single trigger (out-of-network model, single-customer concentration over 30%, EBITDA outside the band, no credible value-add path) short-circuits the score to an automatic 1–2.
 4. **Comparison to the firm's own realized returns** — the moat: matched on sub-sector, size, and entry multiple.
 5. **Surfaced for your judgment** — where the engine deliberately stops and hands off to the partner.
 6. **Banker questions** to walk into the call with.
 7. **Decision record** — log the call and reasoning.
+8. **Ridgeline AI** — a slide-in chat drawer grounded in that deal's score, evidence, and comparables.
 
 ## Running locally
 

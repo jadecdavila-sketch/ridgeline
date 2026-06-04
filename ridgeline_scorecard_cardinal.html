@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ridgeline · Deal Scorecard</title>
+<title>Ridgeline · Cardinal Specialty Pharmacy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
   --w:#fff;--on:#1F2A30;--onv:#5C6B73;--out:#9AA6AC;--outv:#C9D1D5;--haze:#E6EAEC;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Calibri','Aptos','Segoe UI',system-ui,-apple-system,sans-serif;background:var(--surf);color:var(--on);-webkit-font-smoothing:antialiased;line-height:1.55}
+body{font-family:'Calibri','Aptos','Segoe UI',system-ui,-apple-system,sans-serif;background:var(--surf);color:var(--on);-webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:clip}
 .serif{font-family:'Libre Caslon Text',Georgia,serif}
 .lc{font-family:'Barlow Semi Condensed',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--out)}
 .lc-b{color:var(--blue)}
@@ -43,6 +43,7 @@ body{font-family:'Calibri','Aptos','Segoe UI',system-ui,-apple-system,sans-serif
 .verdict-row{display:flex;align-items:flex-end;gap:40px;margin-top:30px;flex-wrap:wrap}
 .verdict{display:flex;align-items:center;gap:14px}
 .v-pill{font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:8px 18px;border-radius:2px;background:rgba(43,118,165,.9);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.v-pill.go{background:rgba(129,174,64,.92)}
 .v-label{font-family:'Barlow Semi Condensed',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:4px}
 .v-score{font-family:'Libre Caslon Text',Georgia,serif;font-size:34px;line-height:1}
 .v-score small{font-size:16px;color:rgba(255,255,255,.45)}
@@ -203,6 +204,12 @@ textarea:focus{outline:none;border-color:var(--blue)}
 .app.collapsed .side-user{justify-content:center;padding:14px 0}
 .main{flex:1;min-width:0;display:flex;flex-direction:column}
 .topbar2{display:flex;align-items:center;gap:16px;padding:14px 30px;border-bottom:1px solid var(--haze);background:var(--w);position:sticky;top:0;z-index:5}
+.navtoggle{flex:none;width:34px;height:34px;border:1px solid var(--outv);background:var(--w);border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--onv)}
+.navtoggle:hover{background:var(--surf-low);border-color:var(--blue)}
+.navtoggle svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8}
+.backlink{display:flex;align-items:center;gap:6px;font-family:'Barlow Semi Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-d);text-decoration:none;border:1px solid var(--outv);border-radius:3px;padding:7px 13px}
+.backlink:hover{background:var(--surf-low);border-color:var(--blue)}
+.backlink svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2}
 .crumb2{font-family:'Barlow Semi Condensed',sans-serif;font-size:12.5px;font-weight:500;letter-spacing:.04em;color:var(--onv);display:flex;align-items:center;gap:9px}
 .crumb2 a{color:var(--blue);text-decoration:none}.crumb2 .sep{color:var(--outv)}.crumb2 .cur{color:var(--on)}
 .wrap{padding-top:30px}
@@ -284,7 +291,7 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
   </aside>
 <main class="main">
 <div class="topbar2">
-  <div class="crumb2">Deal Assistant <span class="sep">/</span> <a href="ridgeline_pipeline.html">Pipeline</a> <span class="sep">/</span> <span class="cur">Meridian Behavioral Health</span></div>
+  <div class="crumb2">Deal Assistant <span class="sep">/</span> <a href="ridgeline_pipeline.html">Pipeline</a> <span class="sep">/</span> <span class="cur">Cardinal Specialty Pharmacy</span></div>
 </div>
 
 <div class="wrap">
@@ -292,45 +299,38 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
   <!-- VERDICT BAND -->
   <div class="hero fade">
     <div class="hero-inner">
-      <div class="hero-eyebrow">NDA Scorecard · Healthcare Services</div>
-      <h1 class="hero-name">Meridian Behavioral Health</h1>
-      <p class="hero-desc">Multi-state outpatient behavioral health platform. 84 clinics across 6 states, founder-clinician led, ~80% payor-contracted revenue.</p>
+      <div class="hero-eyebrow">NDA Scorecard &middot; Specialty Pharmacy</div>
+      <h1 class="hero-name">Cardinal Specialty Pharmacy</h1>
+      <p class="hero-desc">National specialty pharmacy serving complex, high-cost therapies. Limited-distribution drug access, payer and manufacturer contracts, and clinical adherence management. ~$32M adjusted EBITDA on ~$175M revenue.</p>
 
       <div class="verdict-row">
-        <div class="verdict">
-          <span class="v-pill">Selective</span>
-        </div>
-        <div>
-          <div class="v-label">Fit score</div>
-          <div class="v-score">73<small>&thinsp;/&thinsp;100</small></div>
-        </div>
-        <div>
-          <div class="v-label">Implied entry</div>
-          <div class="v-score" style="font-size:26px">12.1<small>x EBITDA</small></div>
-        </div>
+        <div class="verdict"><span class="v-pill go">Pursue</span></div>
+        <div><div class="v-label">REP score</div><div class="v-score">8<small>&thinsp;/&thinsp;10</small></div></div>
+        <div><div class="v-label">Asset quality</div><div class="v-score">A&ndash;</div></div>
+        <div><div class="v-label">Entry</div><div class="v-score" style="font-size:26px">8.8<small>x EBITDA</small></div></div>
       </div>
 
       <div class="dualreads">
         <div class="dr q">
-          <div class="lc">Asset quality</div>
-          <div class="val">High &middot; A&ndash;</div>
-          <div class="note">Durable payor-contracted revenue, strong same-clinic growth and clinical outcomes.</div>
+          <div class="lc">Two-track read</div>
+          <div class="val">A&ndash; asset</div>
+          <div class="note">Recurring refill revenue, mission-critical therapies, FCF conversion above 50 percent. Downside is structurally protected, not just modeled.</div>
         </div>
-        <div class="dr p">
-          <div class="lc">Price</div>
-          <div class="val">Above range</div>
-          <div class="note">12.1x against Ridgemont's 8 to 10x healthcare-services band.</div>
+        <div class="dr q">
+          <div class="lc">Price discipline</div>
+          <div class="val">Below ceiling</div>
+          <div class="note">8.8x entry sits under the ~9.5x walk-away attached to an A&ndash; grade. Quality and price are graded separately.</div>
         </div>
       </div>
 
-      <p class="reasons"><b>Why selective.</b> A genuinely high-quality asset in a fragmented market that rewards a roll-up. The call is held back by an entry multiple above the range that has historically worked for Ridgemont, payor concentration sitting just under the hard-pass gate, and a de novo growth plan that is not yet proven at this scale. Strong business, demanding price.</p>
+      <p class="reasons"><b>Why pursue.</b> An in-lane specialty pharmacy with the protected downside Ridgemont underwrites for: recurring, refill-driven revenue on therapies a patient cannot defer, real procurement and pricing leverage, and free-cash conversion above the 50 percent preference. The return holds even with the exit multiple flat to entry, because it rides operations rather than multiple expansion. Three controllable value-creation levers are credible. The live risk is the one that kills healthcare deals most often, reimbursement and payer durability, and that is where diligence goes first.</p>
     </div>
   </div>
 
   <!-- SPINE -->
   <div class="sec fade" style="animation-delay:.06s">
     <div class="sec-hd">
-      <div><span class="lc lc-b">Scored against Ridgemont's framework</span><h2>The five-axis read</h2></div>
+      <div><span class="lc lc-b">Scored against the REP healthcare framework</span><h2>The read</h2></div>
       <div class="legend">
         <span><i class="dot-rule"></i> scored by rule</span>
         <span><i class="dot-jud"></i> surfaced for your judgment</span>
@@ -338,84 +338,83 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
     </div>
 
     <div class="axis">
-      <div class="axis-name">Management<span class="ai">Team &amp; tenure</span></div>
-      <div class="axis-read">Founder-clinician CEO, <button class="cite" data-ev="e-mgmt">9 years in seat<span class="tg">CIM</span></button>, with a public-company CFO and a COO of four years. Stable, operator-led, and clinically credible.
-        <div class="ev" id="e-mgmt"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Meridian CIM &middot; Management &middot; p.18</span></div><div class="snip">"Dr. Lena Ortiz founded Meridian in 2017 and continues as CEO. CFO joined 2022 from a NYSE-listed provider; COO tenure <span class="hl">4 years</span>."</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Cross-checked against LinkedIn and prior board materials.</div></div></div>
+      <div class="axis-name">Sector &amp; model fit<span class="ai">In lane?</span></div>
+      <div class="axis-read">Specialty pharmacy is a named preferred lane, and the screen tests the <button class="cite" data-ev="e-lane">business model, not the end market<span class="tg">CIM</span></button>: refill-driven recurring revenue on limited-distribution therapies, not a manufacturing or out-of-network model.
+        <div class="ev" id="e-lane"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Cardinal CIM &middot; Business overview &middot; p.9</span></div><div class="snip">"Revenue is <span class="hl">refill-driven and payer-contracted</span> across limited-distribution specialty therapies; no manufacturing, no out-of-network billing model."</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Passes the model-versus-end-market test, not just "sells into healthcare."</div></div></div>
       </div>
-      <div class="axis-assess"><span class="chip strong">Strong</span><div class="bar"><i style="width:82%"></i></div></div>
+      <div class="axis-assess"><span class="chip range">In lane</span><div class="bar"><i style="width:88%;background:var(--green)"></i></div></div>
     </div>
 
     <div class="axis">
-      <div class="axis-name">Industry &amp; market<span class="ai">Attractiveness</span></div>
-      <div class="axis-read">Structural demand tailwinds and a fragmented field where the <button class="cite" data-ev="e-mkt">top ten players hold under 15% share<span class="tg">COMP</span></button>. Favorable conditions for a disciplined roll-up.
-        <div class="ev" id="e-mkt"><div class="ev-card t-comp"><div class="src"><span class="srctag">Public</span><span class="doc">Sector research &middot; Behavioral health Q1 2026 + EDGAR comps</span></div><div class="snip">Fragmentation index places the <span class="hl">ten largest operators below 15%</span> of national outpatient volume; reimbursement parity trends supportive through 2027.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Independent of management claims; pulled from public_data.</div></div></div>
+      <div class="axis-name">Protected downside<span class="ai">Non-negotiable</span></div>
+      <div class="axis-read">Recurring revenue with demonstrated refill retention; therapies a patient <button class="cite" data-ev="e-down">cuts last, not first<span class="tg">CIM</span></button>; pricing and procurement leverage visible in gross margin; and FCF conversion above the framework's 50 percent preference.
+        <div class="ev" id="e-down"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Cardinal CIM &middot; Revenue quality &middot; p.24</span></div><div class="snip">Refill retention in the <span class="hl">low-90s percent</span>; therapies are non-deferrable; <span class="hl">EBITDA-to-FCF conversion above 50 percent</span> with low capex intensity.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Downside is structurally capped, the precondition the framework requires before any return.</div></div></div>
       </div>
-      <div class="axis-assess"><span class="chip strong">Attractive</span><div class="bar"><i style="width:84%"></i></div></div>
+      <div class="axis-assess"><span class="chip strong">Strong</span><div class="bar"><i style="width:84%"></i></div></div>
     </div>
 
     <div class="axis">
-      <div class="axis-name">Valuation<span class="ai">vs benchmark</span></div>
-      <div class="axis-read">The <button class="cite" data-ev="e-val">12.1x ask sits above the 8 to 10x band<span class="tg">DATA</span></button> Ridgemont has paid for comparable healthcare-services platforms, and QoE history suggests the true multiple may run higher.
-        <div class="ev" id="e-val"><div class="ev-card t-chrono"><div class="src"><span class="srctag">Deal data</span><span class="doc">Ridgemont deal database &middot; healthcare-services entries 2017&ndash;2024</span></div><div class="snip">Median entry for the sub-sector: <span class="hl">9.0x</span>. Range 8.4x to 10.6x. Proposed Meridian entry of 12.1x is <span class="hl">+2.1x above the top of range</span>.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Sourced from Ridgemont's own realized entries, not a generic comp set.</div></div></div>
+      <div class="axis-name">Asset quality vs price<span class="ai">The central discipline</span></div>
+      <div class="axis-read">Graded an <button class="cite" data-ev="e-qp">A&ndash; asset on revenue quality<span class="tg">DATA</span></button>, separate from price. The walk-away attached to that grade is roughly 9.5x; the 8.8x entry sits below it. The cardinal error, paying an A multiple for a lesser asset, is avoided here.
+        <div class="ev" id="e-qp"><div class="ev-card t-chrono"><div class="src"><span class="srctag">Deal data</span><span class="doc">REP entries &middot; specialty pharmacy bracket</span></div><div class="snip">A&ndash; quality carries a held ceiling near <span class="hl">9.5x</span>; proposed entry <span class="hl">8.8x</span> is below it. Quality and price are scored on separate tracks and never collapsed into one number.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> The gap between quality and price is the analysis.</div></div></div>
       </div>
-      <div class="axis-assess"><span class="chip above">Above range</span><div class="bar"><i style="width:42%;background:var(--red)"></i></div></div>
+      <div class="axis-assess"><span class="chip range">Below ceiling</span><div class="bar"><i style="width:80%;background:var(--green)"></i></div></div>
     </div>
 
     <div class="axis">
-      <div class="axis-name">Company<span class="ai">Asset quality</span></div>
-      <div class="axis-read"><button class="cite" data-ev="e-co">Roughly 80% of revenue is payor-contracted<span class="tg">CIM</span></button> with <button class="cite" data-ev="e-co2">6% same-clinic growth<span class="tg">QoE</span></button> and strong clinical retention. The underlying business is the strongest part of the story.
-        <div class="ev" id="e-co"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Meridian CIM &middot; Revenue quality &middot; p.31</span></div><div class="snip">"Contracted commercial and Medicaid payor revenue represents <span class="hl">~80%</span> of TTM; remainder is self-pay and ancillary."</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Payor mix detail requested in banker questions below.</div></div></div>
-        <div class="ev" id="e-co2"><div class="ev-card t-qoe"><div class="src"><span class="srctag">QoE pattern</span><span class="doc">In-sector QoE history &middot; same-clinic growth</span></div><div class="snip">Reported <span class="hl">6% same-clinic</span> growth is within the credible band for the sub-sector; verify split of pricing vs volume vs acuity in diligence.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Pattern from five prior in-sector QoE reports.</div></div></div>
+      <div class="axis-name">Value creation<span class="ai">Controllable levers</span></div>
+      <div class="axis-read">Three controllable levers, each gradeable: <button class="cite" data-ev="e-vc">procurement and gross-to-net at scale<span class="tg">IC</span></button> (Proven), therapy-mix shift toward higher-margin categories (Credible), and tuck-ins of regional specialty pharmacies on a proven platform playbook (Credible). The return rides operations, not leverage.
+        <div class="ev" id="e-vc"><div class="ev-card t-ic"><div class="src"><span class="srctag">IC memo</span><span class="doc">REP IC corpus &middot; pharmacy-services value creation</span></div><div class="snip">Comparable platforms realized most of the gain through <span class="hl">procurement, mix shift, and disciplined tuck-ins</span> at realistic multiples, not multiple expansion or leverage.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Each lever is underwritten; "management will figure it out" is not a lever.</div></div></div>
       </div>
       <div class="axis-assess"><span class="chip strong">Strong</span><div class="bar"><i style="width:80%"></i></div></div>
     </div>
 
     <div class="axis">
-      <div class="axis-name">Right to win<span class="ai">Edge &amp; angle</span></div>
-      <div class="axis-read">Relationships and a de novo playbook give a real angle, but the roll-up lane is contested. <button class="cite" data-ev="e-rtw">Two other sponsors are active in adjacent assets<span class="tg">IC</span></button>, so the edge needs pressure-testing.
-        <div class="ev" id="e-rtw"><div class="ev-card t-ic"><div class="src"><span class="srctag">IC memo</span><span class="doc">Ridgemont IC corpus &middot; comparable behavioral-health deliberations</span></div><div class="snip">Competitive entries noted in two comparable processes; both saw <span class="hl">multiple expansion driven by auction dynamics</span> rather than thesis.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Pattern across 8 comparable IC presentations.</div></div></div>
+      <div class="axis-name">Management &amp; data<span class="ai">Credibility multiplier</span></div>
+      <div class="axis-read">Operator-led with a public-company CFO. Reported figures tie and the <button class="cite" data-ev="e-mgmt2">adjustment bridge is modest<span class="tg">QoE</span></button>, under the 40 percent uplift that draws a penalty. Management reads as a credibility multiplier here, not a discount.
+        <div class="ev" id="e-mgmt2"><div class="ev-card t-qoe"><div class="src"><span class="srctag">QoE pattern</span><span class="doc">In-sector QoE history &middot; add-back quality</span></div><div class="snip">Reported-to-adjusted EBITDA uplift is <span class="hl">under 40 percent</span> with add-backs that tie to the balance sheet; no missed-projection history flagged. Adjusted EBITDA is still a negotiating position until proven.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Verify add-back nature and prior-plan attainment in diligence.</div></div></div>
       </div>
-      <div class="axis-assess"><span class="chip mon">Monitor</span><div class="bar"><i style="width:58%;background:var(--amber)"></i></div></div>
+      <div class="axis-assess"><span class="chip strong">Credible</span><div class="bar"><i style="width:76%"></i></div></div>
     </div>
   </div>
 
   <!-- GATES -->
   <div class="sec fade" style="animation-delay:.1s">
-    <div class="sec-hd"><div><span class="lc lc-b">Hard-pass gates</span><h2>None tripped. One sitting on the line.</h2></div></div>
+    <div class="sec-hd"><div><span class="lc lc-b">Hard-pass screen</span><h2>No disqualifier triggered. The asset clears.</h2></div></div>
     <div class="gates">
       <div class="gate pass-ok">
-        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">EBITDA in range</span></div>
-        <div class="gb">17% margin against the 14% floor. Clear.</div>
-      </div>
-      <div class="gate watch">
-        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9L2 18a2 2 0 001.7 3h16.6a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg><span class="gt">Payor concentration</span></div>
-        <div class="gb"><button class="cite" data-ev="e-gate">Top payor at 24%<span class="tg">CIM</span></button>, against a 25% hard-pass gate. One point of headroom.
-          <div class="ev" id="e-gate"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Meridian CIM &middot; Payor mix footnote &middot; p.33</span></div><div class="snip">Largest single payor approx. <span class="hl">24% of TTM revenue</span>; gate triggers an automatic pass at 25% single-payor concentration.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> A single gate trigger short-circuits the whole score to a pass.</div></div></div>
-        </div>
+        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">EBITDA in band</span></div>
+        <div class="gb">~$32M, inside the $20 to 75M target range. Clear.</div>
       </div>
       <div class="gate pass-ok">
-        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">Credible value-add path</span></div>
-        <div class="gb">De novo plus M&amp;A playbook present. Clear, pending proof of scale.</div>
+        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">Model &amp; sector</span></div>
+        <div class="gb">In-lane specialty pharmacy. Not manufacturing, CME, or an out-of-network-dependent model. Clear.</div>
+      </div>
+      <div class="gate pass-ok">
+        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">Concentration</span></div>
+        <div class="gb"><button class="cite" data-ev="e-gate">Largest manufacturer relationship ~22 percent<span class="tg">CIM</span></button>, under the 30 percent gate. Clears, and the first diligence focus.
+          <div class="ev" id="e-gate"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Cardinal CIM &middot; Contract concentration &middot; p.31</span></div><div class="snip">Top limited-distribution relationship approx. <span class="hl">22 percent</span> of gross profit; single-customer concentration above 30 percent is the hard-pass line.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Under the gate, but the dominant risk to test, see banker questions.</div></div></div>
+        </div>
       </div>
     </div>
-    <p class="gate-note">Any single gate trigger, such as out-of-range EBITDA, single-payor concentration, or no credible value-add path, short-circuits the score to an automatic pass.</p>
+    <p class="gate-note">Any single trigger short-circuits the score to an automatic 1 to 2: manufacturing or CME, an out-of-network-dependent model, single-customer concentration over 30 percent, EBITDA outside $20 to 75M, no credible value-add path, or a non-credible banker.</p>
   </div>
 
   <!-- MOAT: comparable Ridgemont deals -->
   <div class="sec fade" style="animation-delay:.14s">
     <div class="sec-hd"><div><span class="lc lc-b">Ridgemont's own record</span><h2>How this compares to deals we have actually done</h2></div></div>
-    <div class="moat-note">This read draws on <b>Ridgemont's realized returns</b>, matched to Meridian on sub-sector, size, and entry multiple. No banker, advisor, or counterparty in this process can run it, because no one else holds this record.</div>
+    <div class="moat-note">The framework names this as the single highest-value thing to automate: <b>systematic comparison against REP's realized returns</b>, today done from partner memory. Matched to Cardinal on sub-sector, size, and entry multiple.</div>
     <table>
       <thead><tr><th>Comparable deal</th><th>Entry</th><th>Entry multiple</th><th>Outcome</th><th>MOIC</th><th>Status</th></tr></thead>
       <tbody>
-        <tr><td class="name">Cedar Park Health</td><td>2018</td><td>8.4x</td><td><span class="mtag up">Outperformed</span></td><td>2.8x</td><td>Exited 2023</td></tr>
-        <tr><td class="name">Summit Care Partners</td><td>2020</td><td>9.1x</td><td><span class="mtag up">In line</span></td><td>2.1x</td><td>Exited 2024</td></tr>
-        <tr><td class="name">Beacon Outpatient</td><td>2021</td><td>8.8x</td><td><span class="mtag held">Tracking</span></td><td>&mdash;</td><td>Active</td></tr>
-        <tr><td class="name">Atlas Therapy Group</td><td>2019</td><td>10.6x</td><td><span class="mtag dn">Underperformed</span></td><td>1.5x</td><td>Exited 2023</td></tr>
-        <tr class="subj"><td class="name">Meridian Behavioral Health</td><td>2026</td><td>12.1x</td><td><button class="cite" data-ev="e-moat" style="color:var(--blue-d)">see the pattern<span class="tg">CHRON</span></button></td><td>&mdash;</td><td>Under review</td></tr>
+        <tr><td class="name">Summit Specialty Pharmacy</td><td>2018</td><td>8.4x</td><td><span class="mtag up">Outperformed</span></td><td>2.9x</td><td>Exited 2023</td></tr>
+        <tr><td class="name">PromptCare</td><td>2019</td><td>8.6x</td><td><span class="mtag up">In line</span></td><td>2.4x</td><td>Exited 2024</td></tr>
+        <tr><td class="name">Beacon Pharmacy Services</td><td>2022</td><td>8.9x</td><td><span class="mtag held">Tracking</span></td><td>&mdash;</td><td>Active</td></tr>
+        <tr><td class="name">Vantage Infusion</td><td>2021</td><td>9.9x</td><td><span class="mtag dn">Underperformed</span></td><td>1.7x</td><td>Exited 2024</td></tr>
+        <tr class="subj"><td class="name">Cardinal Specialty Pharmacy</td><td>2026</td><td>8.8x</td><td><button class="cite" data-ev="e-moat" style="color:var(--blue-d)">see the pattern<span class="tg">CHRON</span></button></td><td>&mdash;</td><td>Under review</td></tr>
       </tbody>
     </table>
-    <div class="ev" id="e-moat" style="margin-top:0"><div class="ev-card t-chrono"><div class="src"><span class="srctag">Chronograph</span><span class="doc">Ridgemont portfolio returns &middot; healthcare-services bracket</span></div><div class="snip">Entries <span class="hl">below 9x produced a median 2.5x MOIC</span>; the single entry above 10x returned 1.5x. Meridian's 12.1x sits above the bracket that has worked for the firm. Every 0.5x of entry compression on this size is roughly <span class="hl">$12M of equity value</span>.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Drawn directly from Ridgemont's Chronograph portfolio.</div></div></div>
+    <div class="ev" id="e-moat" style="margin-top:0"><div class="ev-card t-chrono"><div class="src"><span class="srctag">Chronograph</span><span class="doc">REP portfolio returns &middot; specialty pharmacy</span></div><div class="snip">Sub-9.0x entries in the sub-sector returned a <span class="hl">median 2.6x</span>; the single near-10x entry returned 1.7x. Cardinal at 8.8x sits in the bracket that has worked, <span class="hl">closest to Summit at 2.9x</span>.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Drawn from REP's realized returns, not a generic comp set.</div></div></div>
   </div>
 
   <!-- JUDGMENT -->
@@ -423,20 +422,24 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
     <div class="sec-hd"><div><span class="lc lc-b">The engine stops here</span><h2>Surfaced for your judgment</h2></div></div>
     <div class="jud">
       <h3>Calls the framework deliberately leaves to a partner</h3>
-      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">Is the de novo expansion playbook proven enough to underwrite the growth case at a 12.1x entry, or does the price assume execution the firm has not yet seen at this scale?</span></div>
-      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">Does the founder-clinician's role and the clinical culture survive a control transaction, and what is the retention risk if it does not?</span></div>
+      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">The A&ndash; letter grade is a synthesis call. Does revenue quality and durability justify A&ndash; over B+, which is what sets the ceiling you hold?</span></div>
+      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">Are the three value-creation levers real? Procurement is proven; the mix-shift and tuck-in levers are credible but not yet in the P&amp;L.</span></div>
+      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">AI overlay, evaluated both directions: it reads as a net tailwind here, automating prior authorization, refills, and adherence rather than compressing the moat. Confirm as a named diligence item.</span></div>
+      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">The walk-away. The model proposes holding below ~9.5x; the number is yours to set.</span></div>
     </div>
   </div>
 
   <!-- BANKER QUESTIONS -->
   <div class="sec fade" style="animation-delay:.22s">
     <div class="sec-hd"><div><span class="lc lc-b">Walk into the call ready</span><h2>The questions that move the decision</h2></div></div>
-    <div class="bq"><span class="num">1</span><span class="qx">Full payor mix: top payor and top-three share, by contract and trajectory. Concentration is one point under the gate.</span><span class="imp hi">High impact</span></div>
-    <div class="bq"><span class="num">2</span><span class="qx">De novo unit economics and ramp curve. How many of the 84 clinics are de novo versus acquired, and what is the payback?</span><span class="imp hi">High impact</span></div>
-    <div class="bq"><span class="num">3</span><span class="qx">Same-clinic revenue bridge: pricing versus volume versus acuity mix. Validates the 6% organic claim.</span><span class="imp hi">High impact</span></div>
-    <div class="bq"><span class="num">4</span><span class="qx">Bridge reported growth to organic-only, separating acquired-clinic revenue from same-clinic expansion.</span><span class="imp md">Medium</span></div>
-    <div class="bq"><span class="num">5</span><span class="qx">Clinician retention and recruitment pipeline; turnover by cohort year. Speaks to asset durability.</span><span class="imp md">Medium</span></div>
-    <div class="bq"><span class="num">6</span><span class="qx">QoE-relevant add-backs: owner compensation, one-time items, and capitalized development costs.</span><span class="imp md">Medium</span></div>
+    <div class="bq"><span class="num">1</span><span class="qx">Manufacturer and limited-distribution concentration: share of revenue and gross profit from the top 1, 3, and 5 contracts, and renewal terms.</span><span class="imp hi">High impact</span></div>
+    <div class="bq"><span class="num">2</span><span class="qx">Payer mix and reimbursement durability: commercial versus Medicare versus Medicaid, DIR-fee exposure, and the gross-to-net trend.</span><span class="imp hi">High impact</span></div>
+    <div class="bq"><span class="num">3</span><span class="qx">Refill retention and adherence by therapy cohort. What churns, and why, and how durable is the recurring base.</span><span class="imp hi">High impact</span></div>
+    <div class="bq"><span class="num">4</span><span class="qx">EBITDA adjustment bridge: magnitude and nature of add-backs, owner compensation, and any one-time build costs.</span><span class="imp hi">High impact</span></div>
+    <div class="bq"><span class="num">5</span><span class="qx">340B and fraud-and-abuse posture: AKS, copay assistance, and compliance history.</span><span class="imp md">Medium</span></div>
+    <div class="bq"><span class="num">6</span><span class="qx">Procurement economics: GPO terms and buy-side margin, and how much of the savings thesis is contracted versus assumed.</span><span class="imp md">Medium</span></div>
+    <div class="bq"><span class="num">7</span><span class="qx">Tuck-in pipeline and integration capacity: how many targets, at what multiples, with what synergy math.</span><span class="imp md">Medium</span></div>
+    <div class="bq"><span class="num">8</span><span class="qx">Forward projections versus historical attainment. Has management hit its own plan before.</span><span class="imp md">Medium</span></div>
   </div>
 
   <!-- DECISION RECORD -->
@@ -444,10 +447,10 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
     <div class="sec-hd"><div><span class="lc lc-b">Your call, on the record</span><h2>Decision record</h2></div></div>
     <div class="dec">
       <div id="dec-form">
-        <p class="rec">The engine recommends <b>Selective</b>. Record your call and the reasoning. The judgment stays with you; this captures it.</p>
+        <p class="rec">The engine recommends <b>Pursue</b> (8 of 10, A&ndash; asset, below ceiling). Record your call and the reasoning. The judgment stays with you; this captures it.</p>
         <div class="seg" id="seg">
-          <button data-v="Pursue">Pursue</button>
-          <button data-v="Selective" class="on">Selective<span class="eng">Engine</span></button>
+          <button data-v="Pursue" class="on">Pursue<span class="eng">Engine</span></button>
+          <button data-v="Selective">Selective</button>
           <button data-v="Pass">Pass</button>
         </div>
         <textarea id="note" placeholder="The reasoning behind the call. What would change it?"></textarea>
@@ -462,7 +465,7 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
 
   <div class="foot">
     <span class="lc">Ridgeline &middot; Deal Assistant &middot; Deal Scoring</span>
-    Illustrative prototype on representative data. Meridian Behavioral Health and all figures are fictional and for demonstration. Framework benchmarks and gate thresholds shown here are placeholders, to be replaced with the Healthcare team's calibrated framework. Ridgeline is the platform, the Deal Assistant is the product, Deal Scoring is the capability shown.
+    Illustrative prototype. Cardinal Specialty Pharmacy and all figures are fictional. The 1 to 10 scoring, two-track quality grade and held price ceiling, hard-pass screen, and reimbursement-led risk framing follow the REP Healthcare Investment Framework and the rep-deal-eval rubric. The comparable-deal record stands in for Ridgemont's realized returns, the piece the framework names as most worth automating.
   </div>
 </div>
 
@@ -489,7 +492,7 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
   });
   document.addEventListener('click',function(){ closeAll(null); });
 
-  var seg=document.getElementById('seg'); var choice='Selective';
+  var seg=document.getElementById('seg'); var choice='Pursue';
   seg.querySelectorAll('button').forEach(function(b){
     b.addEventListener('click',function(){
       seg.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
@@ -499,10 +502,10 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
   document.getElementById('logbtn').addEventListener('click',function(){
     var note=document.getElementById('note').value.trim();
     var body=document.getElementById('logged-body');
-    var agree = choice==='Selective';
-    body.innerHTML='<b>'+choice+'</b>'+(agree?' (in line with the engine).':' (overriding the engine\u2019s Selective).')+
+    var agree = choice==='Pursue';
+    body.innerHTML='<b>'+choice+'</b>'+(agree?' (in line with the engine).':' (overriding the engine\u2019s Pursue).')+
       (note?' &mdash; \u201c'+note.replace(/</g,'&lt;')+'\u201d':'')+
-      '<br><br>Captured against the Meridian score and fed back to the data layer. The next Meridian-like deal is scored with this outcome in the firm\u2019s record.';
+      '<br><br>Captured against the Cardinal score and fed back to the data layer. The next Cardinal-like deal is scored with this outcome in the firm\u2019s record.';
     document.getElementById('dec-form').style.display='none';
     document.getElementById('logged').style.display='block';
   });
@@ -516,7 +519,7 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
   if(motionOK && 'IntersectionObserver' in window){
     document.body.classList.add('folding');
     // snap the first section open now, before transitions are enabled, so the hero
-    // and 'The five-axis read' are already revealed on load with no fold animation
+    // and the first section are already revealed on load with no slide animation
     if(secs[0]) secs[0].classList.add('in');
     requestAnimationFrame(function(){
       document.body.classList.add('anim');
@@ -534,27 +537,26 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
 })();
 </script>
 
-<!-- Ridgeline AI : scoped chat -->
 <button class="rai-launch" id="rai-launch"><svg viewBox="0 0 24 24"><path d="M12 2l1.9 5.6L20 9.5l-6.1 1.9L12 17l-1.9-5.6L4 9.5l6.1-1.9z"/></svg> Ridgeline AI <span class="pulse"></span></button>
-<aside class="rai-drawer" id="rai-drawer" aria-label="Ridgeline AI chat" aria-hidden="true">
+<aside class="rai-drawer" id="rai-drawer" aria-hidden="true">
   <div class="rai-hd">
     <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l1.9 5.6L20 9.5l-6.1 1.9L12 17l-1.9-5.6L4 9.5l6.1-1.9z"/></svg></span>
     <div class="t"><div class="n">Ridgeline AI</div><div class="s">Grounded in this deal's scoring</div></div>
     <button class="rai-x" id="rai-x" title="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
   <div class="rai-log" id="rai-log">
-    <div class="msg ai">I am working from everything behind this score: the CIM, the quality-of-earnings pattern, the comparable Ridgemont deals, and the framework. Ask why the call landed where it did, or push on it.</div>
+    <div class="msg ai">I am working from everything behind this score: the CIM, the quality-of-earnings read, the comparable Ridgemont deals, and the REP healthcare framework. Ask why the call landed where it did, or push on it.</div>
   </div>
   <div class="rai-sugg" id="rai-sugg">
     <div class="sgl">Where partners usually start</div>
-    <button class="rai-q" data-i="0">Why Selective and not Pursue?</button>
-    <button class="rai-q" data-i="1">What would move this to a Pass?</button>
-    <button class="rai-q" data-i="2">Which comps drove the valuation?</button>
-    <button class="rai-q" data-i="3">What are you least sure about?</button>
-    <button class="rai-q" data-i="4">Walk me through Atlas Therapy's outcome.</button>
+    <button class="rai-q" data-i="0">Why an 8 and not higher?</button>
+    <button class="rai-q" data-i="1">What would trip a hard pass?</button>
+    <button class="rai-q" data-i="2">Is the downside really protected?</button>
+    <button class="rai-q" data-i="3">Which of our deals does this look like?</button>
+    <button class="rai-q" data-i="4">What are you least sure about?</button>
   </div>
   <div class="rai-foot">
-    <div class="rai-input"><input id="rai-in" placeholder="Ask anything about Meridian"><button class="send" id="rai-send" title="Send"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-7-8-3z"/></svg></button></div>
+    <div class="rai-input"><input id="rai-in" placeholder="Ask anything about Cardinal"><button class="send" id="rai-send" title="Send"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-7-8-3z"/></svg></button></div>
     <div class="rai-note">Prototype. Responses are illustrative and grounded in this deal's loaded evidence.</div>
   </div>
 </aside>
@@ -563,11 +565,11 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
   var launch=document.getElementById('rai-launch'),drawer=document.getElementById('rai-drawer'),x=document.getElementById('rai-x'),log=document.getElementById('rai-log');
   if(!launch||!drawer) return;
   var QA=[
-    {q:"Why Selective and not Pursue?",a:'The entry is what holds it back. At 12.1x it sits about 2.1x above the top of the 8 to 10x band the firm has actually paid, against a median realized entry of 9.0x. The asset itself is strong: roughly 80 percent payor-contracted revenue, 6 percent same-clinic growth, a fragmented market that rewards a roll-up. But payor concentration is at 24 percent against a 25 percent hard-pass gate, one point of headroom, and the de novo plan is not yet proven at this scale. Strong business, demanding price; that combination is a Selective, not a Pursue.<div class="src-tags"><span class="qtag data">DATA</span><span class="qtag cim">CIM</span><span class="qtag chron">CHRON</span></div>'},
-    {q:"What would move this to a Pass?",a:'Two clear triggers. Payor concentration crossing 25 percent would auto-pass it on the gate; it is at 24 percent today, one point away. And valuation: at 12.1x it is already above the bracket where the firm’s one comparable above 10x, Atlas Therapy, returned just 1.5x, so if diligence cannot support the growth case for the premium, the price alone argues for passing. A same-clinic bridge that proves to be mostly price rather than volume or acuity would also weaken it.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag chron">CHRON</span><span class="qtag qoe">QoE</span></div>'},
-    {q:"Which comparable deals drove the valuation read?",a:'Four from Ridgemont’s own portfolio, matched on sub-sector and size. Cedar Park Health anchors the upside at an 8.4x entry and a 2.8x outcome. Summit Care came in at 9.1x for 2.1x. Atlas Therapy is the cautionary one at 10.6x and 1.5x, the only entry above 10x. Beacon is still active. Meridian at 12.1x sits above all of them, roughly 2.1x past the top of the realized range.<div class="src-tags"><span class="qtag chron">CHRON</span></div>'},
-    {q:"What are you least sure about?",a:'Whether the de novo expansion plan is proven enough to underwrite the growth at a 12.1x entry. The 6 percent same-clinic growth is within the credible band, but the split across pricing, volume, and acuity is not evidenced in what was loaded, and the de novo unit economics at this scale are unproven. At this price the read assumes execution the firm has not yet seen, which is why it is first on the banker list.<div class="src-tags"><span class="qtag qoe">QoE</span><span class="qtag cim">CIM</span></div>'},
-    {q:"Walk me through Atlas Therapy's outcome.",a:'I can see Atlas in the portfolio record: a 2019 entry at 10.6x, the single comparable above 10x, which returned 1.5x and was exited in 2023, the firm’s weakest realized result in this bracket. Why it underperformed, how the integration and growth plan played out, lives in the Atlas deal file, which is not loaded for this scoring. I would rather not characterize it from data I do not have. Worth pulling that file before the IC, since Meridian’s 12.1x sits even higher.<div class="src-tags"><span class="qtag chron">CHRON</span></div>'}
+    {q:"Why an 8 and not higher?",a:'An 8 is the top of strong fit, not exceptional. It earns the preferred-sector and compliance-driven-demand bonuses and clears every gate, but a 9 or 10 wants an exceptional, de-risked value-add path. Here the manufacturer concentration and gross-to-net durability are real diligence items, not yet resolved. Clear them well and it moves up.<div class="src-tags"><span class="qtag data">DATA</span><span class="qtag cim">CIM</span></div>'},
+    {q:"What would trip a hard pass?",a:'A few bright lines, any one of which drops it to a 1 or 2 automatically. Single-customer or manufacturer concentration above 30 percent; the largest today is near 22 percent. EBITDA outside the $20 to 75M band; it is at $32M. An out-of-network-dependent model, which this is not. Or the loss of a credible value-add path.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>'},
+    {q:"Is the downside really protected?",a:'That is the core of the score. Revenue is recurring and refill-driven on therapies patients cannot defer, the spend a payer cuts last. Pricing and procurement leverage show up in gross margin, and FCF conversion runs above the 50 percent the framework prefers. The return holds with the exit multiple flat to entry. The one place the floor could crack is reimbursement, which is why it leads the risks.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>'},
+    {q:"Which of our deals does this look like?",a:'Specialty pharmacy and pharmacy-services names from the firm\u2019s own record. Summit Specialty Pharmacy anchors the upside at an 8.4x entry and 2.9x. PromptCare returned 2.4x at 8.6x. Vantage Infusion is the cautionary one, near 10x for 1.7x. Cardinal at 8.8x sits in the sub-9x bracket that has worked, closest to Summit.<div class="src-tags"><span class="qtag chron">CHRON</span></div>'},
+    {q:"What are you least sure about?",a:'Reimbursement and payer durability, the criterion that kills healthcare deals most often. Gross-to-net and DIR-fee trends are not fully evidenced in what was loaded, and a few limited-distribution contracts carry the margin. If a key manufacturer relationship or payer term moved, the thesis would need rework. It is the first diligence focus for exactly that reason.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>'}
   ];
   function open(){drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');launch.style.display='none';}
   function close(){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');launch.style.display='';}
@@ -577,7 +579,7 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
     b.addEventListener('click',function(){var i=+b.getAttribute('data-i');add('me',QA[i].q);setTimeout(function(){add('ai',QA[i].a);},340);});
   });
   var input=document.getElementById('rai-in'),send=document.getElementById('rai-send');
-  function ask(){var v=(input.value||'').trim();if(!v)return;add('me',v);input.value='';setTimeout(function(){add('ai','In the live product I answer any question grounded in this deal’s evidence, with the same citations you see on the card. For this prototype, try one of the suggested questions above.');},340);}
+  function ask(){var v=(input.value||'').trim();if(!v)return;add('me',v);input.value='';setTimeout(function(){add('ai','In the live product I answer any question grounded in this deal\u2019s evidence, with the same citations you see on the card. For this prototype, try one of the suggested questions above.');},340);}
   if(send) send.addEventListener('click',ask);
   if(input) input.addEventListener('keydown',function(e){if(e.key==='Enter')ask();});
 })();

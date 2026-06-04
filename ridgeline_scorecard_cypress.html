@@ -18,7 +18,7 @@
   --w:#fff;--on:#1F2A30;--onv:#5C6B73;--out:#9AA6AC;--outv:#C9D1D5;--haze:#E6EAEC;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Calibri','Aptos','Segoe UI',system-ui,-apple-system,sans-serif;background:var(--surf);color:var(--on);-webkit-font-smoothing:antialiased;line-height:1.55}
+body{font-family:'Calibri','Aptos','Segoe UI',system-ui,-apple-system,sans-serif;background:var(--surf);color:var(--on);-webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:clip}
 .serif{font-family:'Libre Caslon Text',Georgia,serif}
 .lc{font-family:'Barlow Semi Condensed',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--out)}
 .lc-b{color:var(--blue)}
@@ -204,6 +204,12 @@ textarea:focus{outline:none;border-color:var(--blue)}
 .app.collapsed .side-user{justify-content:center;padding:14px 0}
 .main{flex:1;min-width:0;display:flex;flex-direction:column}
 .topbar2{display:flex;align-items:center;gap:16px;padding:14px 30px;border-bottom:1px solid var(--haze);background:var(--w);position:sticky;top:0;z-index:5}
+.navtoggle{flex:none;width:34px;height:34px;border:1px solid var(--outv);background:var(--w);border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--onv)}
+.navtoggle:hover{background:var(--surf-low);border-color:var(--blue)}
+.navtoggle svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8}
+.backlink{display:flex;align-items:center;gap:6px;font-family:'Barlow Semi Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-d);text-decoration:none;border:1px solid var(--outv);border-radius:3px;padding:7px 13px}
+.backlink:hover{background:var(--surf-low);border-color:var(--blue)}
+.backlink svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2}
 .crumb2{font-family:'Barlow Semi Condensed',sans-serif;font-size:12.5px;font-weight:500;letter-spacing:.04em;color:var(--onv);display:flex;align-items:center;gap:9px}
 .crumb2 a{color:var(--blue);text-decoration:none}.crumb2 .sep{color:var(--outv)}.crumb2 .cur{color:var(--on)}
 .wrap{padding-top:30px}
@@ -293,45 +299,38 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
   <!-- VERDICT BAND -->
   <div class="hero fade">
     <div class="hero-inner">
-      <div class="hero-eyebrow">NDA Scorecard · Healthcare Services</div>
+      <div class="hero-eyebrow">NDA Scorecard &middot; Dental Services (DSO)</div>
       <h1 class="hero-name">Cypress Dental Partners</h1>
-      <p class="hero-desc">Multi-region dental services organization. ~140 affiliated practices across 9 states, doctor-led clinical model, hygiene and recare-driven recurring revenue.</p>
+      <p class="hero-desc">Multi-state dental support organization. ~140 affiliated practices, recurring recall and hygiene revenue with an ortho and specialty mix. ~$22M adjusted EBITDA on ~$88M revenue.</p>
 
       <div class="verdict-row">
-        <div class="verdict">
-          <span class="v-pill go">Pursue</span>
-        </div>
-        <div>
-          <div class="v-label">Fit score</div>
-          <div class="v-score">82<small>&thinsp;/&thinsp;100</small></div>
-        </div>
-        <div>
-          <div class="v-label">Implied entry</div>
-          <div class="v-score" style="font-size:26px">9.2<small>x EBITDA</small></div>
-        </div>
+        <div class="verdict"><span class="v-pill go">Pursue</span></div>
+        <div><div class="v-label">REP score</div><div class="v-score">7<small>&thinsp;/&thinsp;10</small></div></div>
+        <div><div class="v-label">Asset quality</div><div class="v-score">B+</div></div>
+        <div><div class="v-label">Entry</div><div class="v-score" style="font-size:26px">9.2<small>x EBITDA</small></div></div>
       </div>
 
       <div class="dualreads">
         <div class="dr q">
-          <div class="lc">Asset quality</div>
-          <div class="val">High &middot; A</div>
-          <div class="note">Recurring hygiene revenue, diversified payors, steady same-practice growth.</div>
+          <div class="lc">Two-track read</div>
+          <div class="val">B+ asset</div>
+          <div class="note">Diversified, recurring recall revenue and a fragmented roll-up runway. A discretionary slice of demand keeps it B+, not A.</div>
         </div>
-        <div class="dr q">
-          <div class="lc">Price</div>
-          <div class="val">In range</div>
-          <div class="note">9.2x sits mid-band against Ridgemont's 8 to 10x healthcare-services range.</div>
+        <div class="dr p">
+          <div class="lc">Price discipline</div>
+          <div class="val">At the line</div>
+          <div class="note">9.2x entry sits just under the ~9.5x ceiling on a B+ grade. Out of lane, so holding that line is the whole point.</div>
         </div>
       </div>
 
-      <p class="reasons"><b>Why pursue.</b> A durable, cash-generative asset in a deeply fragmented market, offered at an entry inside the band that has worked for the firm. The recurring hygiene and recare base and clean payor diversification carry the score, and Ridgemont holds a realized template for exactly this play. The one live caution is competitive rather than fundamental: two sponsors are active in adjacent assets, so the task is moving decisively, not debating fit.</p>
+      <p class="reasons"><b>Pursue, with discipline.</b> A strong, fragmented dental roll-up at a fair entry, with diversified revenue and a credible value-add path. The discipline is real: dental sits outside the core lanes, so the bar rises and this is a 7, not a clean high pursue. The open questions are organic-growth durability and how much demand is discretionary, not whether a gate trips. None does.</p>
     </div>
   </div>
 
   <!-- SPINE -->
   <div class="sec fade" style="animation-delay:.06s">
     <div class="sec-hd">
-      <div><span class="lc lc-b">Scored against Ridgemont's framework</span><h2>The five-axis read</h2></div>
+      <div><span class="lc lc-b">Scored against the REP healthcare framework</span><h2>The read</h2></div>
       <div class="legend">
         <span><i class="dot-rule"></i> scored by rule</span>
         <span><i class="dot-jud"></i> surfaced for your judgment</span>
@@ -339,84 +338,83 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
     </div>
 
     <div class="axis">
-      <div class="axis-name">Management<span class="ai">Team &amp; tenure</span></div>
-      <div class="axis-read">A seasoned DSO operator as CEO who <button class="cite" data-ev="e-mgmt">built and exited a prior platform<span class="tg">CIM</span></button>, with a public-company CFO and an integration team already in seat. Operator-led and acquisitive by background.
-        <div class="ev" id="e-mgmt"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Cypress CIM &middot; Management &middot; p.16</span></div><div class="snip">"CEO previously led a <span class="hl">~90-practice DSO to a 2021 exit</span>; CFO joined 2023 from a publicly traded dental services group; integration lead in seat three years."</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Cross-checked against LinkedIn and prior transaction records.</div></div></div>
+      <div class="axis-name">Sector &amp; model fit<span class="ai">In lane?</span></div>
+      <div class="axis-read">Dental is <button class="cite" data-ev="e-lane">not one of the named lanes<span class="tg">CIM</span></button>, so the bar rises sharply. The model itself is sound, recurring recall revenue and a fragmented roll-up, not manufacturing or out-of-network. Whether it is close enough to underwrite is a partner call, surfaced below.
+        <div class="ev" id="e-lane"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Cypress CIM &middot; Business overview &middot; p.7</span></div><div class="snip">Core lanes are specialty pharmacy, physician staffing, post-acute, RCM, home-based care, and behavioral health. Dental is <span class="hl">adjacent, not core</span>; the model is a services roll-up, which is the part that travels.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg> Out of lane raises the bar; it is not a hard-pass.</div></div></div>
       </div>
-      <div class="axis-assess"><span class="chip strong">Strong</span><div class="bar"><i style="width:82%"></i></div></div>
+      <div class="axis-assess"><span class="chip mon">Out of lane</span><div class="bar"><i style="width:62%;background:var(--amber)"></i></div></div>
     </div>
 
     <div class="axis">
-      <div class="axis-name">Industry &amp; market<span class="ai">Attractiveness</span></div>
-      <div class="axis-read">A large, structurally fragmented field where the <button class="cite" data-ev="e-mkt">ten largest DSOs hold under 15% of practices<span class="tg">COMP</span></button>, with non-cyclical, hygiene-driven recurring demand. Textbook roll-up conditions.
-        <div class="ev" id="e-mkt"><div class="ev-card t-comp"><div class="src"><span class="srctag">Public</span><span class="doc">Sector research &middot; Dental services Q1 2026 + EDGAR comps</span></div><div class="snip">Fragmentation index places the <span class="hl">ten largest DSOs below 15%</span> of US practices; dental spend is non-cyclical and recare visits recur on a 6-month cadence.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Independent of management claims; pulled from public_data.</div></div></div>
+      <div class="axis-name">Protected downside<span class="ai">Non-negotiable</span></div>
+      <div class="axis-read">A recurring recall and hygiene base with real retention, but a <button class="cite" data-ev="e-down">slice of dental spend is discretionary<span class="tg">CIM</span></button>, the kind a customer can defer in a downturn, unlike a specialty drug. The recurring floor is solid; the elective portion is the soft spot to size.
+        <div class="ev" id="e-down"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Cypress CIM &middot; Revenue mix &middot; p.21</span></div><div class="snip">Recall and hygiene are recurring and sticky; <span class="hl">ortho and cosmetic are more discretionary</span> and can soften in a downturn. FCF conversion is healthy but cycle-sensitive on the elective mix.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg> Size the discretionary share; it is part of why this is a 7, not an 8.</div></div></div>
       </div>
-      <div class="axis-assess"><span class="chip strong">Attractive</span><div class="bar"><i style="width:86%"></i></div></div>
+      <div class="axis-assess"><span class="chip mon">Mixed</span><div class="bar"><i style="width:68%;background:var(--amber)"></i></div></div>
     </div>
 
     <div class="axis">
-      <div class="axis-name">Valuation<span class="ai">vs benchmark</span></div>
-      <div class="axis-read">The <button class="cite" data-ev="e-val">9.2x entry sits mid-band<span class="tg">DATA</span></button> within the 8 to 10x range Ridgemont has paid for comparable platforms, and dental QoE patterns are typically clean. Priced to work.
-        <div class="ev" id="e-val"><div class="ev-card t-chrono"><div class="src"><span class="srctag">Deal data</span><span class="doc">Ridgemont deal database &middot; healthcare-services entries 2017&ndash;2024</span></div><div class="snip">Median entry for the sub-sector: <span class="hl">9.0x</span>. Range 8.4x to 10.6x. Proposed Cypress entry of 9.2x is <span class="hl">inside the band</span>, near the median.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Sourced from Ridgemont's own realized entries, not a generic comp set.</div></div></div>
+      <div class="axis-name">Asset quality vs price<span class="ai">The central discipline</span></div>
+      <div class="axis-read">Graded a <button class="cite" data-ev="e-qp">B+ asset on diversified, recurring revenue<span class="tg">DATA</span></button>, separate from price. The ceiling attached to B+ is roughly 9.5x; the 9.2x entry sits just under it. Little room, which is exactly the discipline.
+        <div class="ev" id="e-qp"><div class="ev-card t-chrono"><div class="src"><span class="srctag">Deal data</span><span class="doc">REP entries &middot; dental / services roll-ups</span></div><div class="snip">B+ quality carries a held ceiling near <span class="hl">9.5x</span>; proposed entry <span class="hl">9.2x</span> is just below it. A great asset at the wrong price is a pass; a B+ at a B+ price can be a good deal.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Holding the line is the call; there is little headroom.</div></div></div>
       </div>
-      <div class="axis-assess"><span class="chip range">In range</span><div class="bar"><i style="width:78%;background:var(--green)"></i></div></div>
+      <div class="axis-assess"><span class="chip mon">At the line</span><div class="bar"><i style="width:72%;background:var(--amber)"></i></div></div>
     </div>
 
     <div class="axis">
-      <div class="axis-name">Company<span class="ai">Asset quality</span></div>
-      <div class="axis-read"><button class="cite" data-ev="e-co">Hygiene and recare drive ~38% of revenue<span class="tg">CIM</span></button> with <button class="cite" data-ev="e-co2">~5% same-practice growth<span class="tg">QoE</span></button> and no single-payor concentration. A durable, recurring base.
-        <div class="ev" id="e-co"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Cypress CIM &middot; Revenue quality &middot; p.29</span></div><div class="snip">"Hygiene and recare represent <span class="hl">~38% of TTM revenue</span>; no single payor exceeds ~12%; commercial and out-of-network mix diversified across geographies."</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Payor and patient mix detail requested in banker questions below.</div></div></div>
-        <div class="ev" id="e-co2"><div class="ev-card t-qoe"><div class="src"><span class="srctag">QoE pattern</span><span class="doc">In-sector QoE history &middot; same-practice growth</span></div><div class="snip">Reported <span class="hl">~5% same-practice</span> growth is within the credible band for dental; verify split of pricing vs volume vs hygiene mix in diligence.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Pattern from prior in-sector QoE reports.</div></div></div>
+      <div class="axis-name">Value creation<span class="ai">Controllable levers</span></div>
+      <div class="axis-read">Three controllable levers: <button class="cite" data-ev="e-vc">tuck-in M&amp;A across a fragmented market<span class="tg">IC</span></button> (Proven), procurement and supply leverage at scale (Proven), and de novo plus specialty-mix shift (Credible). The math has to work at realistic multiples, not aspirational ones.
+        <div class="ev" id="e-vc"><div class="ev-card t-ic"><div class="src"><span class="srctag">IC memo</span><span class="doc">REP IC corpus &middot; services roll-up value creation</span></div><div class="snip">Comparable roll-ups realized the gain through <span class="hl">disciplined tuck-ins and procurement</span>, with de novo as upside, not the load-bearing assumption.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Tuck-in math must clear at realistic, not aspirational, multiples.</div></div></div>
       </div>
-      <div class="axis-assess"><span class="chip strong">Strong</span><div class="bar"><i style="width:80%"></i></div></div>
+      <div class="axis-assess"><span class="chip strong">Strong</span><div class="bar"><i style="width:78%"></i></div></div>
     </div>
 
     <div class="axis">
-      <div class="axis-name">Right to win<span class="ai">Edge &amp; angle</span></div>
-      <div class="axis-read">A proven de novo and tuck-in playbook, referral relationships, and a realized template in the firm's own record give a real edge. <button class="cite" data-ev="e-rtw">Comparable processes have been won on speed and relationship<span class="tg">IC</span></button>, which argues for moving early.
-        <div class="ev" id="e-rtw"><div class="ev-card t-ic"><div class="src"><span class="srctag">IC memo</span><span class="doc">Ridgemont IC corpus &middot; comparable dental deliberations</span></div><div class="snip">Comparable dental processes were <span class="hl">won on speed and relationship</span> rather than top dollar; auction risk is manageable when the firm moves early with a credible plan.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Pattern across comparable IC presentations.</div></div></div>
+      <div class="axis-name">Management &amp; data<span class="ai">Credibility multiplier</span></div>
+      <div class="axis-read">Founder-led with a recent CFO hire. Reported figures tie and the <button class="cite" data-ev="e-mgmt2">adjustment bridge is moderate<span class="tg">QoE</span></button>. The open question is whether same-practice growth is volume and mix or mostly price.
+        <div class="ev" id="e-mgmt2"><div class="ev-card t-qoe"><div class="src"><span class="srctag">QoE pattern</span><span class="doc">In-sector QoE history &middot; add-back quality</span></div><div class="snip">Reported-to-adjusted uplift is moderate and ties to the balance sheet; <span class="hl">same-practice growth quality</span> (price vs volume vs mix) is not yet evidenced. Adjusted EBITDA is a negotiating position until proven.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Decompose organic growth in diligence; it drives the durability case.</div></div></div>
       </div>
-      <div class="axis-assess"><span class="chip strong">Credible edge</span><div class="bar"><i style="width:74%"></i></div></div>
+      <div class="axis-assess"><span class="chip strong">Credible</span><div class="bar"><i style="width:74%"></i></div></div>
     </div>
   </div>
 
   <!-- GATES -->
   <div class="sec fade" style="animation-delay:.1s">
-    <div class="sec-hd"><div><span class="lc lc-b">Hard-pass gates</span><h2>None tripped. The asset clears clean.</h2></div></div>
+    <div class="sec-hd"><div><span class="lc lc-b">Hard-pass screen</span><h2>No disqualifier triggered. The constraint is the lane call, not a gate.</h2></div></div>
     <div class="gates">
       <div class="gate pass-ok">
-        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">EBITDA in range</span></div>
-        <div class="gb">19% margin against the 14% floor. Clear.</div>
+        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">EBITDA in band</span></div>
+        <div class="gb">~$22M, inside the $20 to 75M target range. Clear.</div>
       </div>
       <div class="gate pass-ok">
-        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">Payor concentration</span></div>
-        <div class="gb"><button class="cite" data-ev="e-gate">No single payor above ~12%<span class="tg">CIM</span></button>, well under the 25% gate. Clear.
-          <div class="ev" id="e-gate"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Cypress CIM &middot; Payor mix footnote &middot; p.31</span></div><div class="snip">Largest single payor approx. <span class="hl">12% of TTM revenue</span>; the gate triggers an automatic pass only at 25% single-payor concentration.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Diversification verified against the payor schedule.</div></div></div>
+        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">Model type</span></div>
+        <div class="gb">Services roll-up. Not manufacturing, CME, or an out-of-network-dependent model. Clear.</div>
+      </div>
+      <div class="gate pass-ok">
+        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">Concentration</span></div>
+        <div class="gb"><button class="cite" data-ev="e-gate">Diversified across ~140 practices<span class="tg">CIM</span></button>; no single practice or payer near the 30 percent line. Clear.
+          <div class="ev" id="e-gate"><div class="ev-card t-cim"><div class="src"><span class="srctag">CIM</span><span class="doc">Cypress CIM &middot; Practice and payer mix &middot; p.29</span></div><div class="snip">Revenue spread across ~140 locations and a broad PPO and cash-pay base; <span class="hl">no customer near 30 percent</span>. Low concentration is a genuine strength here.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Diversification is real; the risk sits elsewhere.</div></div></div>
         </div>
       </div>
-      <div class="gate pass-ok">
-        <div class="gh"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span class="gt">Credible value-add path</span></div>
-        <div class="gb">De novo plus tuck-in playbook, proven by this team before. Clear.</div>
-      </div>
     </div>
-    <p class="gate-note">Any single gate trigger, such as out-of-range EBITDA, single-payor concentration, or no credible value-add path, short-circuits the score to an automatic pass.</p>
+    <p class="gate-note">Any single trigger short-circuits to an automatic 1 to 2: manufacturing or CME, out-of-network dependence, single-customer concentration over 30 percent, EBITDA outside $20 to 75M, no credible value-add path, or a non-credible banker. Being out of lane is <b>not</b> a hard-pass; it raises the bar and becomes the judgment call below.</p>
   </div>
 
   <!-- MOAT: comparable Ridgemont deals -->
   <div class="sec fade" style="animation-delay:.14s">
     <div class="sec-hd"><div><span class="lc lc-b">Ridgemont's own record</span><h2>How this compares to deals we have actually done</h2></div></div>
-    <div class="moat-note">This read draws on <b>Ridgemont's realized returns</b>, matched to Cypress on sub-sector, size, and entry multiple. No banker, advisor, or counterparty in this process can run it, because no one else holds this record.</div>
+    <div class="moat-note">Matched on sub-sector, size, and entry multiple. The comparable set is <b>thinner here</b> than for an in-lane deal, because dental is adjacent to the core lanes, which is itself worth weighing.</div>
     <table>
       <thead><tr><th>Comparable deal</th><th>Entry</th><th>Entry multiple</th><th>Outcome</th><th>MOIC</th><th>Status</th></tr></thead>
       <tbody>
         <tr><td class="name">Cedar Park Dental</td><td>2018</td><td>8.9x</td><td><span class="mtag up">Outperformed</span></td><td>2.8x</td><td>Exited 2023</td></tr>
-        <tr><td class="name">Maple Grove Dental Group</td><td>2020</td><td>9.3x</td><td><span class="mtag up">In line</span></td><td>2.0x</td><td>Exited 2024</td></tr>
-        <tr><td class="name">Brightwater Dental</td><td>2021</td><td>8.7x</td><td><span class="mtag held">Tracking</span></td><td>&mdash;</td><td>Active</td></tr>
+        <tr><td class="name">Maple Grove Dental</td><td>2020</td><td>9.3x</td><td><span class="mtag held">In line</span></td><td>2.0x</td><td>Exited 2024</td></tr>
+        <tr><td class="name">Brightwater Smiles</td><td>2022</td><td>9.0x</td><td><span class="mtag held">Tracking</span></td><td>&mdash;</td><td>Active</td></tr>
         <tr><td class="name">Ridgeview Orthodontics</td><td>2019</td><td>10.4x</td><td><span class="mtag dn">Underperformed</span></td><td>1.6x</td><td>Exited 2023</td></tr>
         <tr class="subj"><td class="name">Cypress Dental Partners</td><td>2026</td><td>9.2x</td><td><button class="cite" data-ev="e-moat" style="color:var(--blue-d)">see the pattern<span class="tg">CHRON</span></button></td><td>&mdash;</td><td>Under review</td></tr>
       </tbody>
     </table>
-    <div class="ev" id="e-moat" style="margin-top:0"><div class="ev-card t-chrono"><div class="src"><span class="srctag">Chronograph</span><span class="doc">Ridgemont portfolio returns &middot; healthcare-services bracket</span></div><div class="snip">Entries <span class="hl">below 9.5x produced a median 2.4x MOIC</span>; the single entry above 10x returned 1.6x. Cypress's 9.2x sits inside the bracket that has worked for the firm, and <span class="hl">Cedar Park, the closest structural match, returned 2.8x</span>.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Drawn directly from Ridgemont's Chronograph portfolio.</div></div></div>
+    <div class="ev" id="e-moat" style="margin-top:0"><div class="ev-card t-chrono"><div class="src"><span class="srctag">Chronograph</span><span class="doc">REP portfolio returns &middot; dental roll-ups</span></div><div class="snip">Sub-9.5x dental entries returned a <span class="hl">median 2.4x</span>; the single entry above 10x returned 1.6x. Cypress at 9.2x sits mid-band, <span class="hl">closest to Cedar Park at 2.8x</span>.</div><div class="prov"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Hold the entry under 10x; above it, the firm's one comp returned 1.6x.</div></div></div>
   </div>
 
   <!-- JUDGMENT -->
@@ -424,20 +422,24 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
     <div class="sec-hd"><div><span class="lc lc-b">The engine stops here</span><h2>Surfaced for your judgment</h2></div></div>
     <div class="jud">
       <h3>Calls the framework deliberately leaves to a partner</h3>
-      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">Can the integration team absorb the current acquisition pace without diluting the clinical model that drives recare retention?</span></div>
-      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">With two sponsors active, what is the real walk-away price, and does moving fast risk underwriting on less diligence than the firm's standard?</span></div>
+      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">The lane call. Dental is out of lane, so the bar rises. Is the services-roll-up model close enough to the core lanes to underwrite, or not?</span></div>
+      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">The B+ grade and its ceiling. Does the discretionary share of demand cap quality at B+, and is 9.2x close enough to the line to hold?</span></div>
+      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">Are the three levers real? Tuck-ins and procurement are proven; de novo is credible but ramp-dependent.</span></div>
+      <div class="item"><span class="qmk">&ldquo;</span><span class="qtx">AI overlay: dental is relatively insulated, hands-on clinical work. AI reads as a modest back-office tailwind, not a moat compressor. Confirm, do not assume.</span></div>
     </div>
   </div>
 
   <!-- BANKER QUESTIONS -->
   <div class="sec fade" style="animation-delay:.22s">
     <div class="sec-hd"><div><span class="lc lc-b">Walk into the call ready</span><h2>The questions that move the decision</h2></div></div>
-    <div class="bq"><span class="num">1</span><span class="qx">Full payor and patient mix; confirm no single payor or geography approaches the concentration threshold by contract and trajectory.</span><span class="imp hi">High impact</span></div>
-    <div class="bq"><span class="num">2</span><span class="qx">De novo and tuck-in unit economics and ramp. How many of the ~140 practices are de novo versus acquired, and what is the payback?</span><span class="imp hi">High impact</span></div>
-    <div class="bq"><span class="num">3</span><span class="qx">Same-practice revenue bridge: pricing versus volume versus hygiene mix. Validates the ~5% organic claim.</span><span class="imp hi">High impact</span></div>
-    <div class="bq"><span class="num">4</span><span class="qx">Hygiene recare retention and provider turnover by cohort year. Speaks to the durability of the recurring base.</span><span class="imp md">Medium</span></div>
-    <div class="bq"><span class="num">5</span><span class="qx">Acquisition pipeline and integration capacity at the current pace; bench depth on the integration team.</span><span class="imp md">Medium</span></div>
-    <div class="bq"><span class="num">6</span><span class="qx">QoE add-backs: owner compensation, one-time integration costs, and capitalized de novo development.</span><span class="imp md">Medium</span></div>
+    <div class="bq"><span class="num">1</span><span class="qx">Decompose same-practice growth: how much is price, how much is patient volume, how much is ortho and specialty mix.</span><span class="imp hi">High impact</span></div>
+    <div class="bq"><span class="num">2</span><span class="qx">Recurring versus discretionary revenue split, and how the elective mix behaved in the last downturn.</span><span class="imp hi">High impact</span></div>
+    <div class="bq"><span class="num">3</span><span class="qx">Tuck-in pipeline and realized multiples paid to date, with the synergy math behind the integration thesis.</span><span class="imp hi">High impact</span></div>
+    <div class="bq"><span class="num">4</span><span class="qx">EBITDA adjustment bridge: nature and magnitude of add-backs, owner comp, and de novo ramp costs.</span><span class="imp hi">High impact</span></div>
+    <div class="bq"><span class="num">5</span><span class="qx">De novo unit economics: cost to open, time to maturity, and the realized ramp curve versus plan.</span><span class="imp md">Medium</span></div>
+    <div class="bq"><span class="num">6</span><span class="qx">Payer and PPO mix and any reimbursement exposure; how much revenue is cash-pay versus insurance.</span><span class="imp md">Medium</span></div>
+    <div class="bq"><span class="num">7</span><span class="qx">Clinician recruitment and turnover, and dependence on any single regional leadership group.</span><span class="imp md">Medium</span></div>
+    <div class="bq"><span class="num">8</span><span class="qx">Process and banker credibility: IOI timeline, other parties at the table, and data-room readiness.</span><span class="imp md">Medium</span></div>
   </div>
 
   <!-- DECISION RECORD -->
@@ -445,7 +447,7 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
     <div class="sec-hd"><div><span class="lc lc-b">Your call, on the record</span><h2>Decision record</h2></div></div>
     <div class="dec">
       <div id="dec-form">
-        <p class="rec">The engine recommends <b>Pursue</b>. Record your call and the reasoning. The judgment stays with you; this captures it.</p>
+        <p class="rec">The engine recommends <b>Pursue, with discipline</b> (7 of 10, B+ asset, at the line). Record your call and the reasoning. The judgment stays with you; this captures it.</p>
         <div class="seg" id="seg">
           <button data-v="Pursue" class="on">Pursue<span class="eng">Engine</span></button>
           <button data-v="Selective">Selective</button>
@@ -463,7 +465,7 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
 
   <div class="foot">
     <span class="lc">Ridgeline &middot; Deal Assistant &middot; Deal Scoring</span>
-    Illustrative prototype on representative data. Cypress Dental Partners and all figures are fictional and for demonstration. Framework benchmarks and gate thresholds shown here are placeholders, to be replaced with the Healthcare team's calibrated framework. Ridgeline is the platform, the Deal Assistant is the product, Deal Scoring is the capability shown.
+    Illustrative prototype. Cypress Dental Partners and all figures are fictional. The 1 to 10 scoring, two-track quality grade and held price ceiling, hard-pass screen, and the out-of-lane judgment follow the REP Healthcare Investment Framework and the rep-deal-eval rubric. The comparable-deal record stands in for Ridgemont's realized returns, the piece the framework names as most worth automating.
   </div>
 </div>
 
@@ -517,7 +519,7 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
   if(motionOK && 'IntersectionObserver' in window){
     document.body.classList.add('folding');
     // snap the first section open now, before transitions are enabled, so the hero
-    // and 'The five-axis read' are already revealed on load with no fold animation
+    // and the first section are already revealed on load with no slide animation
     if(secs[0]) secs[0].classList.add('in');
     requestAnimationFrame(function(){
       document.body.classList.add('anim');
@@ -535,24 +537,23 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
 })();
 </script>
 
-<!-- Ridgeline AI : scoped chat -->
 <button class="rai-launch" id="rai-launch"><svg viewBox="0 0 24 24"><path d="M12 2l1.9 5.6L20 9.5l-6.1 1.9L12 17l-1.9-5.6L4 9.5l6.1-1.9z"/></svg> Ridgeline AI <span class="pulse"></span></button>
-<aside class="rai-drawer" id="rai-drawer" aria-label="Ridgeline AI chat" aria-hidden="true">
+<aside class="rai-drawer" id="rai-drawer" aria-hidden="true">
   <div class="rai-hd">
     <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l1.9 5.6L20 9.5l-6.1 1.9L12 17l-1.9-5.6L4 9.5l6.1-1.9z"/></svg></span>
     <div class="t"><div class="n">Ridgeline AI</div><div class="s">Grounded in this deal's scoring</div></div>
     <button class="rai-x" id="rai-x" title="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
   <div class="rai-log" id="rai-log">
-    <div class="msg ai">I am working from everything behind this score: the CIM, the quality-of-earnings pattern, the comparable Ridgemont deals, and the framework. Ask why the call landed where it did, or push on it.</div>
+    <div class="msg ai">I am working from everything behind this score: the CIM, the quality-of-earnings read, the comparable Ridgemont deals, and the REP healthcare framework. Ask why the call landed where it did, or push on it.</div>
   </div>
   <div class="rai-sugg" id="rai-sugg">
     <div class="sgl">Where partners usually start</div>
-    <button class="rai-q" data-i="0">Why Pursue and not Selective?</button>
-    <button class="rai-q" data-i="1">What would move this to a Pass?</button>
-    <button class="rai-q" data-i="2">Which comps drove the valuation?</button>
-    <button class="rai-q" data-i="3">What are you least sure about?</button>
-    <button class="rai-q" data-i="4">Walk me through Cedar Park's integration.</button>
+    <button class="rai-q" data-i="0">Why pursue if it is out of lane?</button>
+    <button class="rai-q" data-i="1">What would trip a hard pass?</button>
+    <button class="rai-q" data-i="2">How protected is the downside?</button>
+    <button class="rai-q" data-i="3">Which of our deals does this look like?</button>
+    <button class="rai-q" data-i="4">What are you least sure about?</button>
   </div>
   <div class="rai-foot">
     <div class="rai-input"><input id="rai-in" placeholder="Ask anything about Cypress Dental"><button class="send" id="rai-send" title="Send"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-7-8-3z"/></svg></button></div>
@@ -564,11 +565,11 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
   var launch=document.getElementById('rai-launch'),drawer=document.getElementById('rai-drawer'),x=document.getElementById('rai-x'),log=document.getElementById('rai-log');
   if(!launch||!drawer) return;
   var QA=[
-    {q:"Why Pursue and not Selective?",a:'Three things separate it from a Selective. The entry is inside the band at 9.2x, near the median rather than above it. No hard-pass gate is close to tripping; the largest payor sits near 12 percent against a 25 percent line. And the firm’s own record favors this bracket, where sub-9.5x entries have returned a median 2.4x and Cedar Park is the closest match at 2.8x. The reservation is competitive timing, not asset quality, and timing does not lower the score.<div class="src-tags"><span class="qtag data">DATA</span><span class="qtag cim">CIM</span><span class="qtag chron">CHRON</span></div>'},
-    {q:"What would move this to a Pass?",a:'A few specific triggers. Payor concentration crossing 25 percent would auto-pass it on the gate; today it is near 12 percent. An entry negotiated above roughly 10x would put it in the bracket where the firm’s one comparable returned 1.6x. Or diligence showing the roughly 5 percent same-practice growth is mostly price rather than volume or hygiene mix, which would weaken the durability case.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag chron">CHRON</span><span class="qtag qoe">QoE</span></div>'},
-    {q:"Which comparable deals drove the valuation read?",a:'Four from Ridgemont’s own portfolio, matched on sub-sector and size. Cedar Park Dental anchors the upside at an 8.9x entry and a 2.8x outcome. Maple Grove came in at 9.3x for 2.0x. Ridgeview Orthodontics is the cautionary one at 10.4x and 1.6x. Brightwater is still active. Cypress at 9.2x sits mid-band, closest to Cedar Park.<div class="src-tags"><span class="qtag chron">CHRON</span></div>'},
-    {q:"What are you least sure about?",a:'The durability of organic growth. The materials report roughly 5 percent same-practice growth, which is within the credible range, but the split across pricing, patient volume, and hygiene mix is not evidenced in what was loaded. That is why it is the first question on the banker list. If it turns out to be mostly price, the recurring-revenue case is softer than the score implies.<div class="src-tags"><span class="qtag qoe">QoE</span><span class="qtag cim">CIM</span></div>'},
-    {q:"Walk me through Cedar Park's integration.",a:'I can see Cedar Park’s entry at 8.9x, the comparison to Cypress, and its 2.8x outcome from the portfolio record. The integration playbook itself, how they sequenced tuck-ins and held clinical retention, lives in the Cedar Park deal file, which is not loaded for this scoring. I would rather not characterize it from data I do not have. It is worth pulling that file before the IC.<div class="src-tags"><span class="qtag chron">CHRON</span></div>'}
+    {q:"Why pursue if it is out of lane?",a:'Dental is not one of the named lanes, so the bar rises and this is a pursue with discipline, not a clean pursue. What earns the 7 is a strong, fragmented roll-up at a fair entry, revenue diversified across roughly 140 practices, and a credible value-add path. The out-of-lane call is a judgment the framework leaves to you, which is why it is surfaced rather than buried.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>'},
+    {q:"What would trip a hard pass?",a:'None is close. It is not manufacturing, CME, or out-of-network. EBITDA is about $22M, inside the $20 to 75M band. No single practice or payer is near the 30 percent line, since the network is diversified. The constraint here is not a gate, it is the out-of-lane judgment and holding price discipline.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>'},
+    {q:"How protected is the downside?",a:'Mixed, and that is the honest read. The recall and hygiene base is recurring and sticky, but a slice of dental spend, ortho and cosmetic, is discretionary and can be deferred in a downturn, unlike a specialty drug. That is part of why it scores a 7, not an 8. The recurring base protects most of the floor; the elective portion is the soft spot to size.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>'},
+    {q:"Which of our deals does this look like?",a:'Dental names from the firm\u2019s record, though the set is thinner because it is adjacent to the core lanes. Cedar Park anchors the upside at 8.9x and 2.8x. Maple Grove returned 2.0x at 9.3x. Ridgeview Orthodontics is the cautionary one at 10.4x for 1.6x. Cypress at 9.2x sits mid-band, closest to Cedar Park.<div class="src-tags"><span class="qtag chron">CHRON</span></div>'},
+    {q:"What are you least sure about?",a:'The durability of organic growth and the discretionary share of revenue. The materials show same-practice growth in the mid-single digits, but the split across price, volume, and elective mix is not evidenced in what was loaded. If it is mostly price or elective, the recurring-revenue case softens. It is the first banker question for that reason.<div class="src-tags"><span class="qtag qoe">QoE</span><span class="qtag cim">CIM</span></div>'}
   ];
   function open(){drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');launch.style.display='none';}
   function close(){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');launch.style.display='';}
@@ -578,7 +579,7 @@ body.folding .sec.in::before{transform:translateY(100%);opacity:0}
     b.addEventListener('click',function(){var i=+b.getAttribute('data-i');add('me',QA[i].q);setTimeout(function(){add('ai',QA[i].a);},340);});
   });
   var input=document.getElementById('rai-in'),send=document.getElementById('rai-send');
-  function ask(){var v=(input.value||'').trim();if(!v)return;add('me',v);input.value='';setTimeout(function(){add('ai','In the live product I answer any question grounded in this deal’s evidence, with the same citations you see on the card. For this prototype, try one of the suggested questions above.');},340);}
+  function ask(){var v=(input.value||'').trim();if(!v)return;add('me',v);input.value='';setTimeout(function(){add('ai','In the live product I answer any question grounded in this deal\u2019s evidence, with the same citations you see on the card. For this prototype, try one of the suggested questions above.');},340);}
   if(send) send.addEventListener('click',ask);
   if(input) input.addEventListener('keydown',function(e){if(e.key==='Enter')ask();});
 })();
