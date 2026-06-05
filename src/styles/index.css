@@ -1,0 +1,29 @@
+/* Tailwind v4 first (its base/preflight land in cascade layers). The legacy
+   stylesheet below is imported UNLAYERED, so it always wins over Tailwind's
+   Preflight — that's what keeps the ported pages pixel-identical. New views
+   use Tailwind utilities, which legacy CSS never targets. */
+@import "tailwindcss";
+@import "./legacy-pipeline.css";
+
+/* The prototype's design tokens, mapped into Tailwind's theme so new views get
+   utilities like bg-slate, text-teal, font-cond. The legacy :root vars (--slate
+   etc.) still live in legacy-pipeline.css for the ported markup. */
+@theme {
+  --color-slate: #415A68;
+  --color-slate-d: #374e5a;
+  --color-blue: #2B76A5;
+  --color-blue-d: #1F5F87;
+  --color-teal: #ADD0D2;
+  --color-teal-tint: #EAF2F2;
+  --color-green: #81AE40;
+  --color-green-d: #5f8a2a;
+  --color-amber: #B7791F;
+  --color-red: #B04A43;
+  --color-surf: #FAFBFB;
+  --color-on: #1F2A30;
+  --color-onv: #5C6B73;
+  --color-out: #9AA6AC;
+  --color-haze: #E6EAEC;
+  --font-serif: "Libre Caslon Text", Georgia, serif;
+  --font-cond: "Barlow Semi Condensed", sans-serif;
+}
