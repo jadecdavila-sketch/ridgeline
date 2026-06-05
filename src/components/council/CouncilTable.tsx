@@ -23,7 +23,7 @@ export function CouncilTable({
         <div className="cd-cv">
           <span className="cd-cv-name">The IC Chair · presiding</span>
           <div className="cd-cv-line">
-            <span className={`cd-cv-pill${c.go ? ' go' : ''}`}>{c.verdictLabel}</span>
+            <span className="cd-cv-pill">{c.verdictLabel}</span>
             <span className="cd-cv-stat">
               <b>{c.score}</b>/10 fit
             </span>

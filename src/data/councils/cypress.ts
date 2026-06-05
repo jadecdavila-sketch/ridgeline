@@ -9,7 +9,7 @@ import type { CouncilData } from '../councilTypes'
 export const cypress: CouncilData = {
   chair: {
     verdictLabel: 'Pursue with discipline',
-    go: true,
+    verdict: 'pursue',
     score: '7',
     grade: 'B+',
     entry: '9.2×',

@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Meet the Council — drawer tab — Ridgeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ──────────────────────────────────────────────────────────────
+   The "Meet the Council" page, ported into the council drawer
+   shell as a switch-nav tab (left of "The Table"). The page's
+   own content and proportions are kept intact and simply scroll
+   inside the drawer body; only the drawer chrome (grip, bar,
+   switch nav) is added around it and the terminal CTA removed.
+   ────────────────────────────────────────────────────────────── */
+:root{
+  --slate:#415A68; --slate-d:#374e5a;
+  --blue:#2B76A5; --teal:#ADD0D2; --green:#81AE40; --green-d:#5f8a2a; --red:#B04A43;
+  --ink:#1F2A30; --ink-soft:#56636b; --out:#9AA6AC;
+
+  --paper:#F4EFE3; --paper-2:#FBF8F1; --paper-3:#FCFAF4; --paper-edge:#E7DFCD;
+  --line:#DED6C4; --line-soft:#E8E1D2; --shadow:rgba(74,60,38,.18);
+
+  --partner:#3C7A86; --partner-d:#2c5b64;
+  --examiner:#B5862F; --examiner-d:#8a6420;
+  --chair:#4E8A86;
+
+  --serif:"Libre Caslon Text",Georgia,serif;
+  --cond:"Barlow Semi Condensed",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --seam:var(--green);          /* deal verdict = Pursue */
+}
+*{box-sizing:border-box} html,body{margin:0}
+html{scroll-behavior:smooth}
+body{background:#FAFBFB;color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased;min-height:100vh;line-height:1.6}
+
+a.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;
+  font-family:var(--cond);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  font-size:12px;padding:10px 16px;border-radius:0 0 8px 0;z-index:60}
+a.skip:focus{left:0}
+
+/* ════════ cool scorecard backdrop (the deal you stepped back from) ════════ */
+.backdrop{max-width:1180px;margin:0 auto;padding:54px 28px 200px}
+.bd-eyebrow{font-family:var(--cond);font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.bd-name{font-size:40px;font-weight:700;letter-spacing:-.01em;margin:.32em 0 .18em}
+.bd-desc{font-size:16px;line-height:1.6;color:var(--ink-soft);max-width:60ch;margin:0}
+.bd-faint{color:var(--out);font-family:var(--cond);font-size:13px;letter-spacing:.04em;margin-top:28px}
+
+/* ════════ DRAWER SHELL (warm paper) ════════ */
+.drawer{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;flex-direction:column;
+  background:linear-gradient(180deg,var(--paper-2),var(--paper));border-top:1px solid var(--paper-edge);
+  box-shadow:0 -26px 70px -38px var(--shadow);overflow:hidden;height:92vh}
+.drawer::before{content:"";position:absolute;top:0;bottom:0;left:0;width:3px;background:var(--seam);z-index:5}
+
+.grip{appearance:none;background:transparent;border:0;cursor:pointer;padding:10px 0 4px;display:flex;justify-content:center;flex-shrink:0}
+.grip-line{width:46px;height:4px;border-radius:2px;background:color-mix(in srgb,var(--slate) 28%,var(--paper-edge))}
+
+/* identity bar + switch nav */
+.bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:0 clamp(20px,4vw,48px) 14px;border-bottom:1px solid var(--line);flex-shrink:0}
+.head-l{display:flex;flex-direction:column;gap:3px;min-width:0}
+.head-l .who{font-family:var(--cond);font-weight:700;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--slate)}
+.head-l .who-sub{font-family:var(--cond);font-weight:500;font-size:11.5px;letter-spacing:.05em;color:var(--out)}
+.switch{margin-left:auto;display:flex;align-items:center;gap:2px;background:color-mix(in srgb,var(--paper-edge) 60%,var(--paper-2));border-radius:999px;padding:3px}
+.switch a{font-family:var(--cond);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);
+  text-decoration:none;padding:6px 13px;border-radius:999px;transition:background .2s,color .2s;white-space:nowrap}
+.switch a[aria-current]{background:#fff;color:var(--green-d);box-shadow:0 1px 5px rgba(74,60,38,.16)}
+.switch a:hover:not([aria-current]){color:var(--slate)}
+
+/* ════════ DRAWER BODY — the ported page scrolls here, proportions intact ════════ */
+.body{flex:1 1 auto;min-height:0;overflow-y:auto}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,4.5vw,52px)}
+
+/* ──────── MASTHEAD ──────── */
+.mast{padding:clamp(48px,7vh,92px) 0 clamp(40px,6vh,72px)}
+.mast .kicker{font-family:var(--cond);font-weight:600;font-size:12px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:14px}
+.mast .kicker::after{content:"";height:1px;flex:1;max-width:160px;background:var(--line)}
+.mast h1{font-size:clamp(38px,6vw,60px);font-weight:700;letter-spacing:-.015em;line-height:1.02;
+  margin:.34em 0 .26em;max-width:16ch}
+.mast h1 em{font-style:italic;color:var(--slate)}
+.mast .lede{font-size:clamp(17px,2.1vw,20px);line-height:1.62;color:var(--ink-soft);max-width:60ch;margin:0}
+.mast .lede b{font-weight:400;color:var(--ink);font-style:italic}
+.creed{margin-top:38px;padding-left:20px;border-left:2px solid var(--slate);
+  font-family:var(--serif);font-size:clamp(18px,2.4vw,23px);line-height:1.5;color:var(--ink);max-width:46ch}
+.creed b{font-weight:700}
+
+/* ──────── THE TWO BENCHES — built to disagree ──────── */
+.benches-head{text-align:center;padding:clamp(36px,6vh,72px) 0 28px}
+.section-eyebrow{font-family:var(--cond);font-weight:700;font-size:11px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--ink-soft)}
+.benches-head h2{font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-.01em;margin:.3em 0 0;line-height:1.1}
+.benches-head h2 .v{font-style:italic;color:var(--out);font-weight:400;padding:0 .12em}
+.benches-head p{max-width:54ch;margin:.7em auto 0;color:var(--ink-soft);font-size:16px}
+
+.benches{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  box-shadow:0 30px 80px -52px var(--shadow);background:var(--paper-2)}
+.benches::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:2px;transform:translateX(-1px);
+  background:linear-gradient(180deg,var(--partner),var(--examiner));opacity:.5;z-index:3}
+.bench{position:relative;padding:clamp(22px,3vw,38px);min-width:0}
+.bench.partner{background:linear-gradient(180deg,color-mix(in srgb,var(--partner) 7%,var(--paper-3)),var(--paper-2));--accent:var(--partner);--accent-d:var(--partner-d)}
+.bench.examiner{background:linear-gradient(180deg,color-mix(in srgb,var(--examiner) 8%,var(--paper-3)),var(--paper-2));--accent:var(--examiner);--accent-d:var(--examiner-d)}
+
+.bench .plate{padding:5px;border-radius:13px;background:var(--paper-3);overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--accent) 38%,var(--line));
+  box-shadow:0 14px 34px -16px var(--shadow);aspect-ratio:1/1}
+.bench .plate img{display:block;width:100%;height:100%;object-fit:cover;border-radius:9px}
+
+.bench .role{font-family:var(--cond);font-weight:700;font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent-d);margin:18px 0 4px}
+.bench .name{font-size:clamp(27px,3.4vw,38px);font-weight:700;line-height:1;letter-spacing:-.01em}
+.bench .stance{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.5;
+  color:var(--ink);margin:14px 0 0;padding-left:15px;border-left:2px solid var(--accent)}
+.bench .does{font-size:15px;line-height:1.62;color:var(--ink-soft);margin:16px 0 0}
+.bench .does em{font-style:italic;color:var(--ink)}
+
+.quartet{margin:22px 0 0;display:grid;gap:2px;border-top:1px solid color-mix(in srgb,var(--accent) 22%,var(--line))}
+.sub{padding:13px 0 12px;border-bottom:1px solid var(--line-soft)}
+.sub:last-child{border-bottom:0}
+.sub .sname{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--ink);display:flex;flex-wrap:wrap;align-items:baseline;gap:9px}
+.sub .slens{font-family:var(--cond);font-weight:600;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--out)}
+.sub .hunts{display:block;margin-top:5px;font-family:var(--serif);font-style:italic;font-size:14.5px;line-height:1.5;color:var(--ink-soft)}
+
+.delivers{margin:22px 0 0;padding:14px 16px;border-radius:11px;
+  background:color-mix(in srgb,var(--accent) 9%,var(--paper-3));
+  border:1px solid color-mix(in srgb,var(--accent) 26%,var(--line))}
+.delivers .dlabel{font-family:var(--cond);font-weight:700;font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent-d);margin-bottom:5px}
+.delivers .dtext{font-size:14.5px;line-height:1.55;color:var(--ink)}
+.delivers .dtext b{font-weight:700}
+
+.standoff{margin-top:0;padding:18px 22px;text-align:center;background:var(--paper-3);
+  border:1px solid var(--line);border-top:0;border-radius:0 0 18px 18px;position:relative;top:-1px;z-index:4}
+.standoff p{margin:0 auto;font-family:var(--serif);font-style:italic;font-size:clamp(15px,2vw,17px);
+  line-height:1.55;color:var(--slate-d);max-width:62ch}
+.standoff p b{font-style:normal;font-weight:700;color:var(--ink)}
+
+/* ──────── THE CHAIR — alone, holding the gavel ──────── */
+.chair-sec{padding:clamp(48px,7vh,88px) 0 clamp(40px,6vh,72px)}
+.chair-card{display:grid;grid-template-columns:minmax(0,1fr) clamp(220px,30%,320px);gap:clamp(28px,4vw,56px);
+  align-items:center;background:linear-gradient(135deg,var(--paper-3),var(--paper-2));
+  border:1px solid var(--line);border-radius:18px;padding:clamp(28px,4vw,52px);
+  box-shadow:0 30px 80px -54px var(--shadow);position:relative;overflow:hidden}
+.chair-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--partner),var(--chair) 50%,var(--examiner))}
+.chair-text .role{font-family:var(--cond);font-weight:700;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--chair);margin-bottom:6px}
+.chair-text h2{font-size:clamp(30px,4.6vw,46px);font-weight:700;letter-spacing:-.01em;line-height:1.02;margin:0}
+.chair-text .gavel{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.2vw,21px);
+  line-height:1.5;color:var(--ink);margin:18px 0 0;max-width:42ch}
+.chair-text .body-copy{font-size:15.5px;line-height:1.66;color:var(--ink-soft);margin:16px 0 0;max-width:54ch}
+.chair-text .body-copy em{font-style:italic;color:var(--ink)}
+.owns{margin:22px 0 0;display:flex;flex-wrap:wrap;gap:9px}
+.owns .tok{font-family:var(--cond);font-weight:600;font-size:11.5px;letter-spacing:.04em;
+  padding:7px 13px;border-radius:8px;background:var(--paper-3);border:1px solid var(--line);color:var(--slate-d)}
+.owns .tok b{font-family:var(--serif);font-weight:700}
+.adjudicates{margin:18px 0 0;font-family:var(--cond);font-weight:600;font-size:12px;letter-spacing:.04em;color:var(--examiner-d)}
+.adjudicates b{font-family:var(--serif);font-weight:700;font-style:italic;color:var(--ink)}
+.chair-portrait .plate{padding:6px;border-radius:14px;background:var(--paper-3);overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--chair) 36%,var(--line));
+  box-shadow:0 18px 42px -20px var(--shadow);aspect-ratio:1/1}
+.chair-portrait .plate img{display:block;width:100%;height:100%;object-fit:cover;border-radius:9px}
+
+/* ──────── THE LINE — the call is yours ──────── */
+.line-sec{padding:clamp(36px,6vh,72px) 0 clamp(56px,8vh,96px);text-align:center}
+.line-sec .rule{width:54px;height:2px;background:var(--slate);margin:0 auto 26px}
+.line-sec h2{font-size:clamp(28px,4.4vw,44px);font-weight:700;letter-spacing:-.01em;line-height:1.08;margin:0 auto;max-width:18ch}
+.line-sec h2 em{font-style:italic;color:var(--slate)}
+.line-sec p{font-size:clamp(16px,2vw,18.5px);line-height:1.64;color:var(--ink-soft);max-width:56ch;margin:1em auto 0}
+.line-sec p b{color:var(--ink);font-weight:400;font-style:italic}
+
+.contrast{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:760px;margin:40px auto 0;text-align:left}
+.contrast .col{padding:20px 22px;border-radius:14px;border:1px solid var(--line)}
+.contrast .refuse{background:var(--paper-3)}
+.contrast .are{background:linear-gradient(180deg,color-mix(in srgb,var(--partner) 6%,var(--paper-3)),var(--paper-2));
+  border-color:color-mix(in srgb,var(--partner) 30%,var(--line))}
+.contrast .clabel{font-family:var(--cond);font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+.contrast .refuse .clabel{color:var(--red)}
+.contrast .are .clabel{color:var(--partner-d)}
+.contrast ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.contrast li{font-family:var(--serif);font-size:15px;line-height:1.45;color:var(--ink);padding-left:22px;position:relative}
+.contrast .refuse li{color:var(--ink-soft)}
+.contrast .refuse li::before{content:"\00D7";position:absolute;left:0;top:-1px;color:var(--red);font-weight:700;font-size:17px;line-height:1.4}
+.contrast .are li::before{content:"";position:absolute;left:0;top:9px;width:13px;height:2px;background:var(--partner)}
+
+/* ════════ FOOT BENCH — the cast, seated (CTA removed) ════════ */
+.foot{border-top:1px solid var(--line);background:var(--paper-2);flex-shrink:0}
+.foot .wrap{display:flex;align-items:center;gap:clamp(16px,4vw,44px);flex-wrap:wrap;padding-top:18px;padding-bottom:18px}
+.bench-row{display:flex;align-items:center;gap:clamp(14px,2.4vw,28px)}
+.seat{display:flex;align-items:center;gap:12px}
+.seat .chip{width:48px;height:48px;padding:3px;border-radius:11px;overflow:hidden;flex-shrink:0;
+  background:var(--paper-3);border:1px solid color-mix(in srgb,var(--frame) 36%,var(--line));box-shadow:0 8px 18px -10px var(--shadow)}
+.seat.partner{--frame:var(--partner)} .seat.chair{--frame:var(--chair)} .seat.examiner{--frame:var(--examiner)}
+.seat .chip img{display:block;width:100%;height:100%;object-fit:cover;border-radius:8px}
+.seat .meta .sn{font-family:var(--serif);font-weight:700;font-size:15px;line-height:1.1;display:block}
+.seat .meta .sr{font-family:var(--cond);font-weight:600;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--out);display:block;margin-top:2px}
+.seat.partner .meta .sr{color:var(--partner-d)}
+.seat.examiner .meta .sr{color:var(--examiner-d)}
+.seat.chair .meta .sr{color:var(--chair)}
+.gavel-mark{font-family:var(--cond);font-weight:600;font-size:11px;letter-spacing:.1em;color:var(--out);margin:0 4px}
+.foot .note{margin-left:auto;font-family:var(--cond);font-size:12px;letter-spacing:.03em;color:var(--out);max-width:34ch;text-align:right;line-height:1.45}
+.foot .note strong{color:var(--slate-d);font-weight:700}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+
+@media (max-width:760px){
+  .benches{grid-template-columns:1fr}
+  .benches::after{display:none}
+  .bench.partner{border-bottom:2px solid color-mix(in srgb,var(--partner) 40%,var(--line))}
+  .chair-card{grid-template-columns:1fr}
+  .chair-portrait{order:-1;max-width:280px}
+  .contrast{grid-template-columns:1fr}
+  .foot .wrap{flex-direction:column;align-items:flex-start}
+  .foot .note{margin-left:0;text-align:left}
+}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+<a class="skip" href="#benches">Skip to the council</a>
+
+<!-- the deal you stepped back from -->
+<main class="backdrop">
+  <div class="bd-eyebrow">NDA Scorecard · Specialty Pharmacy</div>
+  <h1 class="bd-name">Cardinal Specialty Pharmacy</h1>
+  <p class="bd-desc">National specialty pharmacy serving complex, high-cost therapies. Limited-distribution drug access, payer and manufacturer contracts, and clinical adherence management. ~$32M adjusted EBITDA on ~$175M revenue.</p>
+  <p class="bd-faint">You stepped back from the verdict to meet the council that reaches it.</p>
+</main>
+
+<aside class="drawer" aria-label="Meet the Council">
+  <button class="grip" aria-label="drawer grip"><span class="grip-line"></span></button>
+
+  <div class="bar">
+    <div class="head-l">
+      <span class="who">Meet the Council</span>
+      <span class="who-sub">The three voices behind every Ridgeline verdict</span>
+    </div>
+    <nav class="switch" aria-label="Switch view">
+      <a href="#" aria-current="page">Meet the Council</a>
+      <a href="./council-drawer-the-table.html">The Table</a>
+      <a href="./council-converse.html">Converse</a>
+    </nav>
+  </div>
+
+  <div class="body">
+
+    <!-- ══════ MASTHEAD ══════ -->
+    <header class="mast">
+      <div class="wrap">
+        <p class="kicker">Ridgeline · The Committee</p>
+        <h1>Two councils argue the deal. <em>You</em> make the call.</h1>
+        <p class="lede">Ridgeline doesn't hand you a number from nowhere. It runs the deliberation of a strong investment committee &mdash; <b>one council building the case, one hunting what kills it</b> &mdash; and leaves the decision exactly where it belongs.</p>
+        <p class="creed">It exists to make your judgment <b>faster and harder to fool.</b> Never absent.</p>
+      </div>
+    </header>
+
+    <!-- ══════ THE TWO BENCHES ══════ -->
+    <section id="benches">
+      <div class="wrap">
+        <div class="benches-head">
+          <p class="section-eyebrow">Built to disagree</p>
+          <h2>The Partner <span class="v">vs.</span> The Examiner</h2>
+          <p>They sit on opposite benches on purpose. One is paid to want the deal; one is paid to find how it dies. The tension between them is not a bug to smooth over &mdash; it is the product. We surface the fight; we never average it into a bland middle.</p>
+        </div>
+
+        <div class="benches">
+
+          <!-- ── PARTNER ── -->
+          <div class="bench partner">
+            <div class="plate">
+              <img src="../Council/Partner.png" alt="Painted portrait of the Conviction Council: four figures in cool teal-green tones, standing together as the bench that builds the bull case." />
+            </div>
+            <p class="role">Conviction Council · builds the case</p>
+            <h3 class="name">The Partner</h3>
+            <p class="stance">&ldquo;A good company is not a good deal. Build the case on a floor you could stand on, and a price you'd still pay if the multiple never moved.&rdquo;</p>
+            <p class="does">Constructs the strongest <em>honest</em> bull case, the way the firm actually makes money &mdash; protected downside and value created by hand, not multiple expansion or a great story. Proposes an asset-quality grade and a walk-away ceiling. Four sub-voices hold it in tension:</p>
+
+            <div class="quartet">
+              <div class="sub">
+                <span class="sname">The Strategist <span class="slens">sector &amp; model fit</span></span>
+                <span class="hunts">Is this a Ridgemont deal, or a company that happens to touch healthcare? Tests the model, not the end market.</span>
+              </div>
+              <div class="sub">
+                <span class="sname">The Floor <span class="slens">protected downside</span></span>
+                <span class="hunts">What's left if growth goes to zero? Unmoved by upside; holds a veto on an unprotected downside.</span>
+              </div>
+              <div class="sub">
+                <span class="sname">The Operator <span class="slens">value creation</span></span>
+                <span class="hunts">Names three levers we can pull with our own hands, and grades each Proven, Credible, or Aspirational &mdash; honestly.</span>
+              </div>
+              <div class="sub">
+                <span class="sname">The Steward <span class="slens">asset quality vs price</span></span>
+                <span class="hunts">Grades the asset apart from price, then sets the walk-away that grade earns. Will not pay an A multiple for a B-plus asset.</span>
+              </div>
+            </div>
+
+            <div class="delivers">
+              <div class="dlabel">Hands up to the Chair</div>
+              <div class="dtext">A fully sourced bull case, a <b>proposed grade</b>, and a <b>walk-away ceiling</b> &mdash; both marked provisional, until the other bench has had its say.</div>
+            </div>
+          </div>
+
+          <!-- ── EXAMINER ── -->
+          <div class="bench examiner">
+            <div class="plate">
+              <img src="../Council/Examiner.png" alt="Painted portrait of the Scrutiny Council: four figures in amber, gold and slate tones, leaning in as the bench that hunts what kills the deal." />
+            </div>
+            <p class="role">Scrutiny Council · hunts the kill</p>
+            <h3 class="name">The Examiner</h3>
+            <p class="stance">&ldquo;Every deal has a way it dies. My job is to find it first &mdash; before the firm wires the money, not after.&rdquo;</p>
+            <p class="does">Builds the list of what kills the deal, ranked most likely and most severe first, each with its mechanism, its source, and a severity. Doesn't soft-pedal a kill to keep a deal alive; doesn't <em>invent</em> one to look thorough. Four sub-voices do the hunting:</p>
+
+            <div class="quartet">
+              <div class="sub">
+                <span class="sname">The Sentinel <span class="slens">reimbursement &amp; regulatory</span></span>
+                <span class="hunts">The most common way a healthcare deal dies. What happens to this revenue when the rule moves, the rate resets, or the program is audited?</span>
+              </div>
+              <div class="sub">
+                <span class="sname">The Auditor <span class="slens">earnings quality</span></span>
+                <span class="hunts">Reads the bridge from reported to adjusted EBITDA like a confession. Add-backs are guilty until tied.</span>
+              </div>
+              <div class="sub">
+                <span class="sname">The Reader <span class="slens">management &amp; people</span></span>
+                <span class="hunts">Reads the team, not the deck. One indispensable person is a single point of failure the CIM will never name.</span>
+              </div>
+              <div class="sub">
+                <span class="sname">The Contrarian <span class="slens">concentration &amp; disruption</span></span>
+                <span class="hunts">States the strongest honest bear case &mdash; the concentration nobody named, the moat AI is quietly filling in.</span>
+              </div>
+            </div>
+
+            <div class="delivers">
+              <div class="dlabel">Hands up to the Chair</div>
+              <div class="dtext">A ranked <b>kill list</b> &mdash; hard stop, material, or diligence-addressable &mdash; and the power to <b>move the Partner's grade down</b> when the earnings prove softer than the deck.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="standoff">
+          <p>Neither bench gets the last word. The Partner can't talk the kill list down; the Examiner can't write the case. A confirmed hard stop, or an unprotected downside, is a pass &mdash; <b>no matter how good the story.</b></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ THE CHAIR ══════ -->
+    <section class="chair-sec">
+      <div class="wrap">
+        <div class="chair-card">
+          <div class="chair-text">
+            <p class="role">The arbiter · not a fifth lens</p>
+            <h2>The IC Chair</h2>
+            <p class="gavel">&ldquo;Two councils argued the deal, one for and one against. I weigh them, decide where they conflict, and put my name on the number.&rdquo;</p>
+            <p class="body-copy">Brings no lens of its own &mdash; it brings the gavel. It weighs conviction against scrutiny and <em>adjudicates</em> where they disagree, deciding which read carries on the evidence. When the fight can't be settled, it names the swing factor as the thing the decision turns on. It owns the one thing neither council may set:</p>
+            <div class="owns">
+              <span class="tok"><b>1&ndash;10</b> fit score</span>
+              <span class="tok"><b>A &ndash; B</b> asset grade</span>
+              <span class="tok">walk-away <b>ceiling</b></span>
+              <span class="tok"><b>pursue</b> / selective / pass</span>
+            </div>
+            <p class="adjudicates">It <b>adjudicates &mdash; it never averages.</b> Two tracks, never one number. A 6 that's secretly a 4 and an 8 averaged together hides the cardinal error.</p>
+          </div>
+          <div class="chair-portrait">
+            <div class="plate">
+              <img src="../Council/Chair.png" alt="Painted portrait of the IC Chair: a single figure in a teal suit with a gold tie, standing alone against a wall in open space, casting a long shadow &mdash; wearing both councils' colors." />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ THE LINE ══════ -->
+    <section class="line-sec">
+      <div class="wrap">
+        <div class="rule" aria-hidden="true"></div>
+        <h2>The Chair owns the verdict. <em>You</em> own the decision.</h2>
+        <p>The verdict is a recommendation, fully reasoned and fully sourced &mdash; built so you can click any part of it and land on where it came from. <b>The machine never makes the call. It makes the call defensible.</b> The weight stays on your shoulders. Your arms are just stronger.</p>
+
+        <div class="contrast">
+          <div class="col refuse">
+            <p class="clabel">What it refuses to be</p>
+            <ul>
+              <li>A confident answer with no source to click into.</li>
+              <li>A fabricated comp, number, or precedent &mdash; the one unforgivable failure.</li>
+              <li>One black-box score standing in for the reasoning behind it.</li>
+              <li>Disagreement smoothed into a bland middle.</li>
+              <li>Generic benchmarks and vendor-speak in place of the firm's own framework.</li>
+            </ul>
+          </div>
+          <div class="col are">
+            <p class="clabel">What it is</p>
+            <ul>
+              <li>Every claim one click from the page it came from.</li>
+              <li>&ldquo;Not evidenced in what was provided&rdquo; &mdash; a complete, honest answer.</li>
+              <li>Two tracks held apart: asset quality, and price.</li>
+              <li>The fight between the councils, surfaced, not averaged.</li>
+              <li>Scored against this firm's framework, history, and language.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ══════ FOOT BENCH — the cast, seated (CTA removed) ══════ -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="bench-row">
+        <div class="seat partner">
+          <div class="chip"><img src="../Council/Partner.png" alt="" /></div>
+          <span class="meta"><span class="sn">The Partner</span><span class="sr">Conviction</span></span>
+        </div>
+        <span class="gavel-mark" aria-hidden="true">&middot;&nbsp;presides&nbsp;&middot;</span>
+        <div class="seat chair">
+          <div class="chip"><img src="../Council/Chair.png" alt="" /></div>
+          <span class="meta"><span class="sn">The IC Chair</span><span class="sr">Adjudicates</span></span>
+        </div>
+        <span class="gavel-mark" aria-hidden="true">&middot;&nbsp;tests&nbsp;&middot;</span>
+        <div class="seat examiner">
+          <div class="chip"><img src="../Council/Examiner.png" alt="" /></div>
+          <span class="meta"><span class="sn">The Examiner</span><span class="sr">Scrutiny</span></span>
+        </div>
+      </div>
+      <p class="note">Switch to <strong>The Table</strong> to see how they scored this deal.</p>
+    </div>
+  </footer>
+</aside>
+
+</body>
+</html>

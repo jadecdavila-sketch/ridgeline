@@ -35,7 +35,7 @@ export function CouncilConverse({ data }: { data: CouncilData }) {
       <div className="cd-thread" ref={logRef}>
         {/* opening statement — the standing read, folded */}
         <div className="cd-opening">
-          <span className={`cd-cv-pill${data.chair.go ? ' go' : ''}`}>
+          <span className="cd-cv-pill">
             {data.chair.verdictLabel} · {data.chair.score}/10 · {data.chair.grade}
           </span>
           <span className="cd-opening-txt" dangerouslySetInnerHTML={{ __html: data.converse.opening }} />

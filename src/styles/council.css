@@ -21,6 +21,7 @@
   --cd-slate-d: #374e5a;
   --cd-green: #81ae40;
   --cd-green-d: #5f8a2a;
+  --cd-amber: #b7791f;
   --cd-red: #b04a43;
   --cd-partner: #3c7a86;
   --cd-examiner: #b5862f;
@@ -104,7 +105,11 @@
   width: 3px;
   background: var(--cd-seam);
 }
-.cd-drawer[data-verdict='no'] {
+/* The seam carries the verdict: pursue = green (default), selective = amber, pass = red. */
+.cd-drawer[data-verdict='selective'] {
+  --cd-seam: var(--cd-amber);
+}
+.cd-drawer[data-verdict='pass'] {
   --cd-seam: var(--cd-red);
 }
 @media (prefers-reduced-motion: reduce) {
@@ -340,8 +345,14 @@
   padding: 6px 15px;
   border-radius: 999px;
 }
-.cd-cv-pill.go {
+.cd-drawer[data-verdict='pursue'] .cd-cv-pill {
   background: var(--cd-green-d);
+}
+.cd-drawer[data-verdict='selective'] .cd-cv-pill {
+  background: var(--cd-amber);
+}
+.cd-drawer[data-verdict='pass'] .cd-cv-pill {
+  background: var(--cd-red);
 }
 .cd-cv-stat {
   font-family: var(--cd-cond);

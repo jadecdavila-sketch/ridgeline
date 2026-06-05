@@ -10,6 +10,8 @@
  * pattern already used in RidgelineAI. Authored statically per deal.
  */
 
+import type { Verdict } from './types'
+
 export type CouncilVoiceId = 'partner' | 'examiner' | 'chair'
 
 /** A small chip on a voice's identity card (proposed grade, ceiling, status). */
@@ -70,7 +72,7 @@ export interface ConverseRound {
 export interface CouncilData {
   chair: {
     verdictLabel: string // "Pursue", "Pursue with discipline", "Pass"
-    go: boolean // green pill
+    verdict: Verdict // drives the seam + pill colour: pursue=green, selective=amber, pass=red
     score: string // "8"
     grade: string // "A−"
     entry: string // "8.8×"

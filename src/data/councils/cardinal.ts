@@ -8,7 +8,7 @@ import type { CouncilData } from '../councilTypes'
 export const cardinal: CouncilData = {
   chair: {
     verdictLabel: 'Pursue',
-    go: true,
+    verdict: 'pursue',
     score: '8',
     grade: 'A−',
     entry: '8.8×',

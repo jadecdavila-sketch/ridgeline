@@ -51,7 +51,7 @@ export function CouncilDrawer({ data, dealName }: { data: CouncilData; dealName:
 
       <aside
         className={open ? 'cd-drawer open' : 'cd-drawer'}
-        data-verdict={data.chair.go ? 'go' : 'no'}
+        data-verdict={data.chair.verdict}
         aria-label={`The committee — ${dealName}`}
         aria-hidden={!open}
       >
