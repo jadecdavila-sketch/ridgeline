@@ -5,6 +5,7 @@
 @import "tailwindcss";
 @import "./legacy-pipeline.css";
 @import "./legacy-scorecard.css";
+@import "./council.css";
 
 /* The prototype's design tokens, mapped into Tailwind's theme so new views get
    utilities like bg-slate, text-teal, font-cond. The legacy :root vars (--slate

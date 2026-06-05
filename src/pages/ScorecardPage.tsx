@@ -3,6 +3,8 @@ import { scorecards } from '../data/scorecards'
 import { dealById } from '../data/deals'
 import { useSectionReveal } from '../hooks/useSectionReveal'
 import { RidgelineAI } from '../components/chat/RidgelineAI'
+import { CouncilDrawer } from '../components/council/CouncilDrawer'
+import { councils } from '../data/councils'
 
 export function ScorecardPage() {
   const { id } = useParams()
@@ -39,6 +41,7 @@ export function ScorecardPage() {
   }
 
   const { crumbName, Body, chat } = sc
+  const council = id ? councils[id] : undefined
   return (
     <div className="scard">
       <div className="topbar2">
@@ -50,7 +53,13 @@ export function ScorecardPage() {
       <div className="wrap">
         <Body />
       </div>
-      <RidgelineAI intro={chat.intro} items={chat.items} placeholder={chat.placeholder} />
+      {/* Where a deal has a Council, "Converse with the Council" replaces the
+          older Ridgeline AI chat; otherwise the chat still stands in. */}
+      {council ? (
+        <CouncilDrawer data={council} dealName={crumbName} />
+      ) : (
+        <RidgelineAI intro={chat.intro} items={chat.items} placeholder={chat.placeholder} />
+      )}
     </div>
   )
 }

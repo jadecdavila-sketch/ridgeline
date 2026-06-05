@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Council Read · The Partner — Artisan sketch v2 (RidgeLine)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ──────────────────────────────────────────────────────────────
+   The Artisan · RidgeLine Council drawer — the FOCUSED READ, v2.
+   One council, full argument, in its own output structure, on the
+   warm committee-room paper, with the real plate presiding.
+   The Partner shown; Examiner / IC Chair reuse this exact shell.
+   ────────────────────────────────────────────────────────────── */
+:root{
+  --slate:#415A68; --slate-d:#374e5a;
+  --blue:#2B76A5; --teal:#ADD0D2; --teal-tint:#EAF2F2;
+  --green:#81AE40; --green-d:#5f8a2a; --amber:#B7791F; --red:#B04A43;
+  --ink:#1F2A30; --ink-soft:#56636b; --out:#9AA6AC;
+
+  --paper:#F4EFE3; --paper-2:#FBF8F1; --paper-edge:#E7DFCD;
+  --line:#DED6C4; --line-soft:#E8E1D2; --shadow:rgba(74,60,38,.18);
+
+  --partner:#3C7A86; --examiner:#B5862F; --chair:#4E8A86;
+
+  --serif:"Libre Caslon Text",Georgia,serif;
+  --cond:"Barlow Semi Condensed",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --seam:var(--green);          /* deal verdict = Pursue */
+  --voice:var(--partner);       /* this read's identity */
+}
+*{box-sizing:border-box} html,body{margin:0}
+body{background:#FAFBFB;color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased;min-height:100vh}
+
+/* cool scorecard backdrop */
+.backdrop{max-width:1180px;margin:0 auto;padding:54px 28px 200px}
+.bd-eyebrow{font-family:var(--cond);font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.bd-name{font-size:40px;font-weight:700;letter-spacing:-.01em;margin:.32em 0 .18em}
+.bd-desc{font-size:16px;line-height:1.6;color:var(--ink-soft);max-width:60ch;margin:0}
+.bd-faint{color:var(--out);font-family:var(--cond);font-size:13px;letter-spacing:.04em;margin-top:28px}
+
+/* ════════ DRAWER SHELL (warm paper) ════════ */
+.drawer{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;flex-direction:column;
+  background:linear-gradient(180deg,var(--paper-2),var(--paper));border-top:1px solid var(--paper-edge);
+  box-shadow:0 -26px 70px -38px var(--shadow);overflow:hidden;height:90vh}
+.drawer::before{content:"";position:absolute;top:0;bottom:0;left:0;width:3px;background:var(--seam)}
+
+.grip{appearance:none;background:transparent;border:0;cursor:pointer;padding:10px 0 4px;display:flex;justify-content:center;flex-shrink:0}
+.grip-line{width:46px;height:4px;border-radius:2px;background:color-mix(in srgb,var(--slate) 28%,var(--paper-edge))}
+
+/* identity bar + voice switch */
+.bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:0 clamp(20px,4vw,48px) 12px;border-bottom:1px solid var(--line)}
+.bar .who{font-family:var(--cond);font-weight:700;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--slate)}
+.bar .deal{font-family:var(--cond);font-weight:500;font-size:12px;letter-spacing:.08em;color:var(--out)}
+.switch{margin-left:auto;display:flex;align-items:center;gap:2px;background:color-mix(in srgb,var(--paper-edge) 60%,var(--paper-2));border-radius:999px;padding:3px}
+.switch a{font-family:var(--cond);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);
+  text-decoration:none;padding:6px 13px;border-radius:999px;transition:background .2s,color .2s}
+.switch a.back{color:var(--out)}
+.switch a[aria-current]{background:#fff;color:var(--voice);box-shadow:0 1px 5px rgba(74,60,38,.16)}
+.switch a:hover:not([aria-current]){color:var(--slate)}
+
+/* body: stage [plate rail] [read] */
+.body{flex:1 1 auto;min-height:0;overflow-y:auto;padding:24px clamp(20px,4vw,48px) 14px}
+.stage{display:grid;grid-template-columns:168px 1fr;gap:clamp(24px,3.4vw,52px);max-width:1080px;margin:0 auto;align-items:start}
+
+/* sticky portrait rail — the plate presides while you read */
+.rail{position:sticky;top:0;display:flex;flex-direction:column;gap:15px}
+.plate{padding:5px;border-radius:13px;background:var(--paper-2);overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--voice) 34%,var(--line));box-shadow:0 12px 30px -14px var(--shadow)}
+.plate img{display:block;width:100%;height:100%;object-fit:cover;border-radius:9px}
+.rail .plate{width:168px;height:196px}
+.ident .name{font-family:var(--serif);font-weight:700;font-size:25px;line-height:1.05;color:var(--ink)}
+.ident .lens{display:block;font-family:var(--cond);font-weight:600;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--voice);margin-top:5px}
+.proposes{margin-top:12px;display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-family:var(--cond);font-weight:700;font-size:11px;letter-spacing:.05em;padding:5px 11px;border-radius:7px;text-transform:uppercase}
+.chip.grade{color:#fff;background:var(--slate)}
+.chip.ceil{color:var(--slate-d);background:#fff;border:1px solid var(--line)}
+.chip.prov{color:var(--out);border:1px dashed var(--out)}
+
+/* read column */
+.read{min-width:0;display:flex;flex-direction:column}
+.sec{padding:20px 0;border-top:1px solid var(--line-soft)}
+.sec:first-child{border-top:0;padding-top:2px}
+.sec-label{font-family:var(--cond);font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.sec-label.clear::after{content:"clear";font-size:9px;letter-spacing:.14em;color:#fff;background:var(--green-d);padding:2px 9px;border-radius:999px}
+.sec > p{font-family:var(--serif);font-size:15.5px;line-height:1.64;color:var(--ink-soft);margin:0}
+.sec > p em{font-style:italic;color:var(--ink)}
+.sec p .src{font-family:var(--cond);font-weight:600;font-size:9px;letter-spacing:.08em;color:#fff;background:var(--slate);padding:2px 6px;border-radius:3px;margin-left:5px;text-transform:uppercase;white-space:nowrap}
+
+/* four pillars — named sub-voices */
+.pillars{display:flex;flex-direction:column;gap:18px;margin-top:2px}
+.pillar{padding-left:16px;border-left:2px solid color-mix(in srgb,var(--voice) 52%,transparent)}
+.pillar .pname{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--ink)}
+.pillar .plens{font-family:var(--cond);font-weight:600;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--out);margin-left:9px}
+.pillar p{margin:7px 0 0;font-family:var(--serif);font-size:15px;line-height:1.62;color:var(--ink-soft)}
+.pillar p em{font-style:italic;color:var(--ink)}
+
+/* tensions */
+.tensions{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.tensions li{position:relative;padding-left:24px;font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.56;color:var(--slate-d)}
+.tensions li::before{content:"";position:absolute;left:0;top:10px;width:13px;height:2px;background:var(--examiner)}
+
+/* questions */
+.qs{margin:0;padding:0;list-style:none;counter-reset:q;display:flex;flex-direction:column;gap:11px}
+.qs li{position:relative;padding-left:36px;font-size:15px;line-height:1.56;color:var(--ink)}
+.qs li::before{counter-increment:q;content:counter(q);position:absolute;left:0;top:0;width:23px;height:23px;border-radius:50%;
+  display:grid;place-items:center;font-family:var(--cond);font-weight:700;font-size:12px;color:var(--voice);
+  border:1.5px solid color-mix(in srgb,var(--voice) 42%,transparent)}
+
+/* conviction read — the weighted close */
+.conviction{background:linear-gradient(180deg,#fff,color-mix(in srgb,var(--paper-2) 70%,#fff));
+  border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-top:10px;box-shadow:0 10px 30px -24px var(--shadow)}
+.conviction .sec-label{color:var(--green-d)}
+.conviction > p{color:var(--slate-d);font-size:16px;line-height:1.62;margin:0}
+.conviction > p em{font-style:italic;color:var(--ink)}
+.conviction .move{margin-top:14px;font-family:var(--serif);font-size:16px;line-height:1.55;color:var(--ink)}
+.conviction .move b{font-family:var(--cond);font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--green-d);display:block;margin-bottom:4px}
+.conviction .caveat{margin-top:14px;font-family:var(--cond);font-size:11.5px;letter-spacing:.04em;color:var(--out)}
+
+/* foot bench */
+.foot{display:flex;align-items:center;gap:16px;padding:8px clamp(20px,4vw,48px) 16px;min-height:62px;border-top:1px solid var(--line)}
+.bench{display:flex;align-items:center;gap:11px}
+.bench .seat{display:flex;flex-direction:column;align-items:center;gap:4px}
+.bench .plate{width:40px;height:40px;padding:3px;border-radius:9px;filter:saturate(.45) brightness(1.02);transition:filter .4s var(--ease),box-shadow .4s var(--ease)}
+.bench .seat.partner .plate{--frame:var(--partner)} .bench .seat.examiner .plate{--frame:var(--examiner)} .bench .seat.chair .plate{--frame:var(--chair)}
+.bench .plate{border-color:color-mix(in srgb,var(--frame,var(--slate)) 30%,var(--line))}
+.bench .seat.on .plate{filter:none;box-shadow:0 0 0 2px var(--voice),0 6px 14px -6px var(--shadow)}
+.bench .tag{font-family:var(--cond);font-weight:600;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--out)}
+.bench .seat.on .tag{color:var(--voice)}
+.back-table{margin-left:auto;appearance:none;border:1px solid color-mix(in srgb,var(--slate) 30%,var(--line));background:transparent;
+  font-family:var(--cond);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);
+  padding:10px 20px;border-radius:999px;cursor:pointer;transition:border-color .2s,color .2s}
+.back-table:hover{border-color:var(--green-d);color:var(--green-d)}
+
+@media (max-width:760px){
+  .stage{grid-template-columns:1fr}
+  .rail{position:static;flex-direction:row;align-items:center;gap:18px}
+  .rail .plate{width:104px;height:120px}
+  .switch{width:100%;justify-content:space-between;margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<main class="backdrop">
+  <div class="bd-eyebrow">NDA Scorecard · Specialty Pharmacy</div>
+  <h1 class="bd-name">Cardinal Specialty Pharmacy</h1>
+  <p class="bd-desc">National specialty pharmacy serving complex, high-cost therapies. Limited-distribution drug access, payer and manufacturer contracts, and clinical adherence management. ~$32M adjusted EBITDA on ~$175M revenue.</p>
+  <p class="bd-faint">You opened the committee, then asked to hear one council in full. This is The Partner's read.</p>
+</main>
+
+<aside class="drawer" aria-label="The Partner's read of Cardinal Specialty Pharmacy">
+  <button class="grip" aria-label="drawer grip"><span class="grip-line"></span></button>
+
+  <div class="bar">
+    <span class="who">The Committee</span>
+    <span class="deal">Cardinal Specialty Pharmacy</span>
+    <nav class="switch" aria-label="Switch council">
+      <a href="./council-drawer-the-table.html" class="back">&#9664;&nbsp;The Table</a>
+      <a href="#" aria-current="page">The Partner</a>
+      <a href="#">The Examiner</a>
+      <a href="#">IC Chair</a>
+    </nav>
+  </div>
+
+  <div class="body">
+    <div class="stage">
+
+      <!-- plate rail -->
+      <div class="rail">
+        <div class="plate"><img src="../Council/Partner.png" alt="The Partner council" /></div>
+        <div class="ident">
+          <span class="name">The Partner</span>
+          <span class="lens">Conviction Council · the bull case</span>
+          <div class="proposes">
+            <span class="chip grade">A&minus; asset</span>
+            <span class="chip ceil">walk-away ~9.5&times;</span>
+            <span class="chip prov">provisional · pre-scrutiny</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- the read -->
+      <div class="read">
+
+        <div class="sec">
+          <div class="sec-label">What I see</div>
+          <p>A national specialty pharmacy in limited-distribution therapies — roughly $32M adjusted EBITDA on $175M revenue.<span class="src">CIM</span> The CIM has just landed, so this is a screen-stage read, provisional by design. The asking range implies an ~8.8&times; entry; I read that for context and set it aside before grading.</p>
+        </div>
+
+        <div class="sec">
+          <div class="sec-label clear">Hard-pass screen</div>
+          <p>I ran the triggers first, before building any case. Not manufacturing or CME; not an out-of-network model; payer <em>and</em> manufacturer concentration both under 30% — the axes that matter for a limited-distribution model; EBITDA inside the $20&ndash;75M band; a credible process. Clear — and only then did I let myself build the bull case.</p>
+        </div>
+
+        <div class="sec">
+          <div class="sec-label">The four pillars</div>
+          <div class="pillars">
+            <div class="pillar">
+              <span class="pname">The Strategist</span><span class="plens">sector &amp; model fit</span>
+              <p>Squarely in lane. Specialty pharmacy is a named preferred lane, and I tested the model, not the end market: refill-driven recurring revenue on limited-distribution drugs, not a manufacturing tail dressed as services.<span class="src">CIM p.9</span> A healthcare-durable model, not one that merely sells into healthcare.</p>
+            </div>
+            <div class="pillar">
+              <span class="pname">The Floor</span><span class="plens">protected downside</span>
+              <p>A floor I could stand on. Recurring revenue with demonstrated refill retention — a therapy a patient cuts last, not first — and FCF conversion above the framework's 50% preference.<span class="src">CIM</span> The return holds with the exit multiple flat to entry; it does not need the multiple to move. Net leverage is the one figure I'd trace through the adjustment bridge before IC.</p>
+            </div>
+            <div class="pillar">
+              <span class="pname">The Operator</span><span class="plens">value creation</span>
+              <p>Three controllable levers, graded honestly: procurement and gross-to-net at scale (<em>Proven</em>), therapy-mix shift toward higher-margin categories (<em>Credible</em>), regional tuck-ins on a playbook we've run before (<em>Credible</em>).<span class="src">IC</span> The return rides operations, not leverage. AI on adherence I'd score as a named diligence item, not a thesis.</p>
+            </div>
+            <div class="pillar">
+              <span class="pname">The Steward</span><span class="plens">asset quality vs price</span>
+              <p>I grade the asset <em>A&minus;</em> on quality and durability, held apart from price, and the walk-away that grade earns is ~9.5&times;. The 8.8&times; entry sits below it — so the cardinal error, paying an A multiple for a lesser asset, is avoided here.<span class="src">DATA</span> The grade is provisional until The Examiner's quality-of-earnings work confirms the bridge is real; a soft bridge would make this a B+ I haven't caught yet.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <div class="sec-label">Tensions I'm holding</div>
+          <ul class="tensions">
+            <li>The Operator would underwrite mix-shift as Credible; The Floor will only stand on the recurring base that exists today. How much of the case rests on a lever not yet in the P&amp;L?</li>
+            <li>I grade A&minus; today; the process wants A pricing. The gap between those two numbers is the negotiation — and the risk.</li>
+            <li>Reimbursement durability could move this entire read, and it belongs to The Examiner. I expect the hardest push there, and I'm not pre-empting it.</li>
+          </ul>
+        </div>
+
+        <div class="sec">
+          <div class="sec-label">Questions before I'd approve</div>
+          <ol class="qs">
+            <li>What share of gross profit sits in the top one, three, and five manufacturer and payer relationships, and what are the renewal terms?</li>
+            <li>What does refill retention look like by cohort over 24 months — genuinely recurring, or re-won every period?</li>
+            <li>Where is net leverage heading once the add-back bridge is traced all the way through?</li>
+          </ol>
+        </div>
+
+        <div class="conviction">
+          <div class="sec-label">My conviction read</div>
+          <p>Pursue-worthy on this council's merits — a clean in-lane fit with a protected downside, at a disciplined entry. Proposed grade <em>A&minus;</em>, walk-away ~9.5&times;, both provisional and subject to The Examiner.</p>
+          <p class="move"><b>The one thing that would most move it</b>Reimbursement durability. If it holds, this is the strongest deal on the screen; if it cracks, the grade and the ceiling both come down.</p>
+          <p class="caveat">I do not set the 1&ndash;10 score or the pursue / pass call. That is the IC Chair's, after both councils are heard.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="bench">
+      <div class="seat partner on"><div class="plate"><img src="../Council/Partner.png" alt="" /></div><span class="tag">Partner</span></div>
+      <div class="seat chair"><div class="plate"><img src="../Council/Chair.png" alt="" /></div><span class="tag">Chair</span></div>
+      <div class="seat examiner"><div class="plate"><img src="../Council/Examiner.png" alt="" /></div><span class="tag">Examiner</span></div>
+    </div>
+    <button class="back-table">&#9664;&nbsp;Back to the table</button>
+  </div>
+</aside>
+
+</body>
+</html>

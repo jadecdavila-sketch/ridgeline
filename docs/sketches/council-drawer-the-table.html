@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Council Drawer · "The Table" — Artisan sketch v2 (RidgeLine)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ──────────────────────────────────────────────────────────────
+   The Artisan · RidgeLine Council drawer — "The Table", v2.
+   Now with the real council plates. The drawer is a WARM PAPER
+   material — the committee room — set against the cool scorecard.
+   Partner = teal · Examiner = gold · Chair = both. The fault-line
+   seam carries the verdict and lights where the councils fought.
+   ────────────────────────────────────────────────────────────── */
+:root{
+  /* RidgeLine accents */
+  --slate:#415A68; --slate-d:#374e5a;
+  --blue:#2B76A5; --teal:#ADD0D2; --teal-tint:#EAF2F2;
+  --green:#81AE40; --green-d:#5f8a2a; --amber:#B7791F; --red:#B04A43;
+  --ink:#1F2A30; --ink-soft:#56636b; --out:#9AA6AC;
+
+  /* Warm paper material, sampled from the illustrations' ground */
+  --paper:#F4EFE3; --paper-2:#FBF8F1; --paper-edge:#E7DFCD;
+  --line:#DED6C4; --line-soft:#E8E1D2;
+  --shadow:rgba(74,60,38,.18);
+
+  /* Council identities, sampled from the plates */
+  --partner:#3C7A86;   /* cool teal-petrol */
+  --examiner:#B5862F;  /* warm ochre */
+  --chair:#4E8A86;     /* teal+gold balance */
+
+  --serif:"Libre Caslon Text",Georgia,serif;
+  --cond:"Barlow Semi Condensed",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --seam:var(--green);  /* deal verdict = Pursue */
+}
+*{box-sizing:border-box} html,body{margin:0}
+body{background:#FAFBFB;color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased;min-height:100vh}
+
+/* ── Cool, clinical scorecard backdrop (deliberately NOT the paper) ── */
+.backdrop{max-width:1180px;margin:0 auto;padding:54px 28px 230px}
+.bd-eyebrow{font-family:var(--cond);font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.bd-name{font-size:40px;font-weight:700;letter-spacing:-.01em;margin:.32em 0 .18em}
+.bd-desc{font-size:16px;line-height:1.6;color:var(--ink-soft);max-width:60ch;margin:0}
+.bd-verdict{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:22px}
+.bd-pill{font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--green-d);padding:7px 16px;border-radius:999px}
+.bd-stat{font-family:var(--cond);font-weight:600;color:var(--slate);font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+.bd-stat b{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--ink);letter-spacing:0}
+.bd-rule{height:1px;background:#E6EAEC;margin:32px 0}
+.bd-faint{color:var(--out);font-family:var(--cond);font-size:13px;letter-spacing:.04em}
+
+/* ════════════════ THE COMMITTEE DRAWER ════════════════ */
+.drawer{
+  position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;flex-direction:column;
+  background:
+    linear-gradient(180deg,var(--paper-2),var(--paper));
+  border-top:1px solid var(--paper-edge);
+  box-shadow:0 -26px 70px -38px var(--shadow);
+  overflow:hidden;height:96px;transition:height .58s var(--ease);
+}
+.drawer[data-snap="stage"]{height:min(484px,74vh)}
+.drawer[data-snap="full"]{height:90vh}
+
+/* verdict seam down the drawer's leading edge */
+.drawer::before{content:"";position:absolute;top:0;bottom:0;left:0;width:3px;background:var(--out);transition:background .6s var(--ease)}
+.drawer:not([data-snap="closed"])::before{background:var(--seam)}
+
+.grip{appearance:none;background:transparent;border:0;cursor:pointer;padding:10px 0 4px;display:flex;justify-content:center;flex-shrink:0}
+.grip-line{width:46px;height:4px;border-radius:2px;background:color-mix(in srgb,var(--slate) 28%,var(--paper-edge));transition:background .25s}
+.grip:hover .grip-line{background:var(--seam)}
+
+/* identity row */
+.identity{display:flex;align-items:baseline;gap:12px;padding:0 clamp(20px,4vw,48px) 8px}
+.identity .who{font-family:var(--cond);font-weight:700;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--slate)}
+.identity .deal{font-family:var(--cond);font-weight:500;font-size:12px;letter-spacing:.08em;color:var(--out)}
+
+/* body */
+.body{flex:1 1 auto;min-height:0;overflow-y:auto;padding:8px clamp(20px,4vw,48px) 8px;opacity:0;transition:opacity .42s var(--ease)}
+.drawer:not([data-snap="closed"]) .body{opacity:1}
+.inner{max-width:1120px;margin:0 auto}
+
+/* ── shared plate (framed illustration, gallery mat) ── */
+.plate{padding:4px;border-radius:11px;background:var(--paper-2);overflow:hidden;flex-shrink:0;
+  border:1px solid color-mix(in srgb,var(--frame,var(--slate)) 32%,var(--line));
+  box-shadow:0 6px 18px -10px var(--shadow)}
+.plate img{display:block;width:100%;height:100%;object-fit:cover;border-radius:8px}
+
+/* ── Chair band — the verdict, presiding ── */
+.chair-band{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;
+  padding:18px 22px;border-radius:16px;
+  background:linear-gradient(180deg,#fff,color-mix(in srgb,var(--paper-2) 60%,#fff));
+  border:1px solid var(--line);box-shadow:0 10px 30px -22px var(--shadow)}
+.chair-band .plate{--frame:var(--chair);width:92px;height:104px}
+.chair-band .plate img{object-position:68% 32%}
+.chair-verdict{min-width:0;display:flex;flex-direction:column;gap:10px}
+.cv-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cv-name{font-family:var(--cond);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--chair)}
+.cv-name::after{content:"";display:inline-block;width:26px;height:1px;background:color-mix(in srgb,var(--chair) 50%,transparent);vertical-align:middle;margin-left:10px}
+.cv-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:16px}
+.cv-pill{font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--green-d);padding:6px 15px;border-radius:999px}
+.cv-stat{font-family:var(--cond);font-weight:600;color:var(--slate);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+.cv-stat b{font-family:var(--serif);font-weight:700;font-size:23px;color:var(--ink);letter-spacing:0}
+.cv-resolution{font-family:var(--serif);font-size:17px;line-height:1.55;color:var(--slate-d);margin:0;max-width:70ch}
+.cv-resolution em{font-style:italic;color:var(--ink)}
+
+/* ── Council header — the two councils take the heads of their columns, facing the seam ── */
+.heads{display:grid;grid-template-columns:1fr clamp(40px,4.5vw,58px) 1fr;column-gap:clamp(20px,3vw,46px);margin-top:22px}
+.head{display:flex;align-items:center;gap:12px}
+.head.partner{grid-column:1;justify-content:flex-end;text-align:right}
+.head.examiner{grid-column:3;justify-content:flex-start}
+.head .plate{width:60px;height:60px}
+.head.partner .plate{--frame:var(--partner)} .head.examiner .plate{--frame:var(--examiner)}
+.head .hname{font-family:var(--serif);font-weight:700;font-size:18px;color:var(--ink);line-height:1.1}
+.head .hlens{display:block;font-family:var(--cond);font-weight:600;font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-top:3px}
+.head.partner .hlens{color:var(--partner)} .head.examiner .hlens{color:var(--examiner)}
+
+/* ── The table — five axis rows around the fault-line seam ── */
+.table{margin-top:6px}
+.row{display:grid;grid-template-columns:1fr clamp(40px,4.5vw,58px) 1fr;column-gap:clamp(20px,3vw,46px);
+  border-top:1px solid var(--line-soft)}
+.row:last-child{border-bottom:1px solid var(--line-soft)}
+.axis{grid-column:1 / -1;display:flex;align-items:center;gap:11px;padding:17px 0 8px}
+.axis-label{font-family:var(--cond);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.axis-tag{font-family:var(--cond);font-weight:700;font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:5px}
+.axis-tag.contested{color:#fff;background:var(--examiner)}
+.axis-tag.agreed{color:var(--out);border:1px solid var(--line)}
+
+.seam{grid-column:2;grid-row:1 / -1;position:relative;display:flex;justify-content:center}
+.seam::before{content:"";position:absolute;top:0;bottom:0;width:1.5px;background:color-mix(in srgb,var(--seam) 30%,var(--line));
+  transform:scaleY(0);transform-origin:top;transition:transform .5s var(--ease)}
+.drawer[data-snap="full"] .seam::before,.drawer[data-snap="stage"] .seam::before{transform:scaleY(1)}
+
+.bank{grid-row:2;padding:0 0 22px}
+.bank.partner{grid-column:1} .bank.examiner{grid-column:3}
+.bank .speaker{font-family:var(--cond);font-weight:700;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--out);display:block;margin-bottom:6px}
+.bank.partner .speaker{color:var(--partner)} .bank.examiner .speaker{color:var(--examiner)}
+.bank .read{font-family:var(--serif);font-size:15px;line-height:1.62;color:var(--ink-soft);margin:0}
+.bank .src{font-family:var(--cond);font-weight:600;font-size:9px;letter-spacing:.08em;color:#fff;background:var(--slate);padding:2px 6px;border-radius:3px;margin-left:5px;text-transform:uppercase;white-space:nowrap}
+
+/* contested rows: ink up, lean in, seam glows */
+.row.fight .bank{opacity:0;transform:translateX(var(--from,0));transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.row.fight .bank.partner{--from:-14px} .row.fight .bank.examiner{--from:14px}
+.drawer:not([data-snap="closed"]) .row.fight .bank{opacity:1;transform:none}
+.row.fight .bank .read{color:var(--ink)}
+.row.fight .seam::before{width:3px;background:var(--seam)}
+.row.fight .seam .glow{position:absolute;top:48px;bottom:20px;width:3px;border-radius:3px;background:var(--seam);
+  opacity:0;box-shadow:0 0 0 0 transparent;transition:opacity .4s var(--ease),box-shadow .6s var(--ease)}
+.drawer[data-snap="full"] .row.fight .seam .glow,.drawer[data-snap="stage"] .row.fight .seam .glow{opacity:1;box-shadow:0 0 16px 1px color-mix(in srgb,var(--seam) 50%,transparent)}
+.table .row:nth-of-type(3) .glow{transition-delay:.16s}
+.table .row:nth-of-type(4) .glow{transition-delay:.34s}
+
+/* IC Chair ruling — left-aligned accent block */
+.ruling{grid-column:1 / -1;grid-row:3;margin:0 0 22px;padding:13px 17px;border-radius:9px;
+  background:color-mix(in srgb,#fff 70%,var(--paper-2));border:1px solid var(--line);border-left:3px solid var(--seam)}
+.ruling .who{font-family:var(--cond);font-weight:700;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--green-d);display:block;margin-bottom:5px}
+.ruling .text{font-family:var(--serif);font-size:14px;line-height:1.55;color:var(--slate-d)}
+.ruling .text em{font-style:italic;color:var(--ink)}
+
+/* ── Foot bench — the three seats + the verb ── */
+.foot{display:flex;align-items:center;gap:16px;padding:6px clamp(20px,4vw,48px) 16px;min-height:66px}
+.bench{display:flex;align-items:center;gap:11px}
+.bench .seat{display:flex;flex-direction:column;align-items:center;gap:4px}
+.bench .plate{width:44px;height:44px;filter:saturate(.45) brightness(1.02);transition:filter .5s var(--ease)}
+.drawer:not([data-snap="closed"]) .bench .plate{filter:none}
+.bench .seat.partner .plate{--frame:var(--partner)} .bench .seat.examiner .plate{--frame:var(--examiner)} .bench .seat.chair .plate{--frame:var(--chair)}
+.bench .seat.partner{order:-1} .bench .seat.chair{order:0} .bench .seat.examiner{order:1}
+.bench .tag{font-family:var(--cond);font-weight:600;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--out)}
+
+.verb-col{margin-left:auto;display:flex;align-items:center;gap:16px}
+.legend{font-family:var(--cond);font-weight:500;font-size:10px;letter-spacing:.05em;color:var(--out);max-width:30ch;text-align:right;line-height:1.45}
+.legend b{color:var(--green-d)}
+.verb{appearance:none;border:0;cursor:pointer;background:var(--slate-d);color:#fff;
+  font-family:var(--cond);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  padding:12px 24px;border-radius:999px;transition:background .22s,transform .22s}
+.verb:hover{background:var(--green-d);transform:translateY(-1px)}
+
+@media (prefers-reduced-motion:reduce){
+  .drawer,.drawer::before,.body,.bank,.seam::before,.seam .glow{transition:none!important}
+  .seam::before{transform:scaleY(1)}
+}
+@media (max-width:760px){
+  .heads,.row{grid-template-columns:1fr 30px 1fr;column-gap:14px}
+  .bank .read{font-size:13.5px}.legend{display:none}
+  .chair-band{grid-template-columns:1fr;text-align:center;justify-items:center}
+  .head .hname{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<!-- cool scorecard backdrop -->
+<main class="backdrop">
+  <div class="bd-eyebrow">NDA Scorecard · Specialty Pharmacy</div>
+  <h1 class="bd-name">Cardinal Specialty Pharmacy</h1>
+  <p class="bd-desc">National specialty pharmacy serving complex, high-cost therapies. Limited-distribution drug access, payer and manufacturer contracts, and clinical adherence management. ~$32M adjusted EBITDA on ~$175M revenue.</p>
+  <div class="bd-verdict">
+    <span class="bd-pill">Pursue</span>
+    <span class="bd-stat"><b>8</b>&thinsp;/&thinsp;10 &nbsp;REP fit</span>
+    <span class="bd-stat"><b>A&minus;</b> &nbsp;asset quality</span>
+    <span class="bd-stat"><b>8.8&times;</b> &nbsp;entry</span>
+  </div>
+  <div class="bd-rule"></div>
+  <p class="bd-faint">The Chair's verdict, stated plainly. Pull up the committee below to see how he got there.</p>
+</main>
+
+<!-- ════════ THE COMMITTEE DRAWER ════════ -->
+<aside class="drawer" data-snap="full" aria-label="The committee — how this deal was scored">
+  <button class="grip" id="grip" aria-label="Cycle the drawer"><span class="grip-line"></span></button>
+
+  <div class="identity">
+    <span class="who">The Committee</span>
+    <span class="deal">Cardinal Specialty Pharmacy · two councils, one chair</span>
+  </div>
+
+  <div class="body">
+    <div class="inner">
+
+      <!-- Chair band -->
+      <div class="chair-band">
+        <div class="plate"><img src="../Council/Chair.png" alt="The IC Chair" /></div>
+        <div class="chair-verdict">
+          <div class="cv-top"><span class="cv-name">The IC Chair · presiding</span></div>
+          <div class="cv-line">
+            <span class="cv-pill">Pursue</span>
+            <span class="cv-stat"><b>8</b>/10 fit</span>
+            <span class="cv-stat"><b>A&minus;</b> grade</span>
+            <span class="cv-stat"><b>8.8&times;</b> entry</span>
+          </div>
+          <p class="cv-resolution">The Floor holds. I priced reimbursement durability into the grade, not the verdict — <em>held A&minus; over the Examiner's B+</em>, and kept the Pursue. 8.8&times; sits below the 9.5&times; ceiling the grade earns. Two fights worth your eye: the grade, and how much of the case rests on a lever not yet in the P&amp;L.</p>
+        </div>
+      </div>
+
+      <!-- Council heads -->
+      <div class="heads">
+        <div class="head partner">
+          <div><span class="hname">The Partner</span><span class="hlens">conviction · the bull case</span></div>
+          <div class="plate"><img src="../Council/Partner.png" alt="The Partner council" /></div>
+        </div>
+        <div class="head examiner">
+          <div class="plate"><img src="../Council/Examiner.png" alt="The Examiner council" /></div>
+          <div><span class="hname">The Examiner</span><span class="hlens">scrutiny · what kills it</span></div>
+        </div>
+      </div>
+
+      <!-- The table -->
+      <div class="table">
+
+        <div class="row calm">
+          <div class="axis"><span class="axis-label">Sector &amp; model fit</span><span class="axis-tag agreed">agreed</span></div>
+          <div class="bank partner"><span class="speaker">The Partner</span><p class="read">A named preferred lane — refill-driven recurring revenue on limited-distribution therapies, not a manufacturing model.<span class="src">CIM</span></p></div>
+          <div class="seam"></div>
+          <div class="bank examiner"><span class="speaker">The Examiner</span><p class="read">Tested the model, not the label: no manufacturing tail in the revenue. It passes clean.</p></div>
+        </div>
+
+        <div class="row calm">
+          <div class="axis"><span class="axis-label">Protected downside</span><span class="axis-tag agreed">agreed</span></div>
+          <div class="bank partner"><span class="speaker">The Partner</span><p class="read">Recurring revenue with demonstrated refill retention — a therapy a patient cuts last, not first — and FCF conversion above the 50% preference.<span class="src">CIM</span></p></div>
+          <div class="seam"></div>
+          <div class="bank examiner"><span class="speaker">The Examiner</span><p class="read">Retention data confirms it: recurring, not merely repeated. The floor is real.</p></div>
+        </div>
+
+        <div class="row fight">
+          <div class="axis"><span class="axis-label">Asset quality vs price</span><span class="axis-tag contested">contested</span></div>
+          <div class="bank partner"><span class="speaker">The Partner</span><p class="read">An A&minus; asset on revenue quality, held apart from price. The walk-away the grade earns is ~9.5&times;; the 8.8&times; entry sits below it.<span class="src">DATA</span></p></div>
+          <div class="seam"><span class="glow"></span></div>
+          <div class="bank examiner"><span class="speaker">The Examiner</span><p class="read">Grade is provisional until QoE clears. A soft add-back bridge could make this a B+ that hasn't been caught yet.<span class="src">QoE</span></p></div>
+          <div class="ruling"><span class="who">IC Chair rules</span><span class="text">Holds <em>A&minus;</em>; entry 8.8&times; sits under the 9.5&times; ceiling. Revisit the grade if QoE softens the bridge — the ceiling does not move with the story.</span></div>
+        </div>
+
+        <div class="row fight">
+          <div class="axis"><span class="axis-label">Value creation</span><span class="axis-tag contested">contested</span></div>
+          <div class="bank partner"><span class="speaker">The Partner</span><p class="read">Three controllable levers: procurement &amp; gross-to-net at scale (Proven), therapy-mix shift (Credible), regional tuck-ins on a proven playbook (Credible).<span class="src">IC</span></p></div>
+          <div class="seam"><span class="glow"></span></div>
+          <div class="bank examiner"><span class="speaker">The Examiner</span><p class="read">Mix-shift is aspirational until it's in the P&amp;L. One proven lever and two hopeful ones is a thinner deal than the model suggests.</p></div>
+          <div class="ruling"><span class="who">IC Chair rules</span><span class="text">Credit procurement as <em>proven</em>; price mix-shift as credible, not banked. The return underwrites on the floor and one lever — anything past that is upside, not basis.</span></div>
+        </div>
+
+        <div class="row calm">
+          <div class="axis"><span class="axis-label">Management &amp; data</span><span class="axis-tag agreed">agreed</span></div>
+          <div class="bank partner"><span class="speaker">The Partner</span><p class="read">Operator-led with a public-company CFO; reported figures tie and the adjustment bridge is modest.<span class="src">QoE</span></p></div>
+          <div class="seam"></div>
+          <div class="bank examiner"><span class="speaker">The Examiner</span><p class="read">Bridge sits under the 40% uplift that draws a penalty. Founder dependency is the one open question.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Foot -->
+  <div class="foot">
+    <div class="bench">
+      <div class="seat partner"><div class="plate"><img src="../Council/Partner.png" alt="" /></div><span class="tag">Partner</span></div>
+      <div class="seat chair"><div class="plate"><img src="../Council/Chair.png" alt="" /></div><span class="tag">Chair</span></div>
+      <div class="seat examiner"><div class="plate"><img src="../Council/Examiner.png" alt="" /></div><span class="tag">Examiner</span></div>
+    </div>
+    <div class="verb-col">
+      <p class="legend">Seam is the <b>verdict</b>; it lights where the two councils <b>fought</b>.</p>
+      <button class="verb" id="verb">Converse with the Council</button>
+    </div>
+  </div>
+</aside>
+
+<script>
+  const drawer = document.querySelector('.drawer');
+  const order = ['closed','stage','full'];
+  function setSnap(next){
+    drawer.dataset.snap = 'closed'; void drawer.offsetWidth;
+    requestAnimationFrame(()=>{ drawer.dataset.snap = next; });
+  }
+  document.getElementById('grip').addEventListener('click',()=>{
+    const next = order[(order.indexOf(drawer.dataset.snap)+1)%order.length];
+    if(next==='closed') drawer.dataset.snap='closed'; else setSnap(next);
+  });
+  document.getElementById('verb').addEventListener('click',()=>setSnap('full'));
+</script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Converse with the Council — Artisan sketch (RidgeLine)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ──────────────────────────────────────────────────────────────
+   The Artisan · RidgeLine — "Converse with the Council".
+   Replaces the Ridgeline AI chat. NOT a bubble chatbot — it is the
+   minutes of a hearing: you ask, and the table answers in character
+   and in tension. The Table is their opening statement; this is the
+   conversation that continues from it. One question can draw a
+   Partner answer, an Examiner counter, and a Chair ruling.
+   ────────────────────────────────────────────────────────────── */
+:root{
+  --slate:#415A68; --slate-d:#374e5a;
+  --blue:#2B76A5; --teal:#ADD0D2; --teal-tint:#EAF2F2;
+  --green:#81AE40; --green-d:#5f8a2a; --amber:#B7791F; --red:#B04A43;
+  --ink:#1F2A30; --ink-soft:#56636b; --out:#9AA6AC;
+
+  --paper:#F4EFE3; --paper-2:#FBF8F1; --paper-edge:#E7DFCD;
+  --line:#DED6C4; --line-soft:#E8E1D2; --shadow:rgba(74,60,38,.18);
+
+  --partner:#3C7A86; --examiner:#B5862F; --chair:#4E8A86;
+
+  --serif:"Libre Caslon Text",Georgia,serif;
+  --cond:"Barlow Semi Condensed",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --seam:var(--green);          /* deal verdict = Pursue */
+}
+*{box-sizing:border-box} html,body{margin:0}
+body{background:#FAFBFB;color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased;min-height:100vh}
+
+/* cool scorecard backdrop */
+.backdrop{max-width:1180px;margin:0 auto;padding:54px 28px 200px}
+.bd-eyebrow{font-family:var(--cond);font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.bd-name{font-size:40px;font-weight:700;letter-spacing:-.01em;margin:.32em 0 .18em}
+.bd-desc{font-size:16px;line-height:1.6;color:var(--ink-soft);max-width:60ch;margin:0}
+.bd-faint{color:var(--out);font-family:var(--cond);font-size:13px;letter-spacing:.04em;margin-top:28px}
+
+/* ════════ DRAWER SHELL (warm paper) ════════ */
+.drawer{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;flex-direction:column;
+  background:linear-gradient(180deg,var(--paper-2),var(--paper));border-top:1px solid var(--paper-edge);
+  box-shadow:0 -26px 70px -38px var(--shadow);overflow:hidden;height:92vh}
+.drawer::before{content:"";position:absolute;top:0;bottom:0;left:0;width:3px;background:var(--seam)}
+
+.grip{appearance:none;background:transparent;border:0;cursor:pointer;padding:10px 0 4px;display:flex;justify-content:center;flex-shrink:0}
+.grip-line{width:46px;height:4px;border-radius:2px;background:color-mix(in srgb,var(--slate) 28%,var(--paper-edge))}
+
+/* header: identity + who's at the table + switch */
+.bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:0 clamp(20px,4vw,48px) 14px;border-bottom:1px solid var(--line)}
+.head-l{display:flex;flex-direction:column;gap:3px;min-width:0}
+.head-l .who{font-family:var(--cond);font-weight:700;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--slate)}
+.head-l .sub{font-family:var(--cond);font-weight:500;font-size:11.5px;letter-spacing:.05em;color:var(--out)}
+.bench{display:flex;align-items:center;gap:7px;margin-left:6px}
+.bench .plate{width:34px;height:34px;padding:2px;border-radius:8px;background:var(--paper-2);overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--frame,var(--slate)) 32%,var(--line));box-shadow:0 4px 10px -6px var(--shadow)}
+.bench .plate img{display:block;width:100%;height:100%;object-fit:cover;border-radius:6px}
+.bench .p{--frame:var(--partner)} .bench .c{--frame:var(--chair)} .bench .e{--frame:var(--examiner)}
+.switch{margin-left:auto;display:flex;align-items:center;gap:2px;background:color-mix(in srgb,var(--paper-edge) 60%,var(--paper-2));border-radius:999px;padding:3px}
+.switch a{font-family:var(--cond);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);
+  text-decoration:none;padding:6px 13px;border-radius:999px;transition:background .2s,color .2s}
+.switch a.back{color:var(--out)}
+.switch a[aria-current]{background:#fff;color:var(--green-d);box-shadow:0 1px 5px rgba(74,60,38,.16)}
+.switch a:hover:not([aria-current]){color:var(--slate)}
+
+/* transcript */
+.body{flex:1 1 auto;min-height:0;overflow-y:auto;padding:22px clamp(20px,4vw,48px) 8px}
+.thread{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+
+/* opening statement — The Table, folded to one line you can reopen */
+.opening{display:flex;align-items:center;gap:14px;padding:13px 16px;border-radius:11px;
+  background:color-mix(in srgb,#fff 70%,var(--paper-2));border:1px solid var(--line);margin-bottom:14px}
+.opening .pill{font-family:var(--cond);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--green-d);padding:5px 12px;border-radius:999px}
+.opening .txt{font-family:var(--serif);font-size:14.5px;color:var(--slate-d);line-height:1.5;min-width:0}
+.opening a{margin-left:auto;font-family:var(--cond);font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);text-decoration:none;white-space:nowrap}
+.opening a:hover{color:var(--green-d)}
+
+/* a round = one question + the table's answer */
+.round{display:grid;grid-template-columns:14px 1fr;gap:16px;padding:6px 0 18px}
+.rail{position:relative;justify-self:center;width:2px;border-radius:2px;background:var(--line)}
+.round.contested .rail{background:var(--seam);box-shadow:0 0 12px color-mix(in srgb,var(--seam) 45%,transparent)}
+.col{min-width:0}
+
+/* you ask */
+.ask{padding:2px 0 14px}
+.ask .lbl{font-family:var(--cond);font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);display:block;margin-bottom:5px}
+.ask .q{font-family:var(--serif);font-size:19px;line-height:1.4;color:var(--ink);margin:0}
+
+/* a voice reply */
+.reply{display:grid;grid-template-columns:42px 1fr;gap:13px;padding:9px 0}
+.reply .plate{width:42px;height:42px;padding:3px;border-radius:9px;background:var(--paper-2);overflow:hidden;align-self:start;
+  border:1px solid color-mix(in srgb,var(--vc,var(--slate)) 34%,var(--line));box-shadow:0 5px 12px -7px var(--shadow)}
+.reply .plate img{display:block;width:100%;height:100%;object-fit:cover;border-radius:6px}
+.reply.partner{--vc:var(--partner)} .reply.examiner{--vc:var(--examiner)} .reply.chair{--vc:var(--chair)}
+.reply .speaker{font-family:var(--cond);font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--vc);display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+.reply .speaker .role{color:var(--out);font-weight:600;letter-spacing:.1em}
+.reply .say{font-family:var(--serif);font-size:15px;line-height:1.62;color:var(--ink);margin:0}
+.reply .say em{font-style:italic}
+.reply .src{font-family:var(--cond);font-weight:600;font-size:9px;letter-spacing:.08em;color:#fff;background:var(--slate);padding:2px 6px;border-radius:3px;margin-left:5px;text-transform:uppercase;white-space:nowrap}
+
+/* chair ruling closes a contested round */
+.ruling{margin:6px 0 2px;padding:12px 15px;border-radius:9px;background:color-mix(in srgb,#fff 72%,var(--paper-2));
+  border:1px solid var(--line);border-left:3px solid var(--seam)}
+.ruling .who{font-family:var(--cond);font-weight:700;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--green-d);display:block;margin-bottom:5px}
+.ruling .text{font-family:var(--serif);font-size:14px;line-height:1.55;color:var(--slate-d)}
+.ruling .text em{font-style:italic;color:var(--ink)}
+
+.round + .round{border-top:1px solid var(--line-soft)}
+
+/* composer */
+.composer{flex-shrink:0;border-top:1px solid var(--line);background:color-mix(in srgb,var(--paper-2) 80%,#fff);padding:12px clamp(20px,4vw,48px) 16px}
+.composer .inner{max-width:880px;margin:0 auto}
+.suggest{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:11px}
+.suggest .lead{font-family:var(--cond);font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--out);align-self:center;margin-right:2px}
+.chip{appearance:none;cursor:pointer;font-family:var(--cond);font-weight:600;font-size:12px;letter-spacing:.02em;color:var(--slate);
+  background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;transition:border-color .2s,color .2s,background .2s}
+.chip:hover{border-color:var(--green-d);color:var(--green-d)}
+.bar-in{display:flex;align-items:center;gap:10px}
+.field{flex:1 1 auto;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 16px}
+.field:focus-within{border-color:color-mix(in srgb,var(--slate) 50%,var(--line));box-shadow:0 0 0 3px color-mix(in srgb,var(--teal) 35%,transparent)}
+.field input{flex:1 1 auto;border:0;outline:0;background:transparent;font-family:var(--serif);font-size:15.5px;color:var(--ink)}
+.field input::placeholder{color:var(--out)}
+.send{appearance:none;border:0;cursor:pointer;background:var(--slate-d);color:#fff;font-family:var(--cond);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  padding:14px 22px;border-radius:13px;transition:background .2s,transform .2s;white-space:nowrap}
+.send:hover{background:var(--green-d);transform:translateY(-1px)}
+.composer .note{font-family:var(--cond);font-size:10.5px;letter-spacing:.04em;color:var(--out);margin:9px 0 0;text-align:center}
+
+@media (max-width:760px){
+  .thread,.composer .inner{max-width:none}
+  .ask .q{font-size:17px}.bench{display:none}
+  .send{padding:14px 16px}
+}
+</style>
+</head>
+<body>
+
+<main class="backdrop">
+  <div class="bd-eyebrow">NDA Scorecard · Specialty Pharmacy</div>
+  <h1 class="bd-name">Cardinal Specialty Pharmacy</h1>
+  <p class="bd-desc">National specialty pharmacy serving complex, high-cost therapies. Limited-distribution drug access, payer and manufacturer contracts, and clinical adherence management. ~$32M adjusted EBITDA on ~$175M revenue.</p>
+  <p class="bd-faint">You pressed "Converse with the Council." The committee is at the table.</p>
+</main>
+
+<aside class="drawer" aria-label="Converse with the Council about Cardinal Specialty Pharmacy">
+  <button class="grip" aria-label="drawer grip"><span class="grip-line"></span></button>
+
+  <div class="bar">
+    <div class="head-l">
+      <span class="who">Converse with the Council</span>
+      <span class="sub">Grounded in Cardinal's score, evidence, and comparables</span>
+    </div>
+    <div class="bench" aria-hidden="true">
+      <div class="plate p"><img src="../Council/Partner.png" alt="" /></div>
+      <div class="plate c"><img src="../Council/Chair.png" alt="" /></div>
+      <div class="plate e"><img src="../Council/Examiner.png" alt="" /></div>
+    </div>
+    <nav class="switch" aria-label="Switch view">
+      <a href="./council-drawer-the-table.html" class="back">&#9664;&nbsp;The Table</a>
+      <a href="#" aria-current="page">Converse</a>
+    </nav>
+  </div>
+
+  <div class="body">
+    <div class="thread">
+
+      <!-- opening statement = The Table, folded -->
+      <div class="opening">
+        <span class="pill">Pursue · 8/10 · A&minus;</span>
+        <span class="txt">The council's opening read stands above. The Floor holds; two fights remain — the grade, and a lever not yet in the P&amp;L.</span>
+        <a href="./council-drawer-the-table.html">Open the table&nbsp;&#9654;</a>
+      </div>
+
+      <!-- ROUND 1 — contested: the table disagrees, the Chair rules -->
+      <div class="round contested">
+        <div class="rail"></div>
+        <div class="col">
+          <div class="ask">
+            <span class="lbl">You ask</span>
+            <p class="q">Why A&minus;, and not an A?</p>
+          </div>
+
+          <div class="reply partner">
+            <div class="plate"><img src="../Council/Partner.png" alt="The Partner" /></div>
+            <div>
+              <span class="speaker">The Partner <span class="role">· the steward</span></span>
+              <p class="say">It earns the A&minus; on revenue quality — recurring, retained, the spend a patient cuts last. But it isn't an A: the downside is protected, not impregnable, and a slice of the margin rides a mix-shift that isn't in the P&amp;L yet.<span class="src">DATA</span> I grade what's there, not what's hoped for.</p>
+            </div>
+          </div>
+
+          <div class="reply examiner">
+            <div class="plate"><img src="../Council/Examiner.png" alt="The Examiner" /></div>
+            <div>
+              <span class="speaker">The Examiner <span class="role">· scrutiny</span></span>
+              <p class="say">And even the A&minus; is provisional. The adjusted EBITDA leans on an add-back bridge I haven't cleared.<span class="src">QoE</span> If the bridge softens under diligence, this is a B+ wearing an A&minus; today.</p>
+            </div>
+          </div>
+
+          <div class="ruling">
+            <span class="who">IC Chair rules</span>
+            <span class="text"><em>A&minus; stands</em>, with the walk-away at 9.5&times;. If the Examiner's quality-of-earnings work softens the bridge, the grade comes down — and the ceiling with it. The story does not move the number.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROUND 2 — closer alignment, no ruling needed -->
+      <div class="round">
+        <div class="rail"></div>
+        <div class="col">
+          <div class="ask">
+            <span class="lbl">You ask</span>
+            <p class="q">What would make you walk?</p>
+          </div>
+
+          <div class="reply examiner">
+            <div class="plate"><img src="../Council/Examiner.png" alt="The Examiner" /></div>
+            <div>
+              <span class="speaker">The Examiner <span class="role">· scrutiny</span></span>
+              <p class="say">A single manufacturer or payer over 30% of gross profit — or refill retention that turns out to be re-won each period, not recurring. Either one, and the floor I'm crediting isn't there.</p>
+            </div>
+          </div>
+
+          <div class="reply partner">
+            <div class="plate"><img src="../Council/Partner.png" alt="The Partner" /></div>
+            <div>
+              <span class="speaker">The Partner <span class="role">· the floor</span></span>
+              <p class="say">I'd add the price. An entry above 9.5&times; and this is someone else's deal. The asset is worth <em>pursuing</em> — it is not worth <em>chasing</em>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- composer -->
+  <div class="composer">
+    <div class="inner">
+      <div class="suggest">
+        <span class="lead">Try</span>
+        <button class="chip">Why not pass?</button>
+        <button class="chip">Compare to Summit Specialty</button>
+        <button class="chip">Where exactly is the floor?</button>
+        <button class="chip">What's the one risk to clear?</button>
+      </div>
+      <div class="bar-in">
+        <div class="field">
+          <input type="text" placeholder="Ask the committee about Cardinal…" aria-label="Ask the council" />
+        </div>
+        <button class="send">Ask the table</button>
+      </div>
+      <p class="note">The council answers in character, from this deal's evidence — and cites where each claim comes from.</p>
+    </div>
+  </div>
+</aside>
+
+</body>
+</html>
