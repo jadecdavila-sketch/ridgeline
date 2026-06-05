@@ -5,7 +5,7 @@ export const halcyon: ScorecardData = {
   crumbName: 'Halcyon Home Health',
   eyebrow: 'NDA Scorecard · Home Health',
   name: 'Halcyon Home Health',
-  desc: 'Regional home health and home-based care provider. Skilled nursing and therapy in the home, Medicare-weighted, with a single dominant payer relationship. ~$9M adjusted EBITDA on ~$61M revenue.',
+  desc: 'Regional home health and home-based care. Skilled nursing and therapy in the home, Medicare-weighted. One payer dominates the book. ~$9M adjusted EBITDA on ~$61M revenue.',
   verdict: 'pass',
   score: '4',
   grade: 'B−',

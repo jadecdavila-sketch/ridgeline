@@ -5,7 +5,7 @@ export const beacon: ScorecardData = {
   crumbName: 'Beacon Imaging Alliance',
   eyebrow: 'NDA Scorecard · Diagnostic Imaging',
   name: 'Beacon Imaging Alliance',
-  desc: 'Outpatient diagnostic imaging network. 28 centers, MRI/CT/imaging modalities, attractive market position, capital-intensive equipment base. ~$26M adjusted EBITDA on ~$132M revenue.',
+  desc: 'Outpatient diagnostic imaging, 28 centers. MRI, CT, and related modalities on a capital-intensive equipment base. ~$26M adjusted EBITDA on ~$132M revenue.',
   verdict: 'selective',
   score: '5',
   grade: 'B',

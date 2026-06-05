@@ -5,7 +5,7 @@ export const meridian: ScorecardData = {
   crumbName: 'Meridian Behavioral Health',
   eyebrow: 'NDA Scorecard · Behavioral Health',
   name: 'Meridian Behavioral Health',
-  desc: 'Multi-state outpatient behavioral health platform. 84 clinics across 6 states, founder-clinician led, recurring visit-based revenue. ~$24M adjusted EBITDA on ~$146M revenue.',
+  desc: 'Outpatient behavioral health, 84 clinics across 6 states. Founder-clinician led, revenue recurring and visit-based. ~$24M adjusted EBITDA on ~$146M revenue.',
   verdict: 'selective',
   score: '6',
   grade: 'B+',

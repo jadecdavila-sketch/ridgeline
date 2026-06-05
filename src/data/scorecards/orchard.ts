@@ -5,7 +5,7 @@ export const orchard: ScorecardData = {
   crumbName: 'Orchard Pediatric Group',
   eyebrow: 'NDA Scorecard · Pediatrics',
   name: 'Orchard Pediatric Group',
-  desc: 'Pediatric primary and specialty care group. 31 clinics, non-deferrable demand, clean capital structure, a credible de novo playbook. ~$10M adjusted EBITDA on ~$54M revenue.',
+  desc: 'Pediatric primary and specialty care, 31 clinics. Non-deferrable demand and a clean capital structure. The de novo playbook is credible. ~$10M adjusted EBITDA on ~$54M revenue.',
   verdict: 'selective',
   score: '6',
   grade: 'B+',

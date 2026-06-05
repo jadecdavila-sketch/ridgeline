@@ -5,7 +5,7 @@ export const sterling: ScorecardData = {
   crumbName: 'Sterling Rehab Network',
   eyebrow: 'NDA Scorecard · Outpatient Rehab',
   name: 'Sterling Rehab Network',
-  desc: 'Outpatient physical and occupational therapy network. 64 clinics, post-acute and direct-access referrals, growth-by-acquisition history. ~$15M adjusted EBITDA on ~$96M revenue.',
+  desc: 'Outpatient physical and occupational therapy, 64 clinics. Post-acute and direct-access referrals. Growth has come by acquisition. ~$15M adjusted EBITDA on ~$96M revenue.',
   verdict: 'pass',
   score: '4',
   grade: 'B−',

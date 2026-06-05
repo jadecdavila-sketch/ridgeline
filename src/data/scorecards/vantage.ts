@@ -5,7 +5,7 @@ export const vantage: ScorecardData = {
   crumbName: 'Vantage Surgical Holdings',
   eyebrow: 'NDA Scorecard · Ambulatory Surgical',
   name: 'Vantage Surgical Holdings',
-  desc: 'Multi-specialty ambulatory surgical center platform. 22 centers, physician-syndicated, strong procedural margins. ~$42M adjusted EBITDA on ~$210M revenue.',
+  desc: 'Multi-specialty ambulatory surgical centers, 22 sites. Physician-syndicated, with strong procedural margins. ~$42M adjusted EBITDA on ~$210M revenue.',
   verdict: 'selective',
   score: '5',
   grade: 'B',

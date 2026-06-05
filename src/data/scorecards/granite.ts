@@ -5,7 +5,7 @@ export const granite: ScorecardData = {
   crumbName: 'Granite Dialysis Partners',
   eyebrow: 'NDA Scorecard · Dialysis',
   name: 'Granite Dialysis Partners',
-  desc: 'Outpatient dialysis operator. 40 clinics, government-weighted reimbursement, structural exposure to rate setting and a live regulatory overhang. ~$18M adjusted EBITDA on ~$120M revenue.',
+  desc: 'Outpatient dialysis, 40 clinics. Reimbursement is government-weighted, exposed to rate setting, with a live regulatory overhang. ~$18M adjusted EBITDA on ~$120M revenue.',
   verdict: 'pass',
   score: '3',
   grade: 'C+',
