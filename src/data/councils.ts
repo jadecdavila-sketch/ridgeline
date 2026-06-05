@@ -2,9 +2,10 @@ import type { CouncilData, CouncilVoiceId } from './councilTypes'
 import { cardinal } from './councils/cardinal'
 import { cypress } from './councils/cypress'
 
-import partnerImg from '../assets/council/partner.png'
-import examinerImg from '../assets/council/examiner.png'
-import chairImg from '../assets/council/chair.png'
+// Compressed (640px WebP) for the bundle; full-res originals live in docs/Council/.
+import partnerImg from '../assets/council/partner.webp'
+import examinerImg from '../assets/council/examiner.webp'
+import chairImg from '../assets/council/chair.webp'
 
 /** Portrait plate per voice — the painterly council illustrations. */
 export const portraits: Record<CouncilVoiceId, string> = {
