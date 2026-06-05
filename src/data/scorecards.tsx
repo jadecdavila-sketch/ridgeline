@@ -1,7 +1,21 @@
 import type { ComponentType } from 'react'
 import { CypressScorecard } from '../components/scorecard/CypressScorecard'
 import { CardinalScorecard } from '../components/scorecard/CardinalScorecard'
+import { Scorecard } from '../components/scorecard/Scorecard'
 import type { ChatItem } from '../components/chat/RidgelineAI'
+import type { ScorecardData } from './scorecardTypes'
+import { meridian } from './scorecards/meridian'
+import { halcyon } from './scorecards/halcyon'
+import { vantage } from './scorecards/vantage'
+import { orchard } from './scorecards/orchard'
+import { sterling } from './scorecards/sterling'
+import { beacon } from './scorecards/beacon'
+import { granite } from './scorecards/granite'
+
+/** Build a registry entry from a data-driven ScorecardData object. */
+function fromData(d: ScorecardData): ScorecardEntry {
+  return { crumbName: d.crumbName, Body: () => <Scorecard data={d} />, chat: d.chat }
+}
 
 export interface ScorecardEntry {
   crumbName: string
@@ -76,4 +90,11 @@ export const scorecards: Record<string, ScorecardEntry> = {
     Body: CardinalScorecard,
     chat: cardinalChat,
   },
+  meridian: fromData(meridian),
+  halcyon: fromData(halcyon),
+  vantage: fromData(vantage),
+  orchard: fromData(orchard),
+  sterling: fromData(sterling),
+  beacon: fromData(beacon),
+  granite: fromData(granite),
 }

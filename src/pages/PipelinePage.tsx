@@ -61,7 +61,7 @@ export function PipelinePage() {
   }
 
   function openDeal(d: Deal) {
-    if (d.hasScorecard) navigate(`/deal/${d.id}`)
+    navigate(`/deal/${d.id}`)
   }
 
   return (
