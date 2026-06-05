@@ -1,7 +1,7 @@
 import { EvidenceProvider, Cite, Evidence, HL } from './evidence'
 import { DecisionRecord } from './DecisionRecord'
 
-/** Cypress Dental Partners — Pursue (with discipline), 7/10, B+, 9.2x. */
+/** Cypress Dental Partners. Pursue (with discipline), 7/10, B+, 9.2x. */
 export function CypressScorecard() {
   return (
     <EvidenceProvider>
@@ -11,8 +11,8 @@ export function CypressScorecard() {
           <div className="hero-eyebrow">NDA Scorecard · Dental Services (DSO)</div>
           <h1 className="hero-name">Cypress Dental Partners</h1>
           <p className="hero-desc">
-            Multi-state dental support organization. ~140 affiliated practices, recurring recall and
-            hygiene revenue with an ortho and specialty mix. ~$22M adjusted EBITDA on ~$88M revenue.
+            Multi-state dental support organization. ~140 affiliated practices. Recurring recall and
+            hygiene revenue, plus an ortho and specialty mix. ~$22M adjusted EBITDA on ~$88M revenue.
           </p>
 
           <div className="verdict-row">
@@ -42,26 +42,25 @@ export function CypressScorecard() {
               <div className="s-lc">Two-track read</div>
               <div className="val">B+ asset</div>
               <div className="note">
-                Diversified, recurring recall revenue and a fragmented roll-up runway. A
-                discretionary slice of demand keeps it B+, not A.
+                Diversified, recurring recall revenue. A fragmented roll-up runway. A discretionary
+                slice of demand holds it at B+ rather than A.
               </div>
             </div>
             <div className="dr p">
               <div className="s-lc">Price discipline</div>
               <div className="val">At the line</div>
               <div className="note">
-                9.2x entry sits just under the ~9.5x ceiling on a B+ grade. Out of lane, so holding
-                that line is the whole point.
+                9.2x entry sits just under the ~9.5x ceiling on a B+ grade. Thin room. Out of lane,
+                so holding the line is the job.
               </div>
             </div>
           </div>
 
           <p className="reasons">
-            <b>Pursue, with discipline.</b> A strong, fragmented dental roll-up at a fair entry, with
-            diversified revenue and a credible value-add path. The discipline is real: dental sits
-            outside the core lanes, so the bar rises and this is a 7, not a clean high pursue. The
-            open questions are organic-growth durability and how much demand is discretionary, not
-            whether a gate trips. None does.
+            <b>Pursue, with discipline.</b> A strong, fragmented dental roll-up at a fair entry.
+            Diversified revenue and a credible value-add path. Dental sits outside the core lanes, so
+            the bar rises and this scores a 7, not a clean high pursue. The open questions are
+            organic-growth durability and how much demand is discretionary. No gate trips.
           </p>
         </div>
       </div>
@@ -92,8 +91,8 @@ export function CypressScorecard() {
             <Cite id="e-lane" tag="CIM">
               not one of the named lanes
             </Cite>
-            , so the bar rises sharply. The model itself is sound, recurring recall revenue and a
-            fragmented roll-up, not manufacturing or out-of-network. Whether it is close enough to
+            , so the bar rises sharply. The model is sound: recurring recall revenue, a fragmented
+            roll-up, no manufacturing or out-of-network exposure. Whether it is close enough to
             underwrite is a partner call, surfaced below.
             <Evidence
               id="e-lane"
@@ -104,7 +103,7 @@ export function CypressScorecard() {
               snip={
                 <>
                   Core lanes are specialty pharmacy, physician staffing, post-acute, RCM, home-based
-                  care, and behavioral health. Dental is <HL>adjacent, not core</HL>; the model is a
+                  care, and behavioral health. Dental is <HL>adjacent, not core</HL>. The model is a
                   services roll-up, which is the part that travels.
                 </>
               }
@@ -128,8 +127,8 @@ export function CypressScorecard() {
             <Cite id="e-down" tag="CIM">
               slice of dental spend is discretionary
             </Cite>
-            , the kind a customer can defer in a downturn, unlike a specialty drug. The recurring
-            floor is solid; the elective portion is the soft spot to size.
+            , the kind a customer defers in a downturn the way a specialty drug is not. The recurring
+            floor is solid. The elective portion is the soft spot to size.
             <Evidence
               id="e-down"
               type="t-cim"
@@ -163,8 +162,8 @@ export function CypressScorecard() {
             <Cite id="e-qp" tag="DATA">
               B+ asset on diversified, recurring revenue
             </Cite>
-            , separate from price. The ceiling attached to B+ is roughly 9.5x; the 9.2x entry sits
-            just under it. Little room, which is exactly the discipline.
+            , separate from price. The ceiling attached to B+ is roughly 9.5x. The 9.2x entry sits
+            just under it. Little room. That gap is the discipline.
             <Evidence
               id="e-qp"
               type="t-chrono"
@@ -172,9 +171,9 @@ export function CypressScorecard() {
               doc="REP entries · dental / services roll-ups"
               snip={
                 <>
-                  B+ quality carries a held ceiling near <HL>9.5x</HL>; proposed entry <HL>9.2x</HL>{' '}
-                  is just below it. A great asset at the wrong price is a pass; a B+ at a B+ price can
-                  be a good deal.
+                  B+ quality carries a held ceiling near <HL>9.5x</HL>. Proposed entry <HL>9.2x</HL>{' '}
+                  sits just below it. A great asset at the wrong price is a pass. A B+ at a B+ price
+                  can be a good deal.
                 </>
               }
               prov="Holding the line is the call; there is little headroom."
@@ -198,8 +197,8 @@ export function CypressScorecard() {
               tuck-in M&amp;A across a fragmented market
             </Cite>{' '}
             (Proven), procurement and supply leverage at scale (Proven), and de novo plus
-            specialty-mix shift (Credible). The math has to work at realistic multiples, not
-            aspirational ones.
+            specialty-mix shift (Credible). The tuck-in math has to clear at multiples we can
+            actually pay.
             <Evidence
               id="e-vc"
               type="t-ic"
@@ -212,7 +211,7 @@ export function CypressScorecard() {
                   load-bearing assumption.
                 </>
               }
-              prov="Tuck-in math must clear at realistic, not aspirational, multiples."
+              prov="Tuck-in math must clear at multiples the platform can pay."
             />
           </div>
           <div className="axis-assess">
@@ -232,7 +231,8 @@ export function CypressScorecard() {
             <Cite id="e-mgmt2" tag="QoE">
               adjustment bridge is moderate
             </Cite>
-            . The open question is whether same-practice growth is volume and mix or mostly price.
+            . The open question is whether same-practice growth runs on volume and mix or mostly on
+            price.
             <Evidence
               id="e-mgmt2"
               type="t-qoe"
@@ -262,7 +262,7 @@ export function CypressScorecard() {
         <div className="sec-hd">
           <div>
             <span className="s-lc lc-b">Hard-pass screen</span>
-            <h2>No disqualifier triggered. The constraint is the lane call, not a gate.</h2>
+            <h2>No disqualifier triggered. The constraint is the lane call. No gate trips.</h2>
           </div>
         </div>
         <div className="gates">
@@ -306,8 +306,7 @@ export function CypressScorecard() {
                 snip={
                   <>
                     Revenue spread across ~140 locations and a broad PPO and cash-pay base;{' '}
-                    <HL>no customer near 30 percent</HL>. Low concentration is a genuine strength
-                    here.
+                    <HL>no customer near 30 percent</HL>. Low concentration is a real strength here.
                   </>
                 }
                 prov="Diversification is real; the risk sits elsewhere."
@@ -333,8 +332,7 @@ export function CypressScorecard() {
         </div>
         <div className="moat-note">
           Matched on sub-sector, size, and entry multiple. The comparable set is <b>thinner here</b>{' '}
-          than for an in-lane deal, because dental is adjacent to the core lanes, which is itself
-          worth weighing.
+          than for an in-lane deal, because dental is adjacent to the core lanes. Weigh that.
         </div>
         <table>
           <thead>
@@ -375,7 +373,7 @@ export function CypressScorecard() {
               <td>
                 <span className="mtag held">Tracking</span>
               </td>
-              <td>&mdash;</td>
+              <td>n/a</td>
               <td>Active</td>
             </tr>
             <tr>
@@ -397,7 +395,7 @@ export function CypressScorecard() {
                   see the pattern
                 </Cite>
               </td>
-              <td>&mdash;</td>
+              <td>n/a</td>
               <td>Under review</td>
             </tr>
           </tbody>
@@ -428,10 +426,10 @@ export function CypressScorecard() {
         <div className="jud">
           <h3>Calls the framework deliberately leaves to a partner</h3>
           {[
-            'The lane call. Dental is out of lane, so the bar rises. Is the services-roll-up model close enough to the core lanes to underwrite, or not?',
+            'The lane call. Dental is out of lane, so the bar rises. Is the services-roll-up model close enough to the core lanes to underwrite?',
             'The B+ grade and its ceiling. Does the discretionary share of demand cap quality at B+, and is 9.2x close enough to the line to hold?',
-            'Are the three levers real? Tuck-ins and procurement are proven; de novo is credible but ramp-dependent.',
-            'AI overlay: dental is relatively insulated, hands-on clinical work. AI reads as a modest back-office tailwind, not a moat compressor. Confirm, do not assume.',
+            'Are the three levers real? Tuck-ins and procurement are proven. De novo is credible but ramp-dependent.',
+            'AI overlay: dental is hands-on clinical work, relatively insulated. AI reads as a modest back-office tailwind, not a moat compressor. Confirm, do not assume.',
           ].map((q, i) => (
             <div className="item" key={i}>
               <span className="qmk">&ldquo;</span>
@@ -450,7 +448,7 @@ export function CypressScorecard() {
           </div>
         </div>
         {[
-          ['Decompose same-practice growth: how much is price, how much is patient volume, how much is ortho and specialty mix.', 'hi', 'High impact'],
+          ['Decompose same-practice growth into price, patient volume, and ortho and specialty mix.', 'hi', 'High impact'],
           ['Recurring versus discretionary revenue split, and how the elective mix behaved in the last downturn.', 'hi', 'High impact'],
           ['Tuck-in pipeline and realized multiples paid to date, with the synergy math behind the integration thesis.', 'hi', 'High impact'],
           ['EBITDA adjustment bridge: nature and magnitude of add-backs, owner comp, and de novo ramp costs.', 'hi', 'High impact'],
@@ -483,8 +481,7 @@ export function CypressScorecard() {
         Illustrative prototype. Cypress Dental Partners and all figures are fictional. The 1 to 10
         scoring, two-track quality grade and held price ceiling, hard-pass screen, and the
         out-of-lane judgment follow the REP Healthcare Investment Framework and the rep-deal-eval
-        rubric. The comparable-deal record stands in for Ridgemont's realized returns, the piece the
-        framework names as most worth automating.
+        rubric. The comparable-deal record stands in for Ridgemont's realized returns.
       </div>
     </EvidenceProvider>
   )

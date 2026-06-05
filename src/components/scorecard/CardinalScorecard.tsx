@@ -1,7 +1,7 @@
 import { EvidenceProvider, Cite, Evidence, HL } from './evidence'
 import { DecisionRecord } from './DecisionRecord'
 
-/** Cardinal Specialty Pharmacy — Pursue, 8/10, A−, 8.8x (in-lane). */
+/** Cardinal Specialty Pharmacy. Pursue, 8/10, A−, 8.8x (in-lane). */
 export function CardinalScorecard() {
   return (
     <EvidenceProvider>
@@ -11,9 +11,9 @@ export function CardinalScorecard() {
           <div className="hero-eyebrow">NDA Scorecard · Specialty Pharmacy</div>
           <h1 className="hero-name">Cardinal Specialty Pharmacy</h1>
           <p className="hero-desc">
-            National specialty pharmacy serving complex, high-cost therapies. Limited-distribution
-            drug access, payer and manufacturer contracts, and clinical adherence management. ~$32M
-            adjusted EBITDA on ~$175M revenue.
+            National specialty pharmacy in complex, high-cost therapies. Limited-distribution drug
+            access, payer and manufacturer contracts, clinical adherence management. ~$32M adjusted
+            EBITDA on ~$175M revenue.
           </p>
 
           <div className="verdict-row">
@@ -44,7 +44,7 @@ export function CardinalScorecard() {
               <div className="val">A&ndash; asset</div>
               <div className="note">
                 Recurring refill revenue, mission-critical therapies, FCF conversion above 50
-                percent. Downside is structurally protected, not just modeled.
+                percent. The downside is structurally protected.
               </div>
             </div>
             <div className="dr q">
@@ -52,19 +52,19 @@ export function CardinalScorecard() {
               <div className="val">Below ceiling</div>
               <div className="note">
                 8.8x entry sits under the ~9.5x walk-away attached to an A&ndash; grade. Quality and
-                price are graded separately.
+                price graded on separate tracks.
               </div>
             </div>
           </div>
 
           <p className="reasons">
-            <b>Why pursue.</b> An in-lane specialty pharmacy with the protected downside Ridgemont
-            underwrites for: recurring, refill-driven revenue on therapies a patient cannot defer,
-            real procurement and pricing leverage, and free-cash conversion above the 50 percent
-            preference. The return holds even with the exit multiple flat to entry, because it rides
-            operations rather than multiple expansion. Three controllable value-creation levers are
-            credible. The live risk is the one that kills healthcare deals most often, reimbursement
-            and payer durability, and that is where diligence goes first.
+            <b>Why pursue.</b> In-lane specialty pharmacy with the protected downside Ridgemont
+            underwrites for. Recurring, refill-driven revenue on therapies a patient cannot defer.
+            Real procurement and pricing leverage. Free-cash conversion above the 50 percent
+            preference. The return holds with the exit multiple flat to entry, because it rides
+            operations rather than multiple expansion. Three controllable value-creation levers, all
+            credible. The live risk is reimbursement and payer durability, the one that kills
+            healthcare deals most often. Diligence goes there first.
           </p>
         </div>
       </div>
@@ -91,12 +91,12 @@ export function CardinalScorecard() {
             Sector &amp; model fit<span className="ai">In lane?</span>
           </div>
           <div className="axis-read">
-            Specialty pharmacy is a named preferred lane, and the screen tests the{' '}
+            Specialty pharmacy is a named preferred lane. The screen tests the{' '}
             <Cite id="e-lane" tag="CIM">
               business model, not the end market
             </Cite>
-            : refill-driven recurring revenue on limited-distribution therapies, not a manufacturing
-            or out-of-network model.
+            : refill-driven recurring revenue on limited-distribution therapies. No manufacturing,
+            no out-of-network billing.
             <Evidence
               id="e-lane"
               type="t-cim"
@@ -124,11 +124,11 @@ export function CardinalScorecard() {
             Protected downside<span className="ai">Non-negotiable</span>
           </div>
           <div className="axis-read">
-            Recurring revenue with demonstrated refill retention; therapies a patient{' '}
+            Recurring revenue with demonstrated refill retention. Therapies a patient{' '}
             <Cite id="e-down" tag="CIM">
               cuts last, not first
             </Cite>
-            ; pricing and procurement leverage visible in gross margin; and FCF conversion above the
+            . Pricing and procurement leverage visible in gross margin. FCF conversion above the
             framework's 50 percent preference.
             <Evidence
               id="e-down"
@@ -161,9 +161,9 @@ export function CardinalScorecard() {
             <Cite id="e-qp" tag="DATA">
               A&ndash; asset on revenue quality
             </Cite>
-            , separate from price. The walk-away attached to that grade is roughly 9.5x; the 8.8x
-            entry sits below it. The cardinal error, paying an A multiple for a lesser asset, is
-            avoided here.
+            , separate from price. The walk-away attached to that grade is roughly 9.5x. The 8.8x
+            entry sits below it. The usual error is paying an A multiple for a lesser asset. Avoided
+            here.
             <Evidence
               id="e-qp"
               type="t-chrono"
@@ -176,7 +176,7 @@ export function CardinalScorecard() {
                   never collapsed into one number.
                 </>
               }
-              prov="The gap between quality and price is the analysis."
+              prov="Quality and price tracked apart. The gap between them carries the read."
             />
           </div>
           <div className="axis-assess">
@@ -198,7 +198,7 @@ export function CardinalScorecard() {
             </Cite>{' '}
             (Proven), therapy-mix shift toward higher-margin categories (Credible), and tuck-ins of
             regional specialty pharmacies on a proven platform playbook (Credible). The return rides
-            operations, not leverage.
+            operations. Leverage is not the source.
             <Evidence
               id="e-vc"
               type="t-ic"
@@ -232,7 +232,7 @@ export function CardinalScorecard() {
               adjustment bridge is modest
             </Cite>
             , under the 40 percent uplift that draws a penalty. Management reads as a credibility
-            multiplier here, not a discount.
+            multiplier here. No discount applied.
             <Evidence
               id="e-mgmt2"
               type="t-qoe"
@@ -283,8 +283,8 @@ export function CardinalScorecard() {
               <span className="gt">Model &amp; sector</span>
             </div>
             <div className="gb">
-              In-lane specialty pharmacy. Not manufacturing, CME, or an out-of-network-dependent
-              model. Clear.
+              In-lane specialty pharmacy. No manufacturing, no CME, no out-of-network dependence.
+              Clear.
             </div>
           </div>
           <div className="gate pass-ok">
@@ -318,7 +318,7 @@ export function CardinalScorecard() {
         <p className="gate-note">
           Any single trigger short-circuits the score to an automatic 1 to 2: manufacturing or CME,
           an out-of-network-dependent model, single-customer concentration over 30 percent, EBITDA
-          outside $20 to 75M, no credible value-add path, or a non-credible banker.
+          outside $20 to 75M, no credible value-add path, a banker without credibility.
         </p>
       </div>
 
@@ -331,7 +331,7 @@ export function CardinalScorecard() {
           </div>
         </div>
         <div className="moat-note">
-          The framework names this as the single highest-value thing to automate:{' '}
+          The framework names this as the highest-value thing to automate:{' '}
           <b>systematic comparison against REP's realized returns</b>, today done from partner
           memory. Matched to Cardinal on sub-sector, size, and entry multiple.
         </div>
@@ -374,7 +374,7 @@ export function CardinalScorecard() {
               <td>
                 <span className="mtag held">Tracking</span>
               </td>
-              <td>&mdash;</td>
+              <td>n/a</td>
               <td>Active</td>
             </tr>
             <tr>
@@ -396,7 +396,7 @@ export function CardinalScorecard() {
                   see the pattern
                 </Cite>
               </td>
-              <td>&mdash;</td>
+              <td>n/a</td>
               <td>Under review</td>
             </tr>
           </tbody>
@@ -428,10 +428,10 @@ export function CardinalScorecard() {
         <div className="jud">
           <h3>Calls the framework deliberately leaves to a partner</h3>
           {[
-            'The A− letter grade is a synthesis call. Does revenue quality and durability justify A− over B+, which is what sets the ceiling you hold?',
-            'Are the three value-creation levers real? Procurement is proven; the mix-shift and tuck-in levers are credible but not yet in the P&L.',
-            'AI overlay, evaluated both directions: it reads as a net tailwind here, automating prior authorization, refills, and adherence rather than compressing the moat. Confirm as a named diligence item.',
-            'The walk-away. The model proposes holding below ~9.5x; the number is yours to set.',
+            'The A− letter grade is a synthesis call. Does revenue quality and durability justify A− over B+? That is what sets the ceiling you hold.',
+            'Are the three value-creation levers real? Procurement is proven. The mix-shift and tuck-in levers are credible but not yet in the P&L.',
+            'AI overlay, run both directions. It reads as a net tailwind here, automating prior authorization, refills, and adherence rather than compressing the moat. Confirm as a named diligence item.',
+            'The walk-away. The model proposes holding below ~9.5x. The number is yours to set.',
           ].map((q, i) => (
             <div className="item" key={i}>
               <span className="qmk">&ldquo;</span>
@@ -452,7 +452,7 @@ export function CardinalScorecard() {
         {[
           ['Manufacturer and limited-distribution concentration: share of revenue and gross profit from the top 1, 3, and 5 contracts, and renewal terms.', 'hi', 'High impact'],
           ['Payer mix and reimbursement durability: commercial versus Medicare versus Medicaid, DIR-fee exposure, and the gross-to-net trend.', 'hi', 'High impact'],
-          ['Refill retention and adherence by therapy cohort. What churns, and why, and how durable is the recurring base.', 'hi', 'High impact'],
+          ['Refill retention and adherence by therapy cohort. What churns and why, and how durable the recurring base is.', 'hi', 'High impact'],
           ['EBITDA adjustment bridge: magnitude and nature of add-backs, owner compensation, and any one-time build costs.', 'hi', 'High impact'],
           ['340B and fraud-and-abuse posture: AKS, copay assistance, and compliance history.', 'md', 'Medium'],
           ['Procurement economics: GPO terms and buy-side margin, and how much of the savings thesis is contracted versus assumed.', 'md', 'Medium'],
@@ -483,8 +483,8 @@ export function CardinalScorecard() {
         Illustrative prototype. Cardinal Specialty Pharmacy and all figures are fictional. The 1 to
         10 scoring, two-track quality grade and held price ceiling, hard-pass screen, and
         reimbursement-led risk framing follow the REP Healthcare Investment Framework and the
-        rep-deal-eval rubric. The comparable-deal record stands in for Ridgemont's realized returns,
-        the piece the framework names as most worth automating.
+        rep-deal-eval rubric. The comparable-deal record stands in for Ridgemont's realized returns.
+        That piece is the one the framework names as most worth automating.
       </div>
     </EvidenceProvider>
   )

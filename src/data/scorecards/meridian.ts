@@ -15,18 +15,18 @@ export const meridian: ScorecardData = {
       side: 'q',
       label: 'Two-track read',
       val: 'B+ asset',
-      note: 'In-lane behavioral health with recurring demand and a real clinic network. A Medicaid-weighted payer mix and the rate risk that carries keep it B+, not A.',
+      note: 'In-lane behavioral health. Recurring demand, a real clinic network. The Medicaid-weighted payer mix and its rate risk hold it at B+.',
     },
     {
       side: 'p',
       label: 'Price discipline',
       val: 'Above the line',
-      note: '12.1x entry sits above the ~10x ceiling attached to a B+ grade. The whole call is whether the asset earns the premium; the engine says hold.',
+      note: '12.1x in, against a ~10x ceiling on a B+ grade. The call is whether the asset earns the premium. The engine says hold.',
     },
   ],
   reasonsLead: 'Selective.',
   reasonsBody:
-    'A genuinely good, in-lane behavioral health asset in a market that rewards a disciplined roll-up. What holds it back is not the model, it is the price and the payer mix: a 12.1x entry above the held ceiling, and revenue weighted toward Medicaid, where a rate action can move the whole thesis. No gate trips. The call is a partner judgment on whether the quality justifies paying above the line, and on how much Medicaid rate risk to underwrite.',
+    'A good, in-lane behavioral health asset in a market that rewards a disciplined roll-up. The drag is price and payer mix. 12.1x entry above the held ceiling. Revenue weighted toward Medicaid, where one rate action can move the thesis. No gate trips. This is a partner judgment: whether the quality justifies paying above the line, and how much Medicaid rate risk to underwrite.',
   spineLead: 'Scored against the REP healthcare framework',
   axes: [
     {
@@ -35,7 +35,7 @@ export const meridian: ScorecardData = {
       read: [
         'Behavioral health is a ',
         { cite: 'e-lane', tag: 'CIM', label: 'named preferred lane' },
-        ', and the model is the right kind: recurring, visit-based outpatient revenue, not facility-heavy or out-of-network. In lane, which sets a normal bar rather than a raised one.',
+        '. The model is the right kind: recurring, visit-based outpatient revenue, no facility-heavy or out-of-network drag. In lane sets a normal bar, not a raised one.',
       ],
       evidence: [
         {
@@ -48,7 +48,7 @@ export const meridian: ScorecardData = {
             { hl: 'recurring and visit-based' },
             ', payer-contracted, with no out-of-network billing model.',
           ],
-          prov: 'Passes the model-versus-end-market test; behavioral health is core.',
+          prov: 'Passes the model-versus-end-market test. Behavioral health is core.',
         },
       ],
       chipCls: 'range',
@@ -60,9 +60,9 @@ export const meridian: ScorecardData = {
       name: 'Protected downside',
       ai: 'Non-negotiable',
       read: [
-        'Demand is recurring and non-deferrable, but the floor has a crack: revenue is ',
+        'Demand is recurring and non-deferrable. The floor has a crack: revenue is ',
         { cite: 'e-down', tag: 'CIM', label: 'weighted toward Medicaid' },
-        ', where reimbursement is set administratively and a rate action hits margin directly. The recurring base is real; the rate exposure is the soft spot.',
+        ', where reimbursement is set administratively and a rate action hits margin directly. The recurring base is real. The rate exposure is the soft spot.',
       ],
       evidence: [
         {
@@ -73,9 +73,9 @@ export const meridian: ScorecardData = {
           snip: [
             'Medicaid is the ',
             { hl: 'largest payer category' },
-            ', above the in-sector norm; commercial mix is thinner. Rate durability, not volume, is the principal downside driver.',
+            ', above the in-sector norm. Commercial mix is thinner. Rate durability, not volume, drives the downside.',
           ],
-          prov: 'Medicaid weighting is why this is a 6, not a clean pursue.',
+          prov: 'Medicaid weighting holds this at a 6, short of a clean pursue.',
           warn: true,
         },
       ],
@@ -90,7 +90,7 @@ export const meridian: ScorecardData = {
       read: [
         'Graded a ',
         { cite: 'e-qp', tag: 'DATA', label: 'B+ asset on a Medicaid-weighted mix' },
-        ', separate from price. The held ceiling on B+ is roughly 10x; the 12.1x entry sits above it. Paying an A multiple for a B+ asset is the error the framework exists to prevent.',
+        ', separate from price. The held ceiling on B+ is roughly 10x. The 12.1x entry sits above it. Paying an A multiple for a B+ asset is the error the framework exists to prevent.',
       ],
       evidence: [
         {
@@ -101,11 +101,11 @@ export const meridian: ScorecardData = {
           snip: [
             'B+ quality carries a held ceiling near ',
             { hl: '10x' },
-            '; proposed entry ',
+            '. Proposed entry ',
             { hl: '12.1x' },
-            ' is above it. The gap between grade and price is the analysis.',
+            ' sits above it. The gap between grade and price is what gets diligenced.',
           ],
-          prov: 'Above the line; the premium has to be earned in diligence or negotiated down.',
+          prov: 'Above the line. Earn the premium in diligence or negotiate it down.',
         },
       ],
       chipCls: 'above',
@@ -117,7 +117,7 @@ export const meridian: ScorecardData = {
       name: 'Value creation',
       ai: 'Controllable levers',
       read: [
-        'Credible levers: de novo clinic expansion on a proven template, payer-mix shift toward commercial, and disciplined tuck-ins. The mix-shift lever is the one that also de-risks the downside, which is why it carries weight here.',
+        'Credible levers. De novo clinic expansion on a proven template, payer-mix shift toward commercial, disciplined tuck-ins. The mix-shift lever also de-risks the downside, so it carries the most weight.',
       ],
       chipCls: 'strong',
       chipLabel: 'Strong',
@@ -127,7 +127,7 @@ export const meridian: ScorecardData = {
       name: 'Management & data',
       ai: 'Credibility multiplier',
       read: [
-        'Founder-clinician led with an experienced CFO. Clinically credible and operator-run; reported figures tie. The open question is the quality of same-clinic growth, price versus volume versus acuity.',
+        'Founder-clinician led, experienced CFO. Clinically credible, operator-run. Reported figures tie. The open question is same-clinic growth quality: price versus volume versus acuity.',
       ],
       chipCls: 'strong',
       chipLabel: 'Credible',
@@ -144,14 +144,14 @@ export const meridian: ScorecardData = {
     {
       state: 'pass-ok',
       title: 'Model & sector',
-      body: ['In-lane outpatient behavioral health. Not facility-heavy, CME, or out-of-network. Clear.'],
+      body: ['In-lane outpatient behavioral health. No facility-heavy, CME, or out-of-network exposure. Clear.'],
     },
     {
       state: 'watch',
       title: 'Payer concentration',
       body: [
         { cite: 'e-gate', tag: 'CIM', label: 'No single payer above ~24 percent' },
-        ', under the 30 percent gate, so it clears. But the Medicaid weighting behind that mix is the risk to size.',
+        ', under the 30 percent gate. It clears. The Medicaid weighting behind that mix is the risk to size.',
       ],
       evidence: [
         {
@@ -162,9 +162,9 @@ export const meridian: ScorecardData = {
           snip: [
             'Largest single payer approx. ',
             { hl: '24 percent' },
-            ' of revenue; the hard-pass line is 30 percent. Concentration clears; rate exposure does not show up as a gate.',
+            ' of revenue. The hard-pass line is 30 percent. Concentration clears. Rate exposure does not show up as a gate.',
           ],
-          prov: 'Clears the gate, but the payer mix is the dominant risk; see banker questions.',
+          prov: 'Clears the gate. The payer mix is the dominant risk. See banker questions.',
         },
       ],
     },
@@ -172,15 +172,15 @@ export const meridian: ScorecardData = {
   gateNote: [
     'Any single trigger short-circuits the score to an automatic 1 to 2: facility-heavy or CME, an out-of-network-dependent model, single-payer concentration over 30 percent, EBITDA outside $20 to 75M, no credible value-add path, or a non-credible banker. Price above the held ceiling is ',
     { b: 'not' },
-    ' a hard-pass; it is the judgment call below.',
+    ' a hard-pass. It is the judgment call below.',
   ],
   moatNote: [
-    'Matched to Meridian on sub-sector, size, and entry multiple, drawn from REP’s realized behavioral health returns rather than a generic comp set.',
+    'Matched to Meridian on sub-sector, size, and entry multiple. Drawn from REP’s realized behavioral health returns, not a generic comp set.',
   ],
   comps: [
     { name: 'Crossroads Behavioral', year: '2020', mult: '9.0x', tag: 'up', tagLabel: 'Outperformed', moic: '2.6x', status: 'Exited 2024' },
     { name: 'Harbor Behavioral Health', year: '2019', mult: '9.6x', tag: 'held', tagLabel: 'In line', moic: '2.0x', status: 'Exited 2023' },
-    { name: 'Meadowbrook Behavioral', year: '2022', mult: '9.4x', tag: 'held', tagLabel: 'Tracking', moic: '—', status: 'Active' },
+    { name: 'Meadowbrook Behavioral', year: '2022', mult: '9.4x', tag: 'held', tagLabel: 'Tracking', moic: 'n/a', status: 'Active' },
     { name: 'Clarvida Health', year: '2018', mult: '11.2x', tag: 'dn', tagLabel: 'Underperformed', moic: '1.4x', status: 'Exited 2022' },
   ],
   subject: { name: 'Meridian Behavioral Health', year: '2026', mult: '12.1x' },
@@ -192,14 +192,14 @@ export const meridian: ScorecardData = {
     snip: [
       'Sub-10x entries returned a ',
       { hl: 'median 2.3x' },
-      '; the single entry above 11x, Clarvida, was Medicaid-heavy and returned ',
+      '. The single entry above 11x, Clarvida, was Medicaid-heavy and returned ',
       { hl: '1.4x' },
       ' after a rate cut. Meridian at 12.1x sits above the bracket and shares that exposure.',
     ],
-    prov: 'The cautionary comp is the one that looks most like this; weigh it.',
+    prov: 'The cautionary comp is the one that looks most like this. Weigh it.',
   },
   judgment: [
-    'The price call. 12.1x is above the ~10x ceiling a B+ grade holds. Does the asset earn the premium, or is the discipline to hold the line and walk?',
+    'The price call. 12.1x against a ~10x ceiling on a B+ grade. Does the asset earn the premium, or do you hold the line and walk?',
     'Medicaid rate risk. How much of the floor depends on rates that can be set against you, and is the commercial mix-shift credible enough to underwrite?',
     'Same-clinic growth quality. Is the organic growth price, volume, or acuity, and is the de novo template proven at this scale?',
   ],
@@ -221,23 +221,23 @@ export const meridian: ScorecardData = {
     items: [
       {
         q: 'Why selective and not pursue?',
-        a: 'The asset is in lane and genuinely good, but two things hold it to a 6. The 12.1x entry sits above the ~10x ceiling a B+ grade carries, so you would be paying an A multiple for a B+ asset. And the payer mix leans Medicaid, where a rate action can move the thesis. No gate trips, so it is not a pass; it is a judgment on whether to pay the premium.<div class="src-tags"><span class="qtag data">DATA</span><span class="qtag cim">CIM</span></div>',
+        a: 'The asset is in lane and good, but two things hold it to a 6. The 12.1x entry sits above the ~10x ceiling a B+ grade carries, so you would pay an A multiple for a B+ asset. And the payer mix leans Medicaid, where a rate action can move the thesis. No gate trips, so this is not a pass. It is a judgment on whether to pay the premium.<div class="src-tags"><span class="qtag data">DATA</span><span class="qtag cim">CIM</span></div>',
       },
       {
         q: 'What is the Medicaid risk, concretely?',
-        a: 'Reimbursement on the Medicaid book is set administratively, not negotiated, so a state rate cut flows straight to margin with little to offset it. The recurring, non-deferrable demand protects volume; it does not protect price. The mitigant is the commercial mix-shift lever, but that is a plan, not yet in the P&L. It is the first banker question for that reason.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
+        a: 'Reimbursement on the Medicaid book is set administratively, not negotiated, so a state rate cut flows straight to margin with little to offset it. The recurring, non-deferrable demand protects volume. It does not protect price. The mitigant is the commercial mix-shift lever, but that is a plan, not yet in the P&L. That is why it is the first banker question.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
       },
       {
         q: 'What would move it to a pass?',
-        a: 'A gate, or the price. Single-payer concentration over 30 percent would auto-pass it; the largest today is near 24 percent. An entry held above the line with no path to compression, against an asset whose closest high-entry comp returned 1.4x, is the other way it slides. Diligence showing the organic growth is mostly price would also weaken it.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag chron">CHRON</span></div>',
+        a: 'A gate, or the price. Single-payer concentration over 30 percent would auto-pass it. The largest today is near 24 percent. An entry held above the line with no path to compression, against an asset whose closest high-entry comp returned 1.4x, is the other way it slides. Diligence showing the organic growth is mostly price would also weaken it.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag chron">CHRON</span></div>',
       },
       {
         q: 'Which of our deals does this look like?',
-        a: 'Behavioral health names from the firm’s record. Crossroads anchors the upside at 9.0x and 2.6x. Harbor returned 2.0x at 9.6x. Clarvida is the cautionary one: Medicaid-heavy, entered above 11x, and returned 1.4x after a rate cut. Meridian at 12.1x sits above the bracket and shares Clarvida’s exposure, which is the comparison that matters.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
+        a: 'Behavioral health names from the firm’s record. Crossroads anchors the upside at 9.0x and 2.6x. Harbor returned 2.0x at 9.6x. Clarvida is the cautionary one: Medicaid-heavy, entered above 11x, returned 1.4x after a rate cut. Meridian at 12.1x sits above the bracket and shares Clarvida’s exposure. That is the comparison that matters.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
       },
       {
         q: 'What are you least sure about?',
-        a: 'Whether the premium is justified. It comes down to Medicaid rate durability and the credibility of the commercial mix-shift, neither fully evidenced in what was loaded. If rates hold and the shift is real, 12.1x can work; if not, the entry is the problem. That uncertainty is exactly why the engine stops at selective and hands it to you.<div class="src-tags"><span class="qtag qoe">QoE</span><span class="qtag cim">CIM</span></div>',
+        a: 'Whether the premium is justified. It comes down to Medicaid rate durability and the credibility of the commercial mix-shift, neither fully evidenced in what was loaded. If rates hold and the shift is real, 12.1x can work. If not, the entry is the problem. That uncertainty is why the engine stops at selective and hands it to you.<div class="src-tags"><span class="qtag qoe">QoE</span><span class="qtag cim">CIM</span></div>',
       },
     ],
   },

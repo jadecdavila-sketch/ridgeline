@@ -15,25 +15,25 @@ export const halcyon: ScorecardData = {
       side: 'q',
       label: 'Two-track read',
       val: 'Capped at B−',
-      note: 'In-lane home-based care with real demand, but a single payer over the line caps quality regardless of the operating story.',
+      note: 'In-lane home-based care with real demand. A single payer over the line caps quality regardless of the operating story.',
     },
     {
       side: 'p',
       label: 'Price discipline',
       val: 'Moot',
-      note: 'An 8.0x entry would be fair for the asset, but price is not the question. The concentration gate governs the score.',
+      note: '8.0x would be fair for the asset. Price is not the question. The concentration gate governs the score.',
     },
   ],
   reasonsLead: 'Pass.',
   reasonsBody:
-    'In-lane home health with a credible operating model, but a single payer sits above the 30 percent line and the revenue rides reimbursement. That trips the concentration gate, which short-circuits the score: a good entry price and a fine clinical story do not buy it back. The question to take to the table is whether the concentration is a contractual cliff or something diligence can re-cut; absent that, it is a pass.',
+    'In-lane home health with a credible operating model. One payer sits above the 30 percent line and the revenue rides reimbursement. That trips the concentration gate and short-circuits the score. A good entry price and a fine clinical story do not buy it back. Take one question to the table: is the concentration a contractual cliff or something diligence can re-cut. Absent that, pass.',
   spineLead: 'Scored against the REP healthcare framework',
   axes: [
     {
       name: 'Sector & model fit',
       ai: 'In lane?',
       read: [
-        'Home-based care is a named preferred lane, and the model is the right kind: recurring, episode-driven skilled care in the home, not facility-heavy or out-of-network. The lane is not the problem.',
+        'Home-based care is a named preferred lane. The model is the right kind: recurring, episode-driven skilled care in the home, no facility-heavy or out-of-network drag. The lane is not the problem.',
       ],
       chipCls: 'range',
       chipLabel: 'In lane',
@@ -46,7 +46,7 @@ export const halcyon: ScorecardData = {
       read: [
         'This is where it breaks. Revenue is ',
         { cite: 'e-down', tag: 'CIM', label: 'concentrated in a single payer and rides reimbursement' },
-        '; a rate action or a contract non-renewal would hit a third of the business at once. The floor is not protected, it is exposed.',
+        '. A rate action or a contract non-renewal would hit a third of the business at once. The floor is exposed.',
       ],
       evidence: [
         {
@@ -57,9 +57,9 @@ export const halcyon: ScorecardData = {
           snip: [
             'Single largest payer is ',
             { hl: 'above one-third of revenue' },
-            ', Medicare-weighted, with reimbursement set administratively. No commercial book of size to offset a rate move.',
+            ', Medicare-weighted, reimbursement set administratively. No commercial book of size to offset a rate move.',
           ],
-          prov: 'Concentration above the gate; the downside is not capped.',
+          prov: 'Concentration above the gate. The downside is not capped.',
           warn: true,
         },
       ],
@@ -72,7 +72,7 @@ export const halcyon: ScorecardData = {
       name: 'Asset quality vs price',
       ai: 'The central discipline',
       read: [
-        'The price is fair for the asset, but the gate moots the comparison. Quality cannot be graded above B− while a single payer governs a third of revenue, and the framework will not collapse a clean entry multiple against a capped grade into a pursue.',
+        'The price is fair for the asset. The gate moots the comparison. Quality cannot grade above B− while a single payer governs a third of revenue, and the framework will not collapse a clean entry multiple against a capped grade into a pursue.',
       ],
       chipCls: 'above',
       chipLabel: 'Gate governs',
@@ -83,7 +83,7 @@ export const halcyon: ScorecardData = {
       name: 'Value creation',
       ai: 'Controllable levers',
       read: [
-        'Payer diversification is the only lever that matters, and it is the hardest: re-cutting the book toward commercial and Medicare Advantage takes time the underwriting may not have. Tuck-ins and route density help the operating margin but not the core risk.',
+        'Payer diversification is the only lever that matters, and the hardest. Re-cutting the book toward commercial and Medicare Advantage takes time the underwriting may not have. Tuck-ins and route density help the operating margin, not the core risk.',
       ],
       chipCls: 'mon',
       chipLabel: 'Single lever',
@@ -94,7 +94,7 @@ export const halcyon: ScorecardData = {
       name: 'Management & data',
       ai: 'Credibility multiplier',
       read: [
-        'Operator-led and clinically capable; the data ties. Management is not the issue, and a strong team does not buy back a tripped gate.',
+        'Operator-led and clinically capable. The data ties. Management is not the issue, and a strong team does not buy back a tripped gate.',
       ],
       chipCls: 'strong',
       chipLabel: 'Credible',
@@ -111,14 +111,14 @@ export const halcyon: ScorecardData = {
     {
       state: 'pass-ok',
       title: 'Model & sector',
-      body: ['In-lane home-based care. Not facility-heavy, CME, or out-of-network. Clear.'],
+      body: ['In-lane home-based care. No facility-heavy, CME, or out-of-network exposure. Clear.'],
     },
     {
       state: 'watch',
       title: 'Concentration · tripped',
       body: [
         { cite: 'e-gate', tag: 'CIM', label: 'Single payer above the 30 percent line' },
-        '. This is the hard-pass trigger, and it short-circuits the score.',
+        '. This is the hard-pass trigger. It short-circuits the score.',
       ],
       evidence: [
         {
@@ -131,7 +131,7 @@ export const halcyon: ScorecardData = {
             { hl: 'over 30 percent' },
             ' of revenue, the bright line. The framework auto-passes single-customer concentration above 30 percent.',
           ],
-          prov: 'Tripped. The rest of the read is academic unless this is re-cut.',
+          prov: 'Tripped. The rest of the read is academic unless this re-cuts.',
           warn: true,
         },
       ],
@@ -143,7 +143,7 @@ export const halcyon: ScorecardData = {
     ', EBITDA outside $20 to 75M, no credible value-add path, or a non-credible banker. Halcyon trips the concentration line.',
   ],
   moatNote: [
-    'Matched on sub-sector and structure. The record is clear that concentration-heavy entries underperform, which is the pattern Halcyon fits.',
+    'Matched on sub-sector and structure. The record shows concentration-heavy entries underperform. Halcyon fits that pattern.',
   ],
   comps: [
     { name: 'Riverbend Home Health', year: '2019', mult: '8.2x', tag: 'up', tagLabel: 'Outperformed', moic: '2.4x', status: 'Exited 2023' },
@@ -160,7 +160,7 @@ export const halcyon: ScorecardData = {
     snip: [
       'Diversified home-health entries returned a ',
       { hl: 'median 2.2x' },
-      '; the two concentration-heavy entries, Pinnacle and Stonegate, returned ',
+      '. The two concentration-heavy entries, Pinnacle and Stonegate, returned ',
       { hl: '1.3x and 1.2x' },
       ' after payer actions. Halcyon’s concentration matches the cautionary set, not the winners.',
     ],
@@ -187,19 +187,19 @@ export const halcyon: ScorecardData = {
     items: [
       {
         q: 'Why a pass?',
-        a: 'A single payer sits above the 30 percent line, which is a hard-pass gate. The gate short-circuits the score: it does not matter that the lane is right, the price is fair, and the team is capable. Concentration over the line means a single rate action or non-renewal can take a third of the business, and the framework will not underwrite that as a pursue.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>',
+        a: 'A single payer sits above the 30 percent line, a hard-pass gate. The gate short-circuits the score. It does not matter that the lane is right, the price is fair, and the team is capable. Concentration over the line means one rate action or non-renewal can take a third of the business, and the framework will not underwrite that as a pursue.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>',
       },
       {
         q: 'Could the concentration be fixed?',
-        a: 'Maybe, and that is the only question worth diligence here. If the "single payer" is really several separable contracts, or the book can be re-weighted toward commercial and Medicare Advantage on a credible timeline, the gate reads differently. But that is a multi-year operating project, not a closing-day fix, so it would have to be underwritten conservatively.<div class="src-tags"><span class="qtag cim">CIM</span></div>',
+        a: 'Maybe, and that is the only question worth diligence here. If the "single payer" is several separable contracts, or the book can be re-weighted toward commercial and Medicare Advantage on a credible timeline, the gate reads differently. But that is a multi-year operating project, not a closing-day fix, so underwrite it conservatively.<div class="src-tags"><span class="qtag cim">CIM</span></div>',
       },
       {
         q: 'Is the asset any good underneath?',
-        a: 'Yes, that is what makes it a near miss rather than an easy no. In-lane home-based care, recurring episode-driven demand, a capable operator, and a fair entry at 8.0x. Strip out the concentration and this is a different conversation. With it, the downside is not protected, which is the framework’s non-negotiable.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
+        a: 'Yes, which is what makes it a near miss rather than an easy no. In-lane home-based care, recurring episode-driven demand, a capable operator, a fair entry at 8.0x. Strip out the concentration and this is a different conversation. With it, the downside is not protected, and that is the framework’s non-negotiable.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
       },
       {
         q: 'Which of our deals does this look like?',
-        a: 'The cautionary home-health names. Pinnacle returned 1.3x and Stonegate 1.2x, both after payer actions hit a concentrated book. The diversified entries, Riverbend at 2.4x and Caldwell at 1.9x, are the counterexample. Halcyon’s concentration puts it with the first group, which is exactly why the gate exists.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
+        a: 'The cautionary home-health names. Pinnacle returned 1.3x and Stonegate 1.2x, both after payer actions hit a concentrated book. The diversified entries, Riverbend at 2.4x and Caldwell at 1.9x, are the counterexample. Halcyon’s concentration puts it with the first group. That is why the gate exists.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
       },
     ],
   },

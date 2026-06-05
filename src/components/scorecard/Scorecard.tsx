@@ -215,7 +215,7 @@ export function Scorecard({ data: d }: { data: ScorecardData }) {
                   see the pattern
                 </Cite>
               </td>
-              <td>&mdash;</td>
+              <td>n/a</td>
               <td>Under review</td>
             </tr>
           </tbody>

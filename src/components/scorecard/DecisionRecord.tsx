@@ -80,7 +80,7 @@ export function DecisionRecord({
                   (agree
                     ? ' (in line with the engine).'
                     : ` (overriding the engine’s ${engineLabel}).`) +
-                  (safeNote ? ` &mdash; “${safeNote}”` : '') +
+                  (safeNote ? ` · “${safeNote}”` : '') +
                   `<br><br>Captured against the ${dealName} score and fed back to the data layer. The next ${dealName}-like deal is scored with this outcome in the firm’s record.`,
               }}
             />

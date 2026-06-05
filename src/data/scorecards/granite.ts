@@ -15,18 +15,18 @@ export const granite: ScorecardData = {
       side: 'p',
       label: 'Two-track read',
       val: 'Capped at C+',
-      note: 'Recurring, non-deferrable treatment, but government-weighted reimbursement and a regulatory overhang cap quality regardless of the operating story.',
+      note: 'Recurring, non-deferrable treatment. Government-weighted reimbursement and a regulatory overhang cap quality regardless of the operating story.',
     },
     {
       side: 'p',
       label: 'Price discipline',
       val: 'Moot',
-      note: '7.5x is cheap, and it does not matter. A reimbursement-dependent model with a regulatory cloud is not bought back by a low entry.',
+      note: '7.5x is cheap. It does not matter. A reimbursement-dependent model under a regulatory cloud is not bought back by a low entry.',
     },
   ],
   reasonsLead: 'Pass.',
   reasonsBody:
-    'The lowest score on the board. Dialysis demand is genuinely non-deferrable, but the revenue is structurally weighted to government reimbursement, the model rides rates set against you, and there is a live regulatory overhang on the sector. That combination trips the screen at entry. A cheap 7.5x does not buy back a reimbursement-dependent model with a regulatory cloud; the floor is exposed in exactly the way the framework refuses to underwrite.',
+    '3 of 10, the lowest on the board. Dialysis demand is non-deferrable. The revenue is weighted to government reimbursement, the model rides rates set against you, and a live regulatory overhang sits on the sector. That combination trips the screen at entry. A 7.5x entry does not buy back a reimbursement-dependent model under a regulatory cloud. The floor is exposed in the way the framework refuses to underwrite.',
   spineLead: 'Scored against the REP healthcare framework',
   axes: [
     {
@@ -35,7 +35,7 @@ export const granite: ScorecardData = {
       read: [
         'Dialysis is ',
         { cite: 'e-lane', tag: 'CIM', label: 'a reimbursement-dependent model the screen guards against' },
-        '. Recurring, non-deferrable treatment, but the economics ride government rate setting rather than a negotiated commercial book. Near the model gate, not safely inside it.',
+        '. Treatment is recurring and non-deferrable. The economics ride government rate setting, not a negotiated commercial book. At the model gate, not inside it.',
       ],
       evidence: [
         {
@@ -63,7 +63,7 @@ export const granite: ScorecardData = {
       read: [
         'Volume is protected; price is not. Government-weighted reimbursement plus a ',
         { cite: 'e-down', tag: 'CIM', label: 'live regulatory overhang' },
-        ' means a single rate or policy action can reset the economics. Non-deferrable demand does not protect a rate-set floor.',
+        ' means one rate or policy action resets the economics. Non-deferrable demand does not protect a rate-set floor.',
       ],
       evidence: [
         {
@@ -89,7 +89,7 @@ export const granite: ScorecardData = {
       name: 'Asset quality vs price',
       ai: 'The central discipline',
       read: [
-        'A 7.5x entry is cheap, and the price is moot. Quality is capped at C+ while reimbursement and regulation govern the economics, and the framework will not collapse a low multiple against a capped grade into anything but a pass.',
+        '7.5x is cheap. The price is moot. Quality caps at C+ while reimbursement and regulation govern the economics. The framework will not collapse a low multiple against a capped grade into a pursue.',
       ],
       chipCls: 'above',
       chipLabel: 'Gate governs',
@@ -100,7 +100,7 @@ export const granite: ScorecardData = {
       name: 'Value creation',
       ai: 'Controllable levers',
       read: [
-        'The levers do not reach the core risk. Density and cost programs help margin at the edges, but no operating lever offsets a government rate reset or a regulatory action. The value case cannot underwrite the thing that governs the asset.',
+        'The levers do not reach the core risk. Density and cost programs help margin at the edges. No operating lever offsets a government rate reset or a regulatory action. The value case cannot underwrite what governs the asset.',
       ],
       chipCls: 'mon',
       chipLabel: 'No lever for the risk',
@@ -111,7 +111,7 @@ export const granite: ScorecardData = {
       name: 'Management & data',
       ai: 'Credibility multiplier',
       read: [
-        'Operationally competent and the data ties. It does not matter. A capable team cannot underwrite away reimbursement dependence and a regulatory overhang, which are structural to the sector, not to the operator.',
+        'Operationally competent, and the data ties. It does not matter. A capable team cannot underwrite away reimbursement dependence and a regulatory overhang. Both are structural to the sector, not the operator.',
       ],
       chipCls: 'strong',
       chipLabel: 'Credible',
@@ -120,13 +120,13 @@ export const granite: ScorecardData = {
   ],
   gatesHeading: 'A disqualifier triggered. Reimbursement dependence and the regulatory overhang govern.',
   gates: [
-    { state: 'pass-ok', title: 'EBITDA in band', body: ['~$18M, inside the $20 to 75M target range on revenue. Clear.'] },
+    { state: 'pass-ok', title: 'EBITDA in band', body: ['~$18M, inside the $20 to 75M target range. Clear.'] },
     {
       state: 'watch',
       title: 'Model & sector · tripped',
       body: [
         { cite: 'e-gate', tag: 'CIM', label: 'Reimbursement-dependent model with a regulatory overhang' },
-        '. This is the screen condition, and it short-circuits the score.',
+        '. This is the screen condition. It short-circuits the score.',
       ],
       evidence: [
         {
@@ -151,11 +151,11 @@ export const granite: ScorecardData = {
     },
   ],
   gateNote: [
-    'Any single trigger short-circuits the score: facility-heavy or CME, an ',
+    'Any one trigger short-circuits the score: facility-heavy or CME, an ',
     { b: 'out-of-network- or reimbursement-dependent model' },
     ', single-customer concentration over 30 percent, EBITDA outside $20 to 75M, no credible value-add path, or a non-credible banker. Granite trips on reimbursement dependence and the regulatory overhang.',
   ],
-  moatNote: ['Matched on sub-sector and structure. The dialysis and reimbursement-dependent set is the firm’s clearest record of why this model is screened out.'],
+  moatNote: ['Matched on sub-sector and structure. The dialysis and reimbursement-dependent set is the firm’s clearest record of why this model is screened.'],
   comps: [
     { name: 'Keystone Renal', year: '2018', mult: '7.8x', tag: 'dn', tagLabel: 'Underperformed', moic: '1.3x', status: 'Exited 2022' },
     { name: 'Tidewater Dialysis', year: '2020', mult: '7.2x', tag: 'dn', tagLabel: 'Underperformed', moic: '1.1x', status: 'Exited 2024' },
@@ -171,13 +171,13 @@ export const granite: ScorecardData = {
     snip: [
       'Every reimbursement-dependent entry in the record returned ',
       { hl: 'below 1.7x' },
-      ' regardless of how cheaply it was bought; the low entries did not protect the returns. The pattern is why the model is a screen, not a deduction.',
+      ' regardless of how cheaply it was bought. The low entries did not protect the returns. That pattern is why the model is a screen, not a deduction.',
     ],
-    prov: 'Cheap did not save these; that is the lesson the gate encodes.',
+    prov: 'Cheap did not save these. That is the lesson the gate encodes.',
   },
   judgment: [
-    'Is there any structure that de-risks reimbursement? Absent a commercial offset or a regulatory resolution, the model trigger stands, and that is rare to find.',
-    'The record is unambiguous: reimbursement-dependent dialysis entries underperformed regardless of price. There is little here the framework leaves open.',
+    'Is there structure that de-risks reimbursement? Absent a commercial offset or a regulatory resolution, the model trigger stands. That is rare to find.',
+    'The record is clear. Reimbursement-dependent dialysis entries underperformed regardless of price. Little here is left open.',
   ],
   banker: [
     { q: 'Payer and reimbursement detail: government versus commercial share, rate history, and exposure to the pending regulatory action.', imp: 'hi', label: 'High impact' },
@@ -195,19 +195,19 @@ export const granite: ScorecardData = {
     items: [
       {
         q: 'Why the lowest score on the board?',
-        a: 'Because two of the framework’s structural objections stack. Dialysis is a reimbursement-dependent model, the kind the screen guards against, and it carries a live regulatory overhang. Demand is non-deferrable, but the economics ride government rates the firm cannot negotiate, so the downside is exposed in a way no operating lever fixes. That trips the screen, and a 7.5x entry does nothing to change it. Hence a 3.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>',
+        a: 'Two of the framework’s structural objections stack. Dialysis is a reimbursement-dependent model, the kind the screen guards against, and it carries a live regulatory overhang. Demand is non-deferrable. The economics ride government rates the firm cannot negotiate, so the downside is exposed in a way no operating lever fixes. A 7.5x entry does nothing to change it. That is the 3.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>',
       },
       {
         q: 'Is it salvageable?',
-        a: 'Rarely, and only with structure the materials do not show. You would need a real commercial offset to the government book, or a resolution of the regulatory overhang, to move the model trigger. Operating improvements do not reach the core risk. Absent one of those, this is a pass regardless of how attractively it is priced.<div class="src-tags"><span class="qtag cim">CIM</span></div>',
+        a: 'Rarely, and only with structure the materials do not show. You would need a commercial offset to the government book, or a resolution of the regulatory overhang, to move the model trigger. Operating improvements do not reach the core risk. Absent one of those, this is a pass at any price.<div class="src-tags"><span class="qtag cim">CIM</span></div>',
       },
       {
         q: 'The price is cheap, does that not help?',
-        a: 'No, and that is the point the record makes. Every reimbursement-dependent entry the firm holds returned below 1.7x, and the cheapest of them did the worst. A low multiple does not protect against a rate reset; it just sets a slightly lower floor on a risk you cannot control. The framework screens the model rather than deducting for it precisely because price has not saved these deals.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
+        a: 'No. The record makes the point. Every reimbursement-dependent entry the firm holds returned below 1.7x, and the cheapest did the worst. A low multiple does not protect against a rate reset. It sets a slightly lower floor on a risk you cannot control. The framework screens the model rather than deducting for it because price has not saved these deals.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
       },
       {
         q: 'Which of our deals does this look like?',
-        a: 'The dialysis and renal names, and they are a cautionary set top to bottom. Keystone returned 1.3x, Tidewater 1.1x, Basin 1.2x, all bought under 8x. Cedar Renal at 1.6x is the best of them and still below the firm’s hurdle. Granite fits the pattern exactly, which is why the model is a screen, not a judgment call.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
+        a: 'The dialysis and renal names, a cautionary set top to bottom. Keystone returned 1.3x, Tidewater 1.1x, Basin 1.2x, all bought under 8x. Cedar Renal at 1.6x is the best of them, still below the firm’s hurdle. Granite fits the pattern, which is why the model is a screen, not a judgment call.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
       },
     ],
   },

@@ -3,7 +3,7 @@ import type { ConverseRound, CouncilData } from '../../data/councilTypes'
 import { Plate } from './parts'
 
 const FALLBACK =
-  'In the live product the council answers any question in character, from this deal&rsquo;s evidence, and cites where each claim comes from. For this prototype, the exchanges above show how the table responds — read them, or try a suggested question.'
+  'In the live product the council answers any question in character, from this deal&rsquo;s evidence, and cites where each claim comes from. For this prototype, the exchanges above show how the table responds. Read them, or try a suggested question.'
 
 /**
  * "Converse with the Council" — replaces the Ridgeline AI chat. Not a bubble
@@ -103,7 +103,7 @@ export function CouncilConverse({ data }: { data: CouncilData }) {
           </button>
         </div>
         <p className="cd-composer-note">
-          The council answers in character, from this deal&rsquo;s evidence — and cites where each claim comes from.
+          The council answers in character, from this deal&rsquo;s evidence, and cites where each claim comes from.
         </p>
       </div>
     </div>

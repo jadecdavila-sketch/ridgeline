@@ -52,7 +52,7 @@ export function CouncilDrawer({ data, dealName }: { data: CouncilData; dealName:
       <aside
         className={open ? 'cd-drawer open' : 'cd-drawer'}
         data-verdict={data.chair.verdict}
-        aria-label={`The committee — ${dealName}`}
+        aria-label={`The committee · ${dealName}`}
         aria-hidden={!open}
       >
         <button className="cd-grip" onClick={() => setOpen(false)} aria-label="Close the council">
