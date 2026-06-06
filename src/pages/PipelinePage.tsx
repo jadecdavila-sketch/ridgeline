@@ -91,8 +91,8 @@ export function PipelinePage() {
           <span className="lc">NDA stage</span>
           <h1>Pipeline</h1>
           <p className="sub">
-            New opportunities, scored against Ridgemont's framework the moment the CIM lands. The
-            work is done before you arrive. Open one to see the read.
+            New opportunities, scored against Ridgemont's framework the moment a CIM lands, so the
+            first-pass read is waiting before you open one.
           </p>
           <div className="suggests">
             {suggests.map((s) => (

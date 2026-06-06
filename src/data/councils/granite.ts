@@ -42,7 +42,7 @@ export const granite: CouncilData = {
       {
         name: 'The Floor',
         lens: 'protected downside',
-        html: 'This is where it dies, and it’s the Examiner’s ground as much as mine. Volume is protected. Price isn’t. Government-weighted reimbursement plus a regulatory overhang means one rate action or one policy move resets the economics. Non-deferrable demand keeps the chairs full; it does nothing for a rate-set floor. <span class="qtag cim">CIM p.18</span> The floor is exposed. That’s the disqualifier, not a deduction.',
+        html: 'This is where it dies, and it’s the Examiner’s ground as much as mine. Volume is protected. Price isn’t. Government-weighted reimbursement plus a regulatory overhang means one rate action or one policy move resets the economics. Non-deferrable demand keeps the chairs full; it does nothing for a rate-set floor. <span class="qtag cim">CIM p.18</span> The floor is exposed. That’s the disqualifier.',
       },
       {
         name: 'The Operator',
@@ -57,7 +57,7 @@ export const granite: CouncilData = {
     ],
     tensions: [
       'No live tension on my side. The screen tripped before any pillar had a case to argue, and I won’t manufacture a bull case to hand the Chair a fight the gate already settled.',
-      'The one thing I’d have leaned on is non-deferrable, recurring demand. It’s real. It doesn’t help. It protects volume, and the regulator and the payer set the price.',
+      'The one thing I’d have leaned on is non-deferrable, recurring demand. It’s real but it doesn’t help: it protects volume, and the regulator and the payer set the price.',
     ],
     questions: [
       'Is there a structure, a real commercial offset to the government book, or a resolution of the overhang, that moves the model trigger? Absent one, the gate stands.',
@@ -90,7 +90,7 @@ export const granite: CouncilData = {
       {
         name: 'The Sentinel',
         lens: 'the trigger that kills this deal',
-        html: 'This is the kill, and it’s mine. Revenue rides one reimbursement mechanic: government-weighted rates set against the firm. A rate action or a policy change flows straight to margin with little to offset it. <span class="qtag cim">CIM p.18</span> Reimbursement is the most common way a healthcare deal dies. Here it’s structural to the sector, not a diligence fix. Hard stop.',
+        html: 'This is the kill, and it’s mine. Revenue rides one reimbursement mechanic: government-weighted rates set against the firm. A rate action or a policy change flows straight to margin with little to offset it. <span class="qtag cim">CIM p.18</span> Reimbursement is the most common way a healthcare deal dies. Here it’s structural to the sector, not a diligence fix.',
       },
       {
         name: 'The Sentinel · payer mix',
@@ -138,9 +138,9 @@ export const granite: CouncilData = {
     {
       axis: 'Protected downside',
       partner:
-        'Volume protected, price not. Government-weighted reimbursement plus a live overhang means one rate or policy action resets the economics. <span class="qtag cim">CIM p.18</span>',
+        'Non-deferrable demand keeps the chairs full, but government-weighted reimbursement plus a live overhang means one rate or policy action resets the economics. <span class="qtag cim">CIM p.18</span>',
       examiner:
-        'Floor’s exposed. This is the kill. Reimbursement the firm can’t negotiate, with a regulatory overhang and government-payer concentration stacked on it. Hard stop. <span class="qtag cim">CIM p.19</span>',
+        'Floor’s exposed. This is the kill. Reimbursement the firm can’t negotiate, with a regulatory overhang and government-payer concentration stacked on it. <span class="qtag cim">CIM p.19</span>',
       contested: true,
       ruling:
         '<em>Trigger tripped.</em> The disqualifier sits here. A rate-set floor under a live overhang isn’t a protected downside. It’s the screen condition. Non-deferrable demand protects volume, and price is what governs. Verdict set on this axis alone.',

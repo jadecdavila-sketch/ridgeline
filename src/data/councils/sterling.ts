@@ -50,12 +50,12 @@ export const sterling: CouncilData = {
       {
         name: 'The Operator',
         lens: 'value creation',
-        html: 'The levers exist, de novo clinics and tuck-ins, and I’ll grade them straight. The track record reads as growth-by-acquisition, not same-clinic improvement. <span class="qtag cim">CIM</span> One acquisitive lever I can name. An organic engine I can only assume. Until same-clinic growth shows up in the numbers, the value case is hoped for, not underwritten.',
+        html: 'The levers exist, de novo clinics and tuck-ins, and I’ll grade them straight. The track record reads as growth-by-acquisition, not same-clinic improvement. <span class="qtag cim">CIM</span> One acquisitive lever I can name. An organic engine I can only assume. I can underwrite the value case once same-clinic growth shows up in the numbers.',
       },
       {
         name: 'The Steward',
         lens: 'asset quality vs price',
-        html: 'B− on quality, graded apart from price. That grade earns a walk-away near the realized band, around 9×. The ask is 10.5×, above every rehab deal the firm has closed. <span class="qtag data">DATA</span> So here’s the cardinal error in plain sight: a full multiple for an asset the record says is worth less. I won’t move the ceiling because the story is good. <span class="qtag chron">CHRON</span>',
+        html: 'B− on quality, graded apart from price. That grade earns a walk-away near the realized band, around 9×. The ask is 10.5×, above every rehab deal the firm has closed. <span class="qtag data">DATA</span> So it’s a full multiple for an asset the record says is worth less. I won’t move the ceiling because the story is good. <span class="qtag chron">CHRON</span>',
       },
     ],
     tensions: [
@@ -70,7 +70,7 @@ export const sterling: CouncilData = {
     ],
     closing: {
       label: 'My conviction read',
-      html: 'A fine in-lane asset I’d pursue at the right number, and 10.5× isn’t it. I’m proposing <em>B−</em> and a 9× walk-away, both provisional, both the Examiner’s to test. Worth <em>pursuing at the realized band</em>. Not worth <em>chasing</em> above it.',
+      html: 'A fine in-lane asset I’d pursue at the right number, and 10.5× isn’t it. I’m proposing <em>B−</em> and a 9× walk-away, both provisional, both the Examiner’s to test. Worth <em>pursuing at the realized band</em>, not above it.',
       move: 'The organic-versus-acquired bridge. If diligence shows a real same-clinic engine, the grade and the price I’d pay both rise. If it confirms the growth was bought, the pass hardens.',
       caveat:
         'I don’t set the 1–10 score or the pursue / pass call. That’s the Chair’s, once he’s heard us both.',
@@ -155,7 +155,7 @@ export const sterling: CouncilData = {
         'Entry’s above every realized rehab comp the firm holds: 8.2×, 8.7×, 9.0×. The premium isn’t backed by a differentiated asset. <span class="qtag chron">CHRON</span>',
       contested: true,
       ruling:
-        'Walk-away holds near <em>9×</em>. The 10.5× ask sits above it and above every realized rehab entry. <em>Pass on price.</em> The ceiling doesn’t move for a good story. That’s the cardinal error this council refuses.',
+        'Walk-away holds near <em>9×</em>. The 10.5× ask sits above it and above every realized rehab entry. <em>Pass on price.</em> The ceiling doesn’t move for a good story.',
     },
     {
       axis: 'Value creation',

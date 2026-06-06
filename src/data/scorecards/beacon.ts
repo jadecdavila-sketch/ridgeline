@@ -26,7 +26,7 @@ export const beacon: ScorecardData = {
   ],
   reasonsLead: 'Selective.',
   reasonsBody:
-    'An attractive imaging market with a credible network. Three things hold it to a 5. Diagnostic imaging is out of lane, so the bar rises. It is capital-intensive, so EBITDA flatters the cash story and the entry should be read against free cash. The data loaded was partial, so the read carries a confidence caveat. No gate trips. The call is the lane plus the capex math. It needs the missing detail before it firms up.',
+    'An attractive imaging market with a credible network. Three things hold it to a 5. Diagnostic imaging is out of lane, so the bar rises. It is capital-intensive, so EBITDA flatters the cash story and the entry should be read against free cash. The data loaded was partial, so the read carries a confidence caveat. No gate trips. It needs the missing detail before it firms up.',
   spineLead: 'Scored against the REP healthcare framework',
   axes: [
     {
@@ -87,7 +87,7 @@ export const beacon: ScorecardData = {
             { hl: 'materially above the services-roll-up norm' },
             '. Underwrite FCF conversion, not EBITDA. The headline multiple understates the price on cash.',
           ],
-          prov: 'Underwrite on free cash. The EBITDA multiple flatters it.',
+          prov: 'Underwrite on free cash; the EBITDA multiple flatters it.',
         },
       ],
       chipCls: 'mon',
@@ -99,7 +99,7 @@ export const beacon: ScorecardData = {
       name: 'Value creation',
       ai: 'Controllable levers',
       read: [
-        'Credible levers. Modality-mix shift toward higher-margin studies. Throughput and scheduling optimization. De novo or tuck-in centers, though de novo is capital-heavy. The operating levers are real. The growth levers carry a capital cost.',
+        'Credible levers. Modality-mix shift toward higher-margin studies. Throughput and scheduling optimization. De novo or tuck-in centers, though de novo is capital-heavy. Real operating levers, though the growth ones carry a capital cost.',
       ],
       chipCls: 'strong',
       chipLabel: 'Credible',
@@ -161,7 +161,7 @@ export const beacon: ScorecardData = {
     snip: [
       'Sub-9.5x imaging entries returned a ',
       { hl: 'median 2.1x' },
-      ', below the services-roll-up median. The capex tax. The entry above 10x returned ',
+      ', below the services-roll-up median. The entry above 10x returned ',
       { hl: '1.6x' },
       '. Beacon at 9.0x is fairly priced on EBITDA. The FCF read decides it.',
     ],

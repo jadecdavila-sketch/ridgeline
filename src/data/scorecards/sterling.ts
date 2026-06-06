@@ -15,7 +15,7 @@ export const sterling: ScorecardData = {
       side: 'q',
       label: 'Two-track read',
       val: 'B− asset',
-      note: 'In-lane outpatient rehab with a real network. Organic growth is unproven. Most of the growth has leaned on acquisition.',
+      note: 'In-lane outpatient rehab with a real network. Organic growth is unproven, since most of it has leaned on acquisition.',
     },
     {
       side: 'p',
@@ -33,7 +33,7 @@ export const sterling: ScorecardData = {
       name: 'Sector & model fit',
       ai: 'In lane?',
       read: [
-        'Outpatient rehab sits inside the post-acute lane. The model is sound: recurring, referral-driven therapy visits. Not facility-heavy, not out-of-network. The lane is not the problem.',
+        'Outpatient rehab sits inside the post-acute lane. The model is sound: recurring, referral-driven therapy visits, facility-light and in-network. The lane is fine.',
       ],
       chipCls: 'range',
       chipLabel: 'In lane',
@@ -57,7 +57,7 @@ export const sterling: ScorecardData = {
       read: [
         'B− asset on an unproven organic story. The ',
         { cite: 'e-qp', tag: 'DATA', label: 'entry is above every realized rehab comp' },
-        ' the firm holds. That is the crux. A full price for a growth case the data does not support.',
+        ' the firm holds. A full price for a growth case the data does not support.',
       ],
       evidence: [
         {
@@ -72,7 +72,7 @@ export const sterling: ScorecardData = {
             { hl: '10.5x' },
             ' is above all of them. No differentiated asset supports the premium.',
           ],
-          prov: 'Above the realized band. The price assumes growth that is not yet evidenced.',
+          prov: 'Above the realized band, pricing growth that isn’t yet evidenced.',
           warn: true,
         },
       ],
@@ -162,7 +162,7 @@ export const sterling: ScorecardData = {
       },
       {
         q: 'Is the asset bad?',
-        a: 'No. It is a fine in-lane rehab network. The problem is the gap between what is asked and what is shown. Growth has leaned on acquisition, and same-clinic improvement is not evidenced. You would be underwriting an organic engine that has not proven out, at a price above the deals that did. The asset is acceptable. The price for this version of it is not.<div class="src-tags"><span class="qtag qoe">QoE</span><span class="qtag cim">CIM</span></div>',
+        a: 'No. It is a fine in-lane rehab network. The problem is the gap between what is asked and what is shown. Growth has leaned on acquisition, and same-clinic improvement is not evidenced. You would be underwriting an organic engine that has not proven out, at a price above the deals that did. The asset is acceptable; the price for this version of it is not.<div class="src-tags"><span class="qtag qoe">QoE</span><span class="qtag cim">CIM</span></div>',
       },
       {
         q: 'What would change it?',

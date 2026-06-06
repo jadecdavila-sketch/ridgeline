@@ -17,7 +17,7 @@ export const meridian: CouncilData = {
     grade: 'B+',
     entry: '12.1×',
     resolution:
-      'B+, Selective, 12.1×. No gate trips. The asset’s real. In-lane outpatient behavioral health, recurring, operator-run. But I can’t call it a pursue. I held the grade at <em>B+</em> on the Medicaid-weighted mix, and that grade earns a ~10× ceiling. Entry’s 12.1×, above the line. Two things decide it: whether the asset earns the premium, and how much Medicaid rate risk we’ll underwrite. Pursue only if the price compresses toward the line, or the commercial mix-shift proves real in diligence. <span class="qtag data">DATA</span>',
+      'B+, Selective, 12.1×. No gate trips. In-lane outpatient behavioral health, recurring, operator-run. But I can’t call it a pursue. I held the grade at <em>B+</em> on the Medicaid-weighted mix, and that grade earns a ~10× ceiling. Entry’s 12.1×, above the line. Two things decide it: whether the asset earns the premium, and how much Medicaid rate risk we’ll underwrite. Pursue only if the price compresses toward the line, or the commercial mix-shift proves real in diligence. <span class="qtag data">DATA</span>',
   },
 
   partner: {
@@ -58,7 +58,7 @@ export const meridian: CouncilData = {
     ],
     tensions: [
       'My Operator wants to bank the commercial mix-shift; my Floor will only stand on the recurring base, and the Medicaid weighting, that exists today. So how much of this case rides on a lever that isn’t in the P&amp;L yet? That’s the one I keep circling.',
-      'I’m at B+, happy to own it at ~10×. The process wants 12.1×. Everything between those two numbers is the negotiation, and it’s where we lose money if we’re wrong.',
+      'I’m at B+, happy to own it at ~10×. The process wants 12.1×. We lose money in the spread between those two numbers.',
       'Medicaid rate durability could move this whole read, and that’s the Examiner’s ground. I expect him to push hardest there. He should.',
     ],
     questions: [
@@ -93,12 +93,12 @@ export const meridian: CouncilData = {
       {
         name: 'The Sentinel',
         lens: 'reimbursement & regulatory durability',
-        html: 'The kill that leads the list. Revenue leans on Medicaid, where rates are set administratively, not negotiated. A state rate cut flows straight to margin with little to offset it. <span class="qtag cim">CIM p.22</span> Recurring demand protects volume, not price. The mitigant is a commercial mix-shift the Partner credits. That’s a plan, not yet in the P&amp;L. This leads the list.',
+        html: 'The kill that leads the list. Revenue leans on Medicaid, where rates are set administratively, not negotiated. A state rate cut flows straight to margin with little to offset it. <span class="qtag cim">CIM p.22</span> Recurring demand protects volume. The mitigant is a commercial mix-shift the Partner credits. That’s a plan, not yet in the P&amp;L. This leads the list.',
       },
       {
         name: 'The Steward of price',
         lens: 'is the entry defensible',
-        html: 'Entry’s 12.1×. The ceiling a B+ carries is ~10×. <span class="qtag data">DATA</span> Most blown deals are fine assets at the wrong number, and this is a fine asset at a number above the line. The premium is the thesis, not the asset. And a premium underwritten on a mix-shift that hasn’t happened is a premium underwritten on hope.',
+        html: 'Entry’s 12.1×. The ceiling a B+ carries is ~10×. <span class="qtag data">DATA</span> It’s a fine asset at a number above the line. And a premium underwritten on a mix-shift that hasn’t happened is a premium underwritten on hope.',
       },
       {
         name: 'The Auditor',

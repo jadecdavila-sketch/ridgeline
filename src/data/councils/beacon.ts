@@ -54,11 +54,11 @@ export const beacon: CouncilData = {
       {
         name: 'The Steward',
         lens: 'asset quality vs price',
-        html: 'A B asset, graded before price. The capex is what moves the price math. <span class="qtag data">DATA</span> 9.0× on EBITDA looks fair, but maintenance capex pulls free cash well below EBITDA, so the effective multiple on cash runs higher than the headline. Price the free cash. <span class="qtag chron">CHRON</span> Sub-9.5× imaging entries returned a median 2.1×, under the services-roll-up median. That’s the capex tax, showing up in the record.',
+        html: 'A B asset, graded before price. The capex is what moves the price math. <span class="qtag data">DATA</span> 9.0× on EBITDA looks fair, but maintenance capex pulls cash conversion down, so the effective multiple on cash runs higher than the headline. Underwrite the cash that converts. <span class="qtag chron">CHRON</span> Sub-9.5× imaging entries returned a median 2.1×, under the services-roll-up median, the capex tax showing up in the record.',
       },
     ],
     tensions: [
-      'My Strategist sees a defensible out-of-lane yes on scale and recurring referral volume. My Steward won’t pay an in-lane multiple for an out-of-lane, capital-intensive asset. Where does the ceiling land on free cash, not EBITDA? That’s the one I keep circling.',
+      'My Strategist sees a defensible out-of-lane yes on scale and recurring referral volume. My Steward won’t pay an in-lane multiple for an out-of-lane, capital-intensive asset. Where does the ceiling land once you read it against the cash that converts? That’s the one I keep circling.',
       'My Operator credits modality-mix and de novo growth. My Floor only stands on the recurring referral base that exists today, not the capital-heavy growth, not the elective slice.',
       'The whole read rests on a FCF conversion number I can’t see yet. The maintenance-versus-growth capex split wasn’t fully provided, so the grade is provisional by design.',
     ],
@@ -69,7 +69,7 @@ export const beacon: CouncilData = {
     ],
     closing: {
       label: 'My conviction read',
-      html: 'On our side of the table, this is a selective, not a pursue. Real scale, an attractive network, but out of lane, capital-intensive, read on partial data. I’m proposing <em>B</em>, and the discipline is to price the free cash, not the 9.0× headline.',
+      html: 'On our side of the table, this is a selective, not a pursue. Real scale, an attractive network, but out of lane, capital-intensive, read on partial data. I’m proposing <em>B</em>, and the discipline is to underwrite the cash that converts behind the 9.0× headline.',
       move: 'The FCF conversion number. Contain maintenance capex and the read firms. If the capex tax runs heavier than the headline, the grade and the effective entry move together, the wrong way.',
       caveat:
         'The 1–10 score and the pursue / selective / pass call aren’t mine. The Chair sets those once he’s heard us both.',
@@ -80,7 +80,7 @@ export const beacon: CouncilData = {
     lens: 'Scrutiny Council · what kills the deal',
     proposes: [
       { text: 'grade provisional', kind: 'grade' },
-      { text: 'underwrite FCF, not EBITDA', kind: 'ceil' },
+      { text: 'underwrite the cash that converts', kind: 'ceil' },
       { text: 'data incomplete', kind: 'prov' },
     ],
     whatISee:
@@ -109,7 +109,7 @@ export const beacon: CouncilData = {
       {
         name: 'The Contrarian',
         lens: 'the capex tax, stated at its strongest',
-        html: 'Strongest bear case: a services model wearing a manufacturing-like capital footprint, and the firm’s own imaging record proves the tax. <span class="qtag chron">CHRON</span> Sub-9.5× imaging entries returned a median 2.1×, below the services-roll-up median. Apex, entered above 10×, returned 1.6×. The assumption to stress is that 9.0× on EBITDA is fair. On free cash, it may not be.',
+        html: 'Strongest bear case: a services model wearing a manufacturing-like capital footprint, and the firm’s own imaging record proves the tax. <span class="qtag chron">CHRON</span> Sub-9.5× imaging entries returned a median 2.1×, below the services-roll-up median. Apex, entered above 10×, returned 1.6×. The assumption to stress is that 9.0× on EBITDA is fair. On the cash that converts, it may run steeper.',
       },
     ],
     tensions: [
@@ -123,7 +123,7 @@ export const beacon: CouncilData = {
     ],
     closing: {
       label: 'My scrutiny read',
-      html: 'No gate trips, and the network’s attractive. But out of lane, capital-intensive, scored on partial data. The entry reads against free cash, not EBITDA. I hold the grade at <em>B</em> and the read provisional until the capex and modality detail lands.',
+      html: 'No gate trips, and the network’s attractive. But out of lane, capital-intensive, scored on partial data. The entry reads against the cash that converts. I hold the grade at <em>B</em> and the read provisional until the capex and modality detail lands.',
       move: 'The maintenance-capex split and FCF conversion. It decides whether 9.0× on EBITDA is fair or a steeper multiple on the cash that actually returns.',
       caveat:
         'I build the case against the deal, not the verdict. The Chair weighs my findings against the Partner’s and sets the call.',
@@ -154,10 +154,10 @@ export const beacon: CouncilData = {
       partner:
         'A B asset. 9.0× on EBITDA looks fair, but the capex intensity moves the price math. Underwrite the free cash. <span class="qtag data">DATA</span>',
       examiner:
-        'Maintenance capex pulls free cash well below EBITDA. Sub-9.5× imaging entries returned a median 2.1×, below the services median. The capex tax. <span class="qtag chron">CHRON</span>',
+        'Maintenance capex pulls cash conversion down. Sub-9.5× imaging entries returned a median 2.1×, below the services median. <span class="qtag chron">CHRON</span>',
       contested: true,
       ruling:
-        'Hold <em>B</em>. Read the entry against free cash, not the 9.0× headline. The effective multiple on cash decides this, not the EBITDA multiple.',
+        'Hold <em>B</em>. Read the entry against the cash that converts behind the 9.0× headline. The effective multiple on cash decides this.',
     },
     {
       axis: 'Value creation',
@@ -219,7 +219,7 @@ export const beacon: CouncilData = {
           {
             voice: 'examiner',
             role: '· the contrarian',
-            html: 'Apex is the one to remember. 10.4× in, 1.6× out. <span class="qtag chron">CHRON</span> The set returns below the services-roll-up median. The capex tax, in the record. The comps say underwrite the cash, not the multiple.',
+            html: 'Apex is the one to remember. 10.4× in, 1.6× out. <span class="qtag chron">CHRON</span> The set returns below the services-roll-up median, the capex tax in the record. The comps say underwrite the cash that converts.',
           },
         ],
       },

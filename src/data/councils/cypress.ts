@@ -53,7 +53,7 @@ export const cypress: CouncilData = {
       {
         name: 'The Steward',
         lens: 'asset quality vs price',
-        html: 'B+ on quality, graded before price, earning a walk-away around 9.5×. The 9.2× entry sits just under it, thin room. <span class="qtag chron">CHRON</span> Cedar Park is the comp that worked: 8.9× in, 2.8× out. Ridgeview Orthodontics is the warning: 10.4× in, 1.6× out. There’s so little margin in the price that discipline is the whole job here.',
+        html: 'B+ on quality, graded before price, earning a walk-away around 9.5×. The 9.2× entry sits just under it, thin room. <span class="qtag chron">CHRON</span> Cedar Park is the comp that worked: 8.9× in, 2.8× out. Ridgeview Orthodontics is the warning: 10.4× in, 1.6× out. There’s almost no margin in the price.',
       },
     ],
     tensions: [
@@ -108,7 +108,7 @@ export const cypress: CouncilData = {
       {
         name: 'Price',
         lens: 'does the math survive a flat multiple',
-        html: '9.2× for an out-of-lane B+ is full. <span class="qtag chron">CHRON</span> Maple Grove returned 2.0× at 9.3×. Ridgeview Orthodontics, 1.6× at 10.4×. The record says overpaying for adjacent dental is where the returns die. Show me the pipeline multiples before I move off that.',
+        html: '9.2× for an out-of-lane B+ is full. <span class="qtag chron">CHRON</span> Maple Grove returned 2.0× at 9.3×. Ridgeview Orthodontics, 1.6× at 10.4×. Show me the pipeline multiples before I move off that.',
       },
     ],
     tensions: [
@@ -216,7 +216,7 @@ export const cypress: CouncilData = {
           {
             voice: 'examiner',
             role: '· price',
-            html: 'And Ridgeview is the one to remember: 10.4× in, 1.6× out. <span class="qtag chron">CHRON</span> The gap between Cedar Park and Ridgeview is almost all entry multiple. That’s the argument for holding the line at 9.2×.',
+            html: 'And Ridgeview is the one to remember: 10.4× in, 1.6× out. <span class="qtag chron">CHRON</span> The gap between Cedar Park and Ridgeview is almost all entry multiple, which is why you hold the line at 9.2×.',
           },
         ],
       },

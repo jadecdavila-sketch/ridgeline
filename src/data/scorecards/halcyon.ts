@@ -26,7 +26,7 @@ export const halcyon: ScorecardData = {
   ],
   reasonsLead: 'Pass.',
   reasonsBody:
-    'In-lane home health with a credible operating model. One payer sits above the 30 percent line and the revenue rides reimbursement. That trips the concentration gate and short-circuits the score. A good entry price and a fine clinical story do not buy it back. Take one question to the table: is the concentration a contractual cliff or something diligence can re-cut. Absent that, pass.',
+    'In-lane home health with a credible operating model, but one payer sits above the 30 percent line and the revenue rides reimbursement, which trips the concentration gate and short-circuits the score. A good entry price and a fine clinical story do not buy it back. The one question worth taking to the table is whether the concentration is a contractual cliff or something diligence can re-cut.',
   spineLead: 'Scored against the REP healthcare framework',
   axes: [
     {
@@ -46,7 +46,7 @@ export const halcyon: ScorecardData = {
       read: [
         'This is where it breaks. Revenue is ',
         { cite: 'e-down', tag: 'CIM', label: 'concentrated in a single payer and rides reimbursement' },
-        '. A rate action or a contract non-renewal would hit a third of the business at once. The floor is exposed.',
+        '. A rate action or a contract non-renewal would hit a third of the business at once, leaving the floor exposed.',
       ],
       evidence: [
         {
@@ -187,7 +187,7 @@ export const halcyon: ScorecardData = {
     items: [
       {
         q: 'Why a pass?',
-        a: 'A single payer sits above the 30 percent line, a hard-pass gate. The gate short-circuits the score. It does not matter that the lane is right, the price is fair, and the team is capable. Concentration over the line means one rate action or non-renewal can take a third of the business, and the framework will not underwrite that as a pursue.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>',
+        a: 'A single payer sits above the 30 percent line, a hard-pass gate. The gate short-circuits the score. It does not matter that the lane is right and the price is fair. Concentration over the line means one rate action or non-renewal can take a third of the business, and the framework will not underwrite that as a pursue.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>',
       },
       {
         q: 'Could the concentration be fixed?',
@@ -195,7 +195,7 @@ export const halcyon: ScorecardData = {
       },
       {
         q: 'Is the asset any good underneath?',
-        a: 'Yes, which is what makes it a near miss rather than an easy no. In-lane home-based care, recurring episode-driven demand, a capable operator, a fair entry at 8.0x. Strip out the concentration and this is a different conversation. With it, the downside is not protected, and that is the framework’s non-negotiable.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
+        a: 'Yes, which is what makes it a near miss rather than an easy no. In-lane home-based care, recurring episode-driven demand, a capable operator, a fair entry at 8.0x. Strip out the concentration and this is a different conversation. With it, the downside is not protected.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
       },
       {
         q: 'Which of our deals does this look like?',

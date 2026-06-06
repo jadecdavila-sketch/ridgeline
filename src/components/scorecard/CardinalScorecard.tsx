@@ -11,9 +11,9 @@ export function CardinalScorecard() {
           <div className="hero-eyebrow">NDA Scorecard · Specialty Pharmacy</div>
           <h1 className="hero-name">Cardinal Specialty Pharmacy</h1>
           <p className="hero-desc">
-            National specialty pharmacy in complex, high-cost therapies. Limited-distribution drug
-            access, payer and manufacturer contracts, clinical adherence management. ~$32M adjusted
-            EBITDA on ~$175M revenue.
+            National specialty pharmacy in complex, high-cost therapies: limited-distribution drug
+            access, payer and manufacturer contracts, adherence management. ~$32M adjusted EBITDA on
+            ~$175M revenue.
           </p>
 
           <div className="verdict-row">
@@ -43,28 +43,25 @@ export function CardinalScorecard() {
               <div className="s-lc">Two-track read</div>
               <div className="val">A&ndash; asset</div>
               <div className="note">
-                Recurring refill revenue, mission-critical therapies, FCF conversion above 50
-                percent. The downside is structurally protected.
+                Recurring refill revenue on mission-critical therapies, cash conversion above 50
+                percent. The downside is protected.
               </div>
             </div>
             <div className="dr q">
               <div className="s-lc">Price discipline</div>
               <div className="val">Below ceiling</div>
               <div className="note">
-                8.8x entry sits under the ~9.5x walk-away attached to an A&ndash; grade. Quality and
-                price graded on separate tracks.
+                8.8x entry, under the ~9.5x walk-away the A&ndash; grade earns, with quality and
+                price graded apart.
               </div>
             </div>
           </div>
 
           <p className="reasons">
-            <b>Why pursue.</b> In-lane specialty pharmacy with the protected downside Ridgemont
-            underwrites for. Recurring, refill-driven revenue on therapies a patient cannot defer.
-            Real procurement and pricing leverage. Free-cash conversion above the 50 percent
-            preference. The return holds with the exit multiple flat to entry, because it rides
-            operations rather than multiple expansion. Three controllable value-creation levers, all
-            credible. The live risk is reimbursement and payer durability, the one that kills
-            healthcare deals most often. Diligence goes there first.
+            <b>Why pursue.</b> In lane, with the protected downside Ridgemont underwrites for:
+            recurring refill revenue on therapies a patient cannot defer, and cash conversion above
+            50 percent. The return does not lean on multiple expansion. Reimbursement durability is
+            the one risk, so diligence starts there.
           </p>
         </div>
       </div>
@@ -95,8 +92,8 @@ export function CardinalScorecard() {
             <Cite id="e-lane" tag="CIM">
               business model, not the end market
             </Cite>
-            : refill-driven recurring revenue on limited-distribution therapies. No manufacturing,
-            no out-of-network billing.
+            : refill-driven recurring revenue on limited-distribution therapies, with no
+            manufacturing or out-of-network billing.
             <Evidence
               id="e-lane"
               type="t-cim"
@@ -124,12 +121,11 @@ export function CardinalScorecard() {
             Protected downside<span className="ai">Non-negotiable</span>
           </div>
           <div className="axis-read">
-            Recurring revenue with demonstrated refill retention. Therapies a patient{' '}
+            Recurring revenue with refill retention, on therapies a patient{' '}
             <Cite id="e-down" tag="CIM">
               cuts last, not first
             </Cite>
-            . Pricing and procurement leverage visible in gross margin. FCF conversion above the
-            framework's 50 percent preference.
+            . Pricing leverage shows in the gross margin; cash conversion runs above 50 percent.
             <Evidence
               id="e-down"
               type="t-cim"
@@ -161,9 +157,8 @@ export function CardinalScorecard() {
             <Cite id="e-qp" tag="DATA">
               A&ndash; asset on revenue quality
             </Cite>
-            , separate from price. The walk-away attached to that grade is roughly 9.5x. The 8.8x
-            entry sits below it. The usual error is paying an A multiple for a lesser asset. Avoided
-            here.
+            , separate from price. The walk-away that grade earns is roughly 9.5x, and the 8.8x
+            entry sits below it. That keeps us from paying an A multiple for a lesser asset.
             <Evidence
               id="e-qp"
               type="t-chrono"
@@ -192,13 +187,12 @@ export function CardinalScorecard() {
             Value creation<span className="ai">Controllable levers</span>
           </div>
           <div className="axis-read">
-            Three controllable levers, each gradeable:{' '}
+            Three levers:{' '}
             <Cite id="e-vc" tag="IC">
               procurement and gross-to-net at scale
             </Cite>{' '}
-            (Proven), therapy-mix shift toward higher-margin categories (Credible), and tuck-ins of
-            regional specialty pharmacies on a proven platform playbook (Credible). The return rides
-            operations. Leverage is not the source.
+            (Proven), therapy-mix shift (Credible), and tuck-ins on a proven platform playbook
+            (Credible). The return rides operations, not leverage.
             <Evidence
               id="e-vc"
               type="t-ic"
@@ -227,12 +221,12 @@ export function CardinalScorecard() {
             Management &amp; data<span className="ai">Credibility multiplier</span>
           </div>
           <div className="axis-read">
-            Operator-led with a public-company CFO. Reported figures tie and the{' '}
+            Operator-led, public-company CFO. Reported figures tie and the{' '}
             <Cite id="e-mgmt2" tag="QoE">
               adjustment bridge is modest
             </Cite>
-            , under the 40 percent uplift that draws a penalty. Management reads as a credibility
-            multiplier here. No discount applied.
+            , under the 40 percent uplift that draws a penalty. Management is a credibility
+            multiplier here, not a discount.
             <Evidence
               id="e-mgmt2"
               type="t-qoe"
@@ -262,7 +256,7 @@ export function CardinalScorecard() {
         <div className="sec-hd">
           <div>
             <span className="s-lc lc-b">Hard-pass screen</span>
-            <h2>No disqualifier triggered. Reimbursement is the open item, not a gate.</h2>
+            <h2>Nothing trips the screen, so the only open question is reimbursement durability.</h2>
           </div>
         </div>
         <div className="gates">
@@ -331,9 +325,9 @@ export function CardinalScorecard() {
           </div>
         </div>
         <div className="moat-note">
-          The framework names this as the highest-value thing to automate:{' '}
-          <b>systematic comparison against REP's realized returns</b>, today done from partner
-          memory. Matched to Cardinal on sub-sector, size, and entry multiple.
+          The framework's top thing to automate:{' '}
+          <b>checking a deal against REP's realized returns</b>, today done from partner memory.
+          Matched to Cardinal on sub-sector, size, and entry.
         </div>
         <table>
           <thead>
@@ -428,10 +422,10 @@ export function CardinalScorecard() {
         <div className="jud">
           <h3>Calls the framework deliberately leaves to a partner</h3>
           {[
-            'The A− letter grade is a synthesis call. Does revenue quality and durability justify A− over B+? That is what sets the ceiling you hold.',
-            'Are the three value-creation levers real? Procurement is proven. The mix-shift and tuck-in levers are credible but not yet in the P&L.',
-            'AI overlay, run both directions. It reads as a net tailwind here, automating prior authorization, refills, and adherence rather than compressing the moat. Confirm as a named diligence item.',
-            'The walk-away. The model proposes holding below ~9.5x. The number is yours to set.',
+            'The A− is a synthesis call: does revenue quality justify A− over B+? It sets the ceiling you hold.',
+            'Are the levers real? Procurement is proven; mix-shift and tuck-ins are credible but not yet in the P&L.',
+            'Run the AI question both ways. Here it looks like a net tailwind, automating prior auth, refills, and adherence rather than compressing the moat; carry it as a diligence item.',
+            'The walk-away: the model holds below ~9.5x, but the number is yours.',
           ].map((q, i) => (
             <div className="item" key={i}>
               <span className="qmk">&ldquo;</span>
@@ -484,7 +478,6 @@ export function CardinalScorecard() {
         10 scoring, two-track quality grade and held price ceiling, hard-pass screen, and
         reimbursement-led risk framing follow the REP Healthcare Investment Framework and the
         rep-deal-eval rubric. The comparable-deal record stands in for Ridgemont's realized returns.
-        That piece is the one the framework names as most worth automating.
       </div>
     </EvidenceProvider>
   )

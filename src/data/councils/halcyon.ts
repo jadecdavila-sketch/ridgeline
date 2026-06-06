@@ -41,7 +41,7 @@ export const halcyon: CouncilData = {
       {
         name: 'The Floor',
         lens: 'protected downside',
-        html: 'This is where it breaks, and it isn’t close. One payer carries more than a third of revenue, and that revenue rides reimbursement set administratively. <span class="qtag cim">CIM p.19</span> A rate action or a non-renewal takes a third of the business at once. The Floor has veto. It uses it here. The downside isn’t protected, it’s exposed. I don’t get to grade past this.',
+        html: 'This is where it breaks, and it isn’t close. One payer carries more than a third of revenue, and that revenue rides reimbursement set administratively. <span class="qtag cim">CIM p.19</span> A rate action or a non-renewal takes a third of the business at once. The Floor has veto. It uses it here. I don’t get to grade past this.',
       },
       {
         name: 'The Operator',
@@ -51,7 +51,7 @@ export const halcyon: CouncilData = {
       {
         name: 'The Steward',
         lens: 'asset quality vs price',
-        html: '8.0× would be fair. It sits where the in-lane comparables landed. <span class="qtag comp">COMP</span> But the gate moots the comparison. I can’t grade quality above B− while a single payer governs a third of revenue, and the framework won’t collapse a clean entry against a capped grade into a pursue. The cardinal error is paying any multiple for a floor that isn’t there.',
+        html: '8.0× would be fair. It sits where the in-lane comparables landed. <span class="qtag comp">COMP</span> But the gate moots the comparison. I can’t grade quality above B− while a single payer governs a third of revenue, and the framework won’t collapse a clean entry against a capped grade into a pursue. No multiple is worth paying for a floor that isn’t there.',
       },
     ],
     tensions: [
@@ -101,16 +101,16 @@ export const halcyon: CouncilData = {
       {
         name: 'The Auditor',
         lens: 'is the EBITDA real',
-        html: 'Moot, and I’ll say so rather than manufacture a second kill. The data ties and the operator is clinically capable. <span class="qtag qoe">QoE</span> Earnings quality doesn’t change the verdict. The gate already governs. Inflating a concern to look thorough on a dead deal is its own failure. One real kill, honestly sized.',
+        html: 'Moot, and I’ll say so rather than manufacture a second kill. The data ties and the operator is clinically capable. <span class="qtag qoe">QoE</span> Earnings quality doesn’t change the verdict. The gate already governs. Inflating a concern to look thorough on a dead deal is its own failure. One kill, sized.',
       },
       {
         name: 'The Reader',
         lens: 'can you trust the numbers',
-        html: 'Operator-led and credible. Not the issue. <span class="qtag qoe">QoE</span> A strong team is real downside protection on a fine asset. It doesn’t buy back a tripped gate, and I won’t let good management talk a hard stop down. The Reader clears. The Contrarian doesn’t.',
+        html: 'Operator-led and credible. Not the issue. <span class="qtag qoe">QoE</span> A strong team is real downside protection on a fine asset. It doesn’t undo a tripped gate, and I won’t let good management talk a hard stop down. The Reader clears. The Contrarian doesn’t.',
       },
     ],
     tensions: [
-      'No live tension with the Partner. They conceded the gate before I raised it. That’s the finding. When the conviction council doesn’t contest the kill, the deal is dead, and the Chair should read the agreement as confirmation, not consensus to be smoothed.',
+      'No live tension with the Partner. They conceded the gate before I raised it. That’s the finding. The Chair should read the agreement as confirmation of the kill.',
       'The Contrarian calls the concentration a hard stop on the evidence as it stands. The one thing that demotes it is a diligence finding that the single payer is several separable contracts. Until that exists, it’s a hard stop, not a diligence-addressable concern.',
     ],
     questions: [
@@ -150,7 +150,7 @@ export const halcyon: CouncilData = {
       partner:
         '8.0× would be fair. It sits where the in-lane comparables landed. <span class="qtag comp">COMP</span> The gate moots the comparison.',
       examiner:
-        'Can’t grade quality above B− while one payer governs a third of revenue. A fair entry doesn’t buy back a tripped gate.',
+        'Can’t grade quality above B− while one payer governs a third of revenue. A fair entry doesn’t clear a tripped gate.',
       contested: false,
     },
     {
@@ -165,7 +165,7 @@ export const halcyon: CouncilData = {
       axis: 'Management & data',
       partner:
         'Operator-led and clinically capable. The data ties. Management isn’t the issue. <span class="qtag qoe">QoE</span>',
-      examiner: 'Credible, and real downside protection on a fine asset. A strong team doesn’t buy back a tripped gate.',
+      examiner: 'Credible, and real downside protection on a fine asset. A strong team doesn’t override a tripped gate.',
       contested: false,
     },
   ],

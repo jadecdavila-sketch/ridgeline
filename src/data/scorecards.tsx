@@ -30,15 +30,15 @@ const cypressChat = {
   items: [
     {
       q: 'Why pursue if it is out of lane?',
-      a: 'Dental is not one of the named lanes, so the bar rises. This is a pursue with discipline. What earns the 7: a strong fragmented roll-up at a fair entry, revenue diversified across roughly 140 practices, and a credible value-add path. The out-of-lane call is a judgment the framework leaves to you, which is why it is surfaced rather than buried.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>',
+      a: 'Dental is not one of the named lanes, so the bar rises. This is a pursue with discipline. What earns the 7: a strong fragmented roll-up at a fair entry, revenue diversified across roughly 140 practices, and a credible value-add path. The out-of-lane call is a judgment the framework leaves to you, so it’s surfaced.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>',
     },
     {
       q: 'What would trip a hard pass?',
-      a: 'None is close. Not manufacturing, not CME, not out-of-network. EBITDA is about $22M, inside the $20 to 75M band. No practice or payer is near the 30 percent line; the network is diversified. The constraint is not a gate. It is the out-of-lane judgment and holding price discipline.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>',
+      a: 'None is close. Not manufacturing, not CME, not out-of-network. EBITDA is about $22M, inside the $20 to 75M band. No practice or payer is near the 30 percent line; the network is diversified. No gate binds; the constraints are the out-of-lane judgment and price discipline.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag data">DATA</span></div>',
     },
     {
       q: 'How protected is the downside?',
-      a: 'Mixed. The recall and hygiene base is recurring and sticky. A slice of dental spend, ortho and cosmetic, is discretionary and can be deferred in a downturn. That is part of why it scores a 7, not an 8. The recurring base protects most of the floor. The elective portion is the soft spot to size.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
+      a: 'Mixed. The recall and hygiene base is recurring and sticky. A slice of dental spend, ortho and cosmetic, is discretionary and can be deferred in a downturn. That is part of why it scores a 7, not an 8. The recurring base protects most of the floor; the elective portion is the soft spot to size.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
     },
     {
       q: 'Which of our deals does this look like?',
@@ -66,7 +66,7 @@ const cardinalChat = {
     },
     {
       q: 'Is the downside really protected?',
-      a: 'That is the core of the score. Revenue is recurring and refill-driven on therapies patients cannot defer, the spend a payer cuts last. Pricing and procurement leverage show up in gross margin. FCF conversion runs above the 50 percent the framework prefers. The return holds with the exit multiple flat to entry. The one place the floor could crack is reimbursement, which is why it leads the risks.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
+      a: 'That is the core of the score. Revenue is recurring and refill-driven on therapies patients cannot defer, the spend a payer cuts last, with pricing and procurement leverage showing up in gross margin and FCF conversion running above the 50 percent the framework prefers, so the return holds with the exit multiple flat to entry. The one place the floor could crack is reimbursement, which is why it leads the risks.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
     },
     {
       q: 'Which of our deals does this look like?',
@@ -74,7 +74,7 @@ const cardinalChat = {
     },
     {
       q: 'What are you least sure about?',
-      a: 'Reimbursement and payer durability, the criterion that kills healthcare deals most often. Gross-to-net and DIR-fee trends are not fully evidenced in what was loaded. A few limited-distribution contracts carry the margin. If a key manufacturer relationship or payer term moved, the thesis would need rework. That is the first diligence focus.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
+      a: 'Reimbursement and payer durability. Gross-to-net and DIR-fee trends are not fully evidenced in what was loaded. A few limited-distribution contracts carry the margin. If a key manufacturer relationship or payer term moved, the thesis would need rework. That is the first diligence focus.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
     },
   ] as ChatItem[],
 }

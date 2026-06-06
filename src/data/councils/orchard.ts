@@ -30,7 +30,7 @@ export const orchard: CouncilData = {
       { text: 'out of lane · selective', kind: 'prov' },
     ],
     whatISee:
-      'Pediatric primary and specialty care group. About $10M of adjusted EBITDA on ~$54M of revenue, 31 clinics, asking near 9.5×. <span class="qtag cim">CIM</span> Pediatrics isn’t a named lane, so I’m a selective from the first line. But it’s the closest out-of-lane name I’ve underwritten: recurring, visit-based services, adjacent to the core lanes, nothing facility-heavy or out-of-network. The case has to earn the out-of-lane call. Here the downside helps it earn it.',
+      'Pediatric primary and specialty care group. About $10M of adjusted EBITDA on ~$54M of revenue, 31 clinics, asking near 9.5×. <span class="qtag cim">CIM</span> Pediatrics isn’t a named lane, so I’m a selective from the first line. But it’s the closest out-of-lane name I’ve underwritten: recurring, visit-based services, adjacent to the core lanes, nothing facility-heavy or out-of-network. The case has to earn the out-of-lane call, and here the downside does it.',
     screen: {
       label: 'Hard-pass screen',
       clear: true,
@@ -55,7 +55,7 @@ export const orchard: CouncilData = {
       {
         name: 'The Steward',
         lens: 'asset quality vs price',
-        html: 'A B+, held back from A− by the lane distance and a Medicaid-weighted payer mix I haven’t verified. The ceiling B+ earns is ~10×; the 9.5× entry sits just under it. Thin room, priced to work. <span class="qtag chron">CHRON</span> Willow returned 2.6× at 9.1×, Sunrise 2.7× at 8.8×. The one entered above 10× returned 1.6×. Price isn’t the issue here. The lane is.',
+        html: 'A B+, held back from A− by the lane distance and a Medicaid-weighted payer mix I haven’t verified. The ceiling B+ earns is ~10×; the 9.5× entry sits just under it. Thin room, priced to work. <span class="qtag chron">CHRON</span> Willow returned 2.6× at 9.1×, Sunrise 2.7× at 8.8×. The one entered above 10× returned 1.6×. Price isn’t the issue; the lane is what holds it back.',
       },
     ],
     tensions: [
@@ -100,12 +100,12 @@ export const orchard: CouncilData = {
       {
         name: 'The Strategist-Test',
         lens: 'is it close enough to underwrite',
-        html: 'I test the call, not the label. Pediatric primary care monetizes like the core lanes: recurring, visit-based, non-deferrable. Granted: the closest out-of-lane name we’ve seen. <span class="qtag cim">CIM</span> But out of lane raises the bar. An out-of-lane B+ doesn’t earn an in-lane multiple. The premium gets earned, not assumed from adjacency.',
+        html: 'I test the call, not the label. Pediatric primary care monetizes like the core lanes: recurring, visit-based, non-deferrable. Granted: the closest out-of-lane name we’ve seen. <span class="qtag cim">CIM</span> But out of lane raises the bar. An out-of-lane B+ doesn’t earn an in-lane multiple. Adjacency doesn’t earn the premium.',
       },
       {
         name: 'The Contrarian',
         lens: 'scale & the bear case',
-        html: 'The honest bear case is size. ~$10M EBITDA, a smaller platform that needs the de novo and tuck-in plan to build real scale. The realized unit economics on recent builds: not evidenced. <span class="qtag qoe">QoE</span> Slow build-out, or ramp economics weaker than the template implies, and the value-creation case thins. The platform stays sub-scale.',
+        html: 'The honest bear case is size. ~$10M EBITDA, a smaller platform that needs the de novo and tuck-in plan to build real scale. The realized unit economics on recent builds: not evidenced. <span class="qtag qoe">QoE</span> Slow build-out, or ramp economics weaker than the template implies, and the value-creation case thins as the platform stays sub-scale.',
       },
       {
         name: 'The Auditor',

@@ -45,7 +45,7 @@ export const vantage: CouncilData = {
       {
         name: 'The Floor',
         lens: 'protected downside',
-        html: 'Mixed. Procedural demand is durable and recurring enough to grade. But a meaningful share is schedulable and gets deferred in a downturn, and case volume rides physician loyalty. <span class="qtag cim">CIM</span> Most of the floor holds. The elective slice and the physician-dependence are the soft spots, and they’re part of why this reads as a 5 and not a 7. Downside protected. Not impregnable.',
+        html: 'Mixed. Procedural demand is durable and recurring enough to grade. But a meaningful share is schedulable and gets deferred in a downturn, and case volume rides physician loyalty. <span class="qtag cim">CIM</span> Most of the floor holds. The elective slice and the physician-dependence are the soft spots, and they’re part of why this reads as a 5 and not a 7.',
       },
       {
         name: 'The Operator',
@@ -55,7 +55,7 @@ export const vantage: CouncilData = {
       {
         name: 'The Steward',
         lens: 'asset quality vs price',
-        html: 'A B asset, graded apart from price: strong margins, set against the out-of-lane distance and the physician dependence. The ceiling a B out of lane earns is ~10×. The 11.0× entry sits <em>above</em> it. <span class="qtag chron">CHRON</span> Cascade is the comp that worked: 9.4× in, 2.5× out. Lakeshore is the warning: above 11× in, 1.5× out. Paying up for an out-of-lane asset is the cardinal error, and 11.0× courts it. The premium has to be earned. I haven’t seen it earned yet.',
+        html: 'A B asset, graded apart from price: strong margins, set against the out-of-lane distance and the physician dependence. The ceiling a B out of lane earns is ~10×. The 11.0× entry sits <em>above</em> it. <span class="qtag chron">CHRON</span> Cascade is the comp that worked: 9.4× in, 2.5× out. Lakeshore is the warning: above 11× in, 1.5× out. Pay up for an out-of-lane asset and 11.0× is exactly the overpay this council refuses. The premium has to be earned. I haven’t seen it earned yet.',
       },
     ],
     tensions: [
@@ -105,7 +105,7 @@ export const vantage: CouncilData = {
       {
         name: 'The Auditor',
         lens: 'is the EBITDA real',
-        html: 'The ~$42M adjusted figure ties at the summary level. The bridge isn’t traced, and the data isn’t fully separated from the elective slice. <span class="qtag qoe">QoE</span> The data ties; the bench doesn’t yet. A grade resting on margins I haven’t walked line by line is a B I’m holding, not confirming.',
+        html: 'The ~$42M adjusted figure ties at the summary level. The bridge isn’t traced, and the data isn’t fully separated from the elective slice. <span class="qtag qoe">QoE</span> The numbers reconcile at the top, not yet line by line. A grade resting on margins I haven’t walked is a B I’m holding, not confirming.',
       },
       {
         name: 'The Contrarian',
@@ -158,7 +158,7 @@ export const vantage: CouncilData = {
         '11.0× sits above that line. Lakeshore, entered above 11×, returned 1.5×. The surgical comps disappoint above the line. <span class="qtag chron">CHRON</span>',
       contested: true,
       ruling:
-        'Hold <em>B</em>; ceiling ~10×, the 11.0× entry above it. Price discipline is the whole game. The premium gets earned before I cross the line, not after.',
+        'Hold <em>B</em>; ceiling ~10×, the 11.0× entry above it. Price discipline is the whole game. The premium gets earned before I cross the line.',
     },
     {
       axis: 'Value creation',

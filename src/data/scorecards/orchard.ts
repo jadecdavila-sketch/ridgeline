@@ -15,7 +15,7 @@ export const orchard: ScorecardData = {
       side: 'q',
       label: 'Two-track read',
       val: 'B+ asset',
-      note: 'Non-deferrable demand, a clean balance sheet, a proven de novo template. Protected downside. The lane is the only thing capping it.',
+      note: 'Non-deferrable demand and protected downside on a clean balance sheet, with a proven de novo template, capped only by the lane.',
     },
     {
       side: 'p',
@@ -63,7 +63,7 @@ export const orchard: ScorecardData = {
       read: [
         'The strongest axis. Pediatric care is ',
         { cite: 'e-down', tag: 'CIM', label: 'about as non-deferrable as demand gets' },
-        ', a clean capital structure, recurring visit volume. This part earns the B+ and keeps the score off the floor.',
+', and recurring visit volume sits on a clean capital structure. This part earns the B+.',
       ],
       evidence: [
         {
@@ -146,7 +146,7 @@ export const orchard: ScorecardData = {
       { hl: '1.6x' },
       '. Orchard at 9.5x sits inside the bracket that has worked, closest to Willow and Sunrise.',
     ],
-    prov: 'Priced inside the band that has performed. The lane is the open question, not the price.',
+    prov: 'Priced inside the band that has performed. The lane is the open question.',
   },
   judgment: [
     'The lane call. Pediatrics is out of lane but unusually close to the core services lanes, with protected demand. Close enough to underwrite at a normal price?',
@@ -178,7 +178,7 @@ export const orchard: ScorecardData = {
       },
       {
         q: 'Which of our deals does this look like?',
-        a: 'Physician-group and pediatric names. Willow returned 2.6x at 9.1x, Sunrise 2.7x at 8.8x, both entered under 10x. The one entered above 10x returned 1.6x. Orchard at 9.5x sits inside the bracket that has worked. Price is not the worry here. The lane is.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
+        a: 'Physician-group and pediatric names. Willow returned 2.6x at 9.1x, Sunrise 2.7x at 8.8x, both entered under 10x. The one entered above 10x returned 1.6x. Orchard at 9.5x sits inside the bracket that has worked, which leaves the lane as the open question.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
       },
       {
         q: 'What are you least sure about?',

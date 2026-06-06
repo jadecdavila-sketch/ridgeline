@@ -21,7 +21,7 @@ export const granite: ScorecardData = {
       side: 'p',
       label: 'Price discipline',
       val: 'Moot',
-      note: '7.5x is cheap. It does not matter. A reimbursement-dependent model under a regulatory cloud is not bought back by a low entry.',
+      note: 'A reimbursement-dependent model under a regulatory cloud is not bought back by a low entry.',
     },
   ],
   reasonsLead: 'Pass.',
@@ -63,7 +63,7 @@ export const granite: ScorecardData = {
       read: [
         'Volume is protected; price is not. Government-weighted reimbursement plus a ',
         { cite: 'e-down', tag: 'CIM', label: 'live regulatory overhang' },
-        ' means one rate or policy action resets the economics. Non-deferrable demand does not protect a rate-set floor.',
+        ' means one rate or policy action resets the economics.',
       ],
       evidence: [
         {
@@ -76,7 +76,7 @@ export const granite: ScorecardData = {
             { hl: 'regulatory overhang on payment and oversight' },
             '; a rate action or policy change flows directly to margin with little to offset it.',
           ],
-          prov: 'The floor is exposed; this is the disqualifying condition.',
+          prov: 'The floor is exposed: the disqualifying condition.',
           warn: true,
         },
       ],
@@ -100,7 +100,7 @@ export const granite: ScorecardData = {
       name: 'Value creation',
       ai: 'Controllable levers',
       read: [
-        'The levers do not reach the core risk. Density and cost programs help margin at the edges. No operating lever offsets a government rate reset or a regulatory action. The value case cannot underwrite what governs the asset.',
+        'The levers do not reach the core risk. Density and cost programs help margin at the edges. No operating lever offsets a government rate reset or a regulatory action.',
       ],
       chipCls: 'mon',
       chipLabel: 'No lever for the risk',
@@ -111,7 +111,7 @@ export const granite: ScorecardData = {
       name: 'Management & data',
       ai: 'Credibility multiplier',
       read: [
-        'Operationally competent, and the data ties. It does not matter. A capable team cannot underwrite away reimbursement dependence and a regulatory overhang. Both are structural to the sector, not the operator.',
+        'Operationally competent, and the data ties, but a capable team cannot underwrite away reimbursement dependence and a regulatory overhang. Both are structural to the sector, not the operator.',
       ],
       chipCls: 'strong',
       chipLabel: 'Credible',
@@ -173,7 +173,7 @@ export const granite: ScorecardData = {
       { hl: 'below 1.7x' },
       ' regardless of how cheaply it was bought. The low entries did not protect the returns. That pattern is why the model is a screen, not a deduction.',
     ],
-    prov: 'Cheap did not save these. That is the lesson the gate encodes.',
+    prov: 'Cheap did not save these.',
   },
   judgment: [
     'Is there structure that de-risks reimbursement? Absent a commercial offset or a regulatory resolution, the model trigger stands. That is rare to find.',
@@ -203,11 +203,11 @@ export const granite: ScorecardData = {
       },
       {
         q: 'The price is cheap, does that not help?',
-        a: 'No. The record makes the point. Every reimbursement-dependent entry the firm holds returned below 1.7x, and the cheapest did the worst. A low multiple does not protect against a rate reset. It sets a slightly lower floor on a risk you cannot control. The framework screens the model rather than deducting for it because price has not saved these deals.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
+        a: 'No. The record makes the point. Every reimbursement-dependent entry the firm holds returned below 1.7x, and the cheapest did the worst. A low multiple does not protect against a rate reset. It sets a slightly lower floor on a risk you cannot control. The framework screens the model at the gate because price has not saved these deals.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
       },
       {
         q: 'Which of our deals does this look like?',
-        a: 'The dialysis and renal names, a cautionary set top to bottom. Keystone returned 1.3x, Tidewater 1.1x, Basin 1.2x, all bought under 8x. Cedar Renal at 1.6x is the best of them, still below the firm’s hurdle. Granite fits the pattern, which is why the model is a screen, not a judgment call.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
+        a: 'The dialysis and renal names, a cautionary set top to bottom. Keystone returned 1.3x, Tidewater 1.1x, Basin 1.2x, all bought under 8x. Cedar Renal at 1.6x is the best of them, still below the firm’s hurdle. Granite fits the pattern, which is why the model is screened at the gate.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
       },
     ],
   },

@@ -15,7 +15,7 @@ export const meridian: ScorecardData = {
       side: 'q',
       label: 'Two-track read',
       val: 'B+ asset',
-      note: 'In-lane behavioral health. Recurring demand, a real clinic network. The Medicaid-weighted payer mix and its rate risk hold it at B+.',
+      note: 'In-lane behavioral health with recurring demand and a real clinic network, held at B+ by the Medicaid-weighted payer mix and its rate risk.',
     },
     {
       side: 'p',
@@ -26,7 +26,7 @@ export const meridian: ScorecardData = {
   ],
   reasonsLead: 'Selective.',
   reasonsBody:
-    'A good, in-lane behavioral health asset in a market that rewards a disciplined roll-up. The drag is price and payer mix. 12.1x entry above the held ceiling. Revenue weighted toward Medicaid, where one rate action can move the thesis. No gate trips. This is a partner judgment: whether the quality justifies paying above the line, and how much Medicaid rate risk to underwrite.',
+    'A good, in-lane behavioral health asset. The drag is price and payer mix. 12.1x entry above the held ceiling, revenue weighted toward Medicaid, where one rate action can move the thesis. No gate trips, so this is a partner judgment: whether the quality justifies paying above the line, and how much Medicaid rate risk to underwrite.',
   spineLead: 'Scored against the REP healthcare framework',
   axes: [
     {
@@ -62,7 +62,7 @@ export const meridian: ScorecardData = {
       read: [
         'Demand is recurring and non-deferrable. The floor has a crack: revenue is ',
         { cite: 'e-down', tag: 'CIM', label: 'weighted toward Medicaid' },
-        ', where reimbursement is set administratively and a rate action hits margin directly. The recurring base is real. The rate exposure is the soft spot.',
+        ', where reimbursement is set administratively and a rate action hits margin directly. The recurring base is real, but the rate exposure is the soft spot.',
       ],
       evidence: [
         {
@@ -90,7 +90,7 @@ export const meridian: ScorecardData = {
       read: [
         'Graded a ',
         { cite: 'e-qp', tag: 'DATA', label: 'B+ asset on a Medicaid-weighted mix' },
-        ', separate from price. The held ceiling on B+ is roughly 10x. The 12.1x entry sits above it. Paying an A multiple for a B+ asset is the error the framework exists to prevent.',
+        ', separate from price. The held ceiling on B+ is roughly 10x. The 12.1x entry sits above it, so the premium has to be earned in diligence.',
       ],
       evidence: [
         {
@@ -225,7 +225,7 @@ export const meridian: ScorecardData = {
       },
       {
         q: 'What is the Medicaid risk, concretely?',
-        a: 'Reimbursement on the Medicaid book is set administratively, not negotiated, so a state rate cut flows straight to margin with little to offset it. The recurring, non-deferrable demand protects volume. It does not protect price. The mitigant is the commercial mix-shift lever, but that is a plan, not yet in the P&L. That is why it is the first banker question.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
+        a: 'Reimbursement on the Medicaid book is set administratively, not negotiated, so a state rate cut flows straight to margin with little to offset it. Recurring demand protects volume, not price. The mitigant is the commercial mix-shift lever, but that is a plan, not yet in the P&L. That is why it is the first banker question.<div class="src-tags"><span class="qtag cim">CIM</span><span class="qtag qoe">QoE</span></div>',
       },
       {
         q: 'What would move it to a pass?',
@@ -233,7 +233,7 @@ export const meridian: ScorecardData = {
       },
       {
         q: 'Which of our deals does this look like?',
-        a: 'Behavioral health names from the firm’s record. Crossroads anchors the upside at 9.0x and 2.6x. Harbor returned 2.0x at 9.6x. Clarvida is the cautionary one: Medicaid-heavy, entered above 11x, returned 1.4x after a rate cut. Meridian at 12.1x sits above the bracket and shares Clarvida’s exposure. That is the comparison that matters.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
+        a: 'Behavioral health names from the firm’s record. Crossroads anchors the upside at 9.0x and 2.6x. Harbor returned 2.0x at 9.6x. Clarvida is the cautionary one: Medicaid-heavy, entered above 11x, returned 1.4x after a rate cut. Meridian at 12.1x sits above the bracket and shares Clarvida’s exposure.<div class="src-tags"><span class="qtag chron">CHRON</span></div>',
       },
       {
         q: 'What are you least sure about?',

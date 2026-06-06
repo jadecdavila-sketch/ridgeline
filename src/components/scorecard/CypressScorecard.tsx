@@ -42,16 +42,16 @@ export function CypressScorecard() {
               <div className="s-lc">Two-track read</div>
               <div className="val">B+ asset</div>
               <div className="note">
-                Diversified, recurring recall revenue. A fragmented roll-up runway. A discretionary
-                slice of demand holds it at B+ rather than A.
+                Diversified, recurring recall revenue on a fragmented roll-up runway, but a
+                discretionary slice of demand holds it at B+ rather than A.
               </div>
             </div>
             <div className="dr p">
               <div className="s-lc">Price discipline</div>
               <div className="val">At the line</div>
               <div className="note">
-                9.2x entry sits just under the ~9.5x ceiling on a B+ grade. Thin room. Out of lane,
-                so holding the line is the job.
+                9.2x entry sits just under the ~9.5x ceiling on a B+ grade, so the room is thin and
+                holding the line is the job.
               </div>
             </div>
           </div>
@@ -127,8 +127,8 @@ export function CypressScorecard() {
             <Cite id="e-down" tag="CIM">
               slice of dental spend is discretionary
             </Cite>
-            , the kind a customer defers in a downturn the way a specialty drug is not. The recurring
-            floor is solid. The elective portion is the soft spot to size.
+            , the kind a customer defers in a downturn. The recurring floor is solid; the elective
+            portion is the soft spot to size.
             <Evidence
               id="e-down"
               type="t-cim"
@@ -172,11 +172,10 @@ export function CypressScorecard() {
               snip={
                 <>
                   B+ quality carries a held ceiling near <HL>9.5x</HL>. Proposed entry <HL>9.2x</HL>{' '}
-                  sits just below it. A great asset at the wrong price is a pass. A B+ at a B+ price
-                  can be a good deal.
+                  sits just below it.
                 </>
               }
-              prov="Holding the line is the call; there is little headroom."
+              prov="Little headroom at 9.2x against a 9.5x ceiling."
             />
           </div>
           <div className="axis-assess">
@@ -309,7 +308,7 @@ export function CypressScorecard() {
                     <HL>no customer near 30 percent</HL>. Low concentration is a real strength here.
                   </>
                 }
-                prov="Diversification is real; the risk sits elsewhere."
+                prov="No customer near 30 percent; concentration is not where the risk sits."
               />
             </div>
           </div>
@@ -317,8 +316,8 @@ export function CypressScorecard() {
         <p className="gate-note">
           Any single trigger short-circuits to an automatic 1 to 2: manufacturing or CME,
           out-of-network dependence, single-customer concentration over 30 percent, EBITDA outside
-          $20 to 75M, no credible value-add path, or a non-credible banker. Being out of lane is{' '}
-          <b>not</b> a hard-pass; it raises the bar and becomes the judgment call below.
+          $20 to 75M, no credible value-add path, or a non-credible banker. Out of lane raises the
+          bar; it does <b>not</b> trip the screen, and becomes the judgment call below.
         </p>
       </div>
 
@@ -429,7 +428,7 @@ export function CypressScorecard() {
             'The lane call. Dental is out of lane, so the bar rises. Is the services-roll-up model close enough to the core lanes to underwrite?',
             'The B+ grade and its ceiling. Does the discretionary share of demand cap quality at B+, and is 9.2x close enough to the line to hold?',
             'Are the three levers real? Tuck-ins and procurement are proven. De novo is credible but ramp-dependent.',
-            'AI overlay: dental is hands-on clinical work, relatively insulated. AI reads as a modest back-office tailwind, not a moat compressor. Confirm, do not assume.',
+            'AI overlay: dental is hands-on clinical work, so AI reads as a back-office tailwind, not a moat compressor. Confirm, do not assume.',
           ].map((q, i) => (
             <div className="item" key={i}>
               <span className="qmk">&ldquo;</span>

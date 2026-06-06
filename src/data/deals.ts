@@ -23,7 +23,7 @@ export const deals: Deal[] = [
     verdict: 'pursue',
     score: 7,
     reason:
-      'Strong fragmented roll-up at 9.2x. Dental sits outside the core lanes. Pursue with discipline.',
+      'Strong fragmented roll-up at 9.2x, but dental sits outside the core lanes, so pursue with discipline.',
     signal: { kind: 'urg', text: 'Out of lane, clean roll-up · 2 sponsors circling' },
     when: '2 hrs ago',
     hasScorecard: true,
@@ -116,11 +116,11 @@ export const deals: Deal[] = [
 export const pipelineMeta: PipelineMeta = {
   briefingMeta: 'Synthesized across 14 deals · 9:02 AM',
   briefingHtml:
-    '14 deals scored this week, 3 overnight. Open <b>Cardinal Specialty Pharmacy</b> first. In-lane specialty pharmacy, an 8, the protected downside the framework underwrites for, and an 8.8x entry below the held ceiling. The one risk to clear is reimbursement durability. Two names trip the hard-pass screen on day one: <b>Halcyon</b> on single-payer concentration, <b>Granite</b> on Medicaid and reimbursement risk. <b>Cypress</b> has a clock on it, a clean dental roll-up with two sponsors circling, out of lane and a pursue with discipline. Meridian is a Selective worth a look if the entry comes below 11x.',
+    '14 deals scored this week, 3 overnight. Open <b>Cardinal Specialty Pharmacy</b> first. In-lane specialty pharmacy, an 8, protected downside, and an 8.8x entry below the held ceiling. The one risk to clear is reimbursement durability. Two names trip the hard-pass screen on day one: <b>Halcyon</b> on single-payer concentration, <b>Granite</b> on Medicaid and reimbursement risk. <b>Cypress</b> has a clock on it: a clean dental roll-up with two sponsors circling, out of lane, so a pursue with discipline. Meridian is a Selective worth a look if the entry comes below 11x.',
   focus: {
     dealId: 'cardinal',
     label: 'Cardinal Specialty Pharmacy',
-    why: 'the clean in-lane fit, the one to open first',
+    why: 'the clean in-lane fit; open it first',
   },
   stats: { scored: '14', avgFirstPass: '11', pursue: 2, selective: 4, pass: 3 },
   suggests: [

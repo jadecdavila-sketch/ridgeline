@@ -29,13 +29,43 @@ numbers-forward, unshowy, occasionally blunt.**
    human.
 6. **"X is the Y" equations** ("the gap is the negotiation," "price and the floor
    are the same discipline"). Aphorism posing as analysis. Once, maybe.
-7. **Uniform sentence length.** Break one in half. Let a three-word sentence sit
-   next to a long one.
+7. **Uniform sentence length.** Vary it for *real*: a long, unspooling sentence,
+   then a short one. The goal is contrast, not "all short."
+8. **Stacked assertions** (the "definitive statement, then another, then a third"
+   pattern). The tell is not sentence length or count. It is independent claims
+   set side by side with their logic deleted. Three signatures, usually together.
+   First, a suppressed connective: sentences that really stand in a relation of
+   cause, condition, or contrast, laid in parallel with the link removed. Second,
+   a restatement gloss: one sentence re-saying a neighbor in grander or more
+   inspirational terms, adding no fact ("The work is done before you arrive"
+   restating "scored the moment the CIM lands"). Third, a rhythmic kicker: the run
+   closing on a short imperative or aphorism that exists for cadence.
+
+   The test, on any run of two or more independent declaratives: Can you slot
+   *because / so / which / but* between them? Then the link exists and you deleted
+   it, so restore it. Does a sentence add no new fact, only a re-frame? Cut it.
+   Does the run end on a punch that is rhythm, not content? Fold it into the clause
+   before. **The fix:** pick the load-bearing claim as the spine and demote the
+   rest into clauses hanging off it, so the reader sees one structured thought
+   rather than a list of verdicts.
+9. **Verbosity / over-expression.** LLMs say the maximum that shows
+   understanding; people say the minimum that carries it. Two cuts. *Words:*
+   delete any the meaning survives without, especially the first of a doubled
+   modifier ("real procurement and pricing leverage" becomes "procurement
+   leverage"), significance-asides ("the criterion that kills healthcare deals
+   most often"), and nominalized verbs ("systematic comparison against returns"
+   becomes "checked against returns"). *Points:* of everything true in a passage,
+   keep the two or three that change the read and demote the rest into the
+   citations and the axes. Guardrail: this is signal, not syllables. Keep the
+   precise term and the sophistication; lose the wrapper. Cutting into simplistic
+   is the failure on the other side.
 
 ## Do instead
 
 - **Numbers lead.** "8.8× in, 9.5× ceiling. Room." Let the figure carry it.
-- **Flat, declarative, uneven.** Fragments allowed.
+- **Declarative but uneven, and connected.** Fragments allowed, sparingly. Vary
+  sentence length deliberately, and keep the subordination (because / which / so)
+  that reads as a person thinking, not a model listing verdicts.
 - **Concrete over abstract.** "DIR fees, gross-to-net, eight quarters" beats
   "reimbursement durability."
 - **Keep every fact, figure, and source tag exactly.** This is a cadence

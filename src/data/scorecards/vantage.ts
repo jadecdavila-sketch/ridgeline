@@ -26,7 +26,7 @@ export const vantage: ScorecardData = {
   ],
   reasonsLead: 'Selective.',
   reasonsBody:
-    'Strong surgical platform, margins most deals would envy. Two things hold it to a 5. Ambulatory surgical sits outside the named lanes, so the bar rises. And tenure runs thin against where the framework wants it, a gap the firm has bridged before, but only with a CEO hire. No gate trips. The call: is the out-of-lane quality worth a full price and a bet on new leadership.',
+    'Strong surgical platform, margins most deals would envy. Two things hold it to a 5. Ambulatory surgical sits outside the named lanes, so the bar rises. And tenure runs thin against where the framework wants it, a gap the firm has bridged before, but only with a CEO hire. No gate trips, so it stays selective. The call: is the out-of-lane quality worth a full price and a bet on new leadership.',
   spineLead: 'Scored against the REP healthcare framework',
   axes: [
     {
@@ -61,7 +61,7 @@ export const vantage: ScorecardData = {
       name: 'Protected downside',
       ai: 'Non-negotiable',
       read: [
-        'Procedural demand is durable. But a meaningful share is schedulable, deferrable in a downturn, and case volume rides physician loyalty. Recurring enough to grade. Not as protected as a refill-driven model.',
+        'Procedural demand is durable. But a meaningful share is schedulable, deferrable in a downturn, and case volume rides physician loyalty. Recurring enough to grade, but less protected than a refill-driven model.',
       ],
       chipCls: 'mon',
       chipLabel: 'Mixed',
@@ -95,7 +95,7 @@ export const vantage: ScorecardData = {
       read: [
         'The soft spot. Leadership tenure is ',
         { cite: 'e-mgmt2', tag: 'IC', label: 'thin against the benchmark' },
-        ', the same gap the firm saw at Peak Field and closed with a CEO hire. The data ties. The bench does not yet.',
+        ', the same gap the firm saw at Peak Field and closed with a CEO hire, though the data ties even where the bench does not yet.',
       ],
       evidence: [
         {
