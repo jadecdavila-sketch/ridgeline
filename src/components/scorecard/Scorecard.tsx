@@ -178,7 +178,7 @@ export function Scorecard({ data: d }: { data: ScorecardData }) {
         <div className="sec-hd">
           <div>
             <span className="s-lc lc-b">Ridgemont's own record</span>
-            <h2>How this compares to deals we have actually done</h2>
+            <h2>Against our realized deals</h2>
           </div>
         </div>
         <div className="moat-note">{read(d.moatNote)}</div>
@@ -227,8 +227,8 @@ export function Scorecard({ data: d }: { data: ScorecardData }) {
       <div className="sec fade" style={{ animationDelay: '.18s' }}>
         <div className="sec-hd">
           <div>
-            <span className="s-lc lc-b">The engine stops here</span>
-            <h2>Surfaced for your judgment</h2>
+            <span className="s-lc lc-b">Where the engine stops</span>
+            <h2>Left to your judgment</h2>
           </div>
         </div>
         <div className="jud">
@@ -246,8 +246,8 @@ export function Scorecard({ data: d }: { data: ScorecardData }) {
       <div className="sec fade" style={{ animationDelay: '.22s' }}>
         <div className="sec-hd">
           <div>
-            <span className="s-lc lc-b">Walk into the call ready</span>
-            <h2>The questions that move the decision</h2>
+            <span className="s-lc lc-b">Before the banker call</span>
+            <h2>Questions that move the score</h2>
           </div>
         </div>
         {d.banker.map((b, i) => (
