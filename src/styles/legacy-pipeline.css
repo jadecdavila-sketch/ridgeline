@@ -79,6 +79,8 @@ body{font-family:'Calibri','Aptos','Segoe UI',system-ui,-apple-system,sans-serif
 .brief-hd .meta{font-family:'Barlow Semi Condensed',sans-serif;font-size:11px;font-weight:500;letter-spacing:.03em;color:var(--out);margin-left:auto}
 .brief-body{font-size:14.5px;line-height:1.62;color:var(--on);max-width:880px}
 .brief-body b{font-weight:600;color:var(--on)}
+.brief-deal{font-weight:600;color:var(--blue);text-decoration:none;cursor:pointer}
+.brief-deal:hover{color:var(--blue-d);text-decoration:underline}
 .brief-focus{margin-top:15px;padding-top:14px;border-top:1px solid var(--haze);display:flex;align-items:center;gap:11px;flex-wrap:wrap}
 .brief-focus .lc{font-size:10px;color:var(--out)}
 .focus-pill{font-size:13.5px;font-weight:600;color:var(--blue-d);background:var(--teal-tint);border:1px solid var(--teal);border-radius:3px;padding:5px 13px;cursor:pointer}

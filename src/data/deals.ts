@@ -116,7 +116,7 @@ export const deals: Deal[] = [
 export const pipelineMeta: PipelineMeta = {
   briefingMeta: 'Synthesized across 14 deals · 9:02 AM',
   briefingHtml:
-    '14 deals scored this week, 3 overnight. Open <b>Cardinal Specialty Pharmacy</b> first. In-lane specialty pharmacy, an 8, protected downside, and an 8.8x entry below the held ceiling. The one risk to clear is reimbursement durability. Two names trip the hard-pass screen on day one: <b>Halcyon</b> on single-payer concentration, <b>Granite</b> on Medicaid and reimbursement risk. <b>Cypress</b> has a clock on it: a clean dental roll-up with two sponsors circling, out of lane, so a pursue with discipline. Meridian is a Selective worth a look if the entry comes below 11x.',
+    '14 deals scored this week, 3 overnight. Open <a class="brief-deal" href="#/deal/cardinal">Cardinal Specialty Pharmacy</a> first. In-lane specialty pharmacy, an 8, protected downside, and an 8.8x entry below the held ceiling. The one risk to clear is reimbursement durability. Two names trip the hard-pass screen on day one: <a class="brief-deal" href="#/deal/halcyon">Halcyon</a> on single-payer concentration, <a class="brief-deal" href="#/deal/granite">Granite</a> on Medicaid and reimbursement risk. <a class="brief-deal" href="#/deal/cypress">Cypress</a> has a clock on it: a clean dental roll-up with two sponsors circling, out of lane, so a pursue with discipline. <a class="brief-deal" href="#/deal/meridian">Meridian</a> is a Selective worth a look if the entry comes below 11x.',
   focus: {
     dealId: 'cardinal',
     label: 'Cardinal Specialty Pharmacy',
