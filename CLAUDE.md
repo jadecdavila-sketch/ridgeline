@@ -60,6 +60,8 @@ The product handles a shared Claude API key and (eventually) client project data
 **Before committing:**
 - `npm run lint` passes. `npm run build` (`tsc -b && vite build`) passes.
 - No hardcoded values that should be config.
+- spawn a subagent to review your code for bugs
+- Always ask Jade before pushing to production!
 
 ---
 
