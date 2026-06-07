@@ -83,7 +83,7 @@ export const cardinal: CouncilData = {
       { text: 'pending QoE', kind: 'prov' },
     ],
     whatISee:
-      'Same asset. I read it for where it breaks. The $32M of EBITDA is a claim until the bridge ties, and I’ll treat it as one. <span class="qtag qoe">QoE</span> I’m not here to kill deals. I’m here to find what costs us money, and price it before we wire.',
+      'Same asset. I read it for where it breaks. The $32M of adjusted EBITDA is the number the seller would like to be true; until the bridge ties, that’s all it is. <span class="qtag qoe">QoE</span> I’m not here to kill deals. I’m here to find what costs us money, and price it before we wire.',
     screen: {
       label: 'What I ran',
       clear: true,

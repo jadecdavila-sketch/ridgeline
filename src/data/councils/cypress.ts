@@ -68,7 +68,7 @@ export const cypress: CouncilData = {
     ],
     closing: {
       label: 'My conviction read',
-      html: 'On our side of the table, this is a pursue with discipline. A strong, fragmented roll-up at a fair-but-full entry, adjacent to the lanes rather than in them. I’m proposing <em>B+</em>, a 9.5× walk-away, and the out-of-lane call held consciously.',
+      html: 'On our side of the table, this is a pursue with discipline. A strong, fragmented roll-up at a fair-but-full entry, adjacent to the lanes rather than in them. I want this one, which is exactly when the price discipline has to come from someone other than me. I’m proposing <em>B+</em>, a 9.5× walk-away, and the out-of-lane call held consciously.',
       move: 'The durability and composition of organic growth. If the recurring base is doing the work, this holds. If it’s elective or price, the floor and the grade soften together.',
       caveat:
         'The 1–10 score and the pursue / pass aren’t mine. The Chair sets those once he’s heard us both.',

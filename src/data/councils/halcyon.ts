@@ -120,7 +120,7 @@ export const halcyon: CouncilData = {
     ],
     closing: {
       label: 'My scrutiny read',
-      html: 'One kill, and it’s fatal. Single-payer concentration <em>over 30%</em> of revenue <span class="qtag cim">CIM p.20</span> is a hard-pass trigger. A hard stop, not a material risk, not diligence-addressable as it stands. The asset is real, the team is capable, the earnings tie. None of it buys back the floor. The firm’s own record says so: Pinnacle and Stonegate, the concentration-heavy home-health entries, returned 1.3× and 1.2× after payer actions. <span class="qtag chron">CHRON</span> Halcyon matches the cautionary set.',
+      html: 'One kill, and it’s fatal. Single-payer concentration <em>over 30%</em> of revenue <span class="qtag cim">CIM p.20</span> is a hard-pass trigger. A hard stop, not a material risk, not diligence-addressable as it stands. The asset is real, the team is capable, the earnings tie. None of it buys back the floor. The firm’s own record says so: Pinnacle and Stonegate, the concentration-heavy home-health entries, returned 1.3× and 1.2× after payer actions. <span class="qtag chron">CHRON</span> We’ve run this play twice; it didn’t improve with practice.',
       move: 'Whether the single payer is one contract or several. Re-cut it below the line in diligence and the hard stop demotes to a material risk. The deal is alive again. Until then, a pass.',
       caveat:
         'I build the case against the deal, not the verdict. The IC Chair sets the call. I’m flagging this one as a hard stop.',

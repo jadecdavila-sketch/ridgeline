@@ -19,7 +19,7 @@ export const vantage: CouncilData = {
     grade: 'B',
     entry: '11.0×',
     resolution:
-      'B, Selective, 11.0×. A 5, not a 7. No gate trips and the asset is strong. But ambulatory surgical is out of lane, the bench is thin, and 11.0× runs above the ~10× ceiling a B out of lane earns. I held B over the Partner’s pull to grade the margins up. I won’t bridge price for an out-of-lane asset whose leadership upgrade is still an assumption. Two conditions ride on the call: underwrite the CEO hire, and hold price below the line. <span class="qtag data">DATA</span>',
+      'B, Selective, 11.0×. A 5, not a 7. No gate trips and the asset is strong. But ambulatory surgical is out of lane, the bench is thin, and 11.0× runs above the ~10× ceiling a B out of lane earns. I held B over the Partner’s pull to grade the margins up. I won’t bridge price for an out-of-lane asset whose leadership upgrade is still an assumption. Two conditions ride on the call: underwrite the CEO hire, and hold price below the line. Eleven times earnings, and we’d still be hiring the CEO ourselves. <span class="qtag data">DATA</span>',
   },
 
   partner: {

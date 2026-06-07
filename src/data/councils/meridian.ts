@@ -17,7 +17,7 @@ export const meridian: CouncilData = {
     grade: 'B+',
     entry: '12.1×',
     resolution:
-      'B+, Selective, 12.1×. No gate trips. In-lane outpatient behavioral health, recurring, operator-run. But I can’t call it a pursue. I held the grade at <em>B+</em> on the Medicaid-weighted mix, and that grade earns a ~10× ceiling. Entry’s 12.1×, above the line. Two things decide it: whether the asset earns the premium, and how much Medicaid rate risk we’ll underwrite. Pursue only if the price compresses toward the line, or the commercial mix-shift proves real in diligence. <span class="qtag data">DATA</span>',
+      'B+, Selective, 12.1×. No gate trips. In-lane outpatient behavioral health, recurring, operator-run. But I can’t call it a pursue. I held the grade at <em>B+</em> on the Medicaid-weighted mix, and that grade earns a ~10× ceiling. Entry’s 12.1×, above the line. Two things decide it: whether the asset earns the premium, and how much Medicaid rate risk we’ll underwrite. Pursue only if the price compresses toward the line, or the commercial mix-shift proves real in diligence. Until then it’s a polite no with the door left open. <span class="qtag data">DATA</span>',
   },
 
   partner: {

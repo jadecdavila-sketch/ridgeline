@@ -80,7 +80,7 @@ export const granite: CouncilData = {
       { text: 'confirmed at screen', kind: 'prov' },
     ],
     whatISee:
-      '40 clinics, ~$18M adjusted EBITDA on ~$120M revenue, ~7.5×. <span class="qtag cim">CIM p.6</span> I don’t need the deep kill list. The screen trips at step zero. Reimbursement-dependent model, live regulatory overhang. Hard-pass trigger. Everything past it is academic, so I lead with it.',
+      '40 clinics, ~$18M adjusted EBITDA on ~$120M revenue, ~7.5×. <span class="qtag cim">CIM p.6</span> I don’t need the deep kill list; the screen trips at step zero, well before the interesting questions. Reimbursement-dependent model, live regulatory overhang. Hard-pass trigger. Everything past it is academic, so I lead with it.',
     screen: {
       label: 'Kill screen',
       clear: false,
@@ -90,7 +90,7 @@ export const granite: CouncilData = {
       {
         name: 'The Sentinel',
         lens: 'the trigger that kills this deal',
-        html: 'This is the kill, and it’s mine. Revenue rides one reimbursement mechanic: government-weighted rates set against the firm. A rate action or a policy change flows straight to margin with little to offset it. <span class="qtag cim">CIM p.18</span> Reimbursement is the most common way a healthcare deal dies. Here it’s structural to the sector, not a diligence fix.',
+        html: 'This is the kill, and it’s mine. Revenue rides one reimbursement mechanic: government-weighted rates set against the firm. A rate action or a policy change flows straight to margin with little to offset it. <span class="qtag cim">CIM p.18</span> Reimbursement is the most common way a healthcare deal dies. You don’t diligence your way out of how dialysis gets paid.',
       },
       {
         name: 'The Sentinel · payer mix',

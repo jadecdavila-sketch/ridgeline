@@ -18,7 +18,7 @@ export const beacon: CouncilData = {
     grade: 'B',
     entry: '9.0×',
     resolution:
-      'B, Selective, 9.0×. Three drags hold it off a pursue. Imaging is out of lane, so the bar rises. It’s capital-intensive, so 9.0× on EBITDA is a steeper multiple on free cash than it reads. And the maintenance-capex and modality detail came in thin. No gate trips. This is judgment, not a disqualifier. I hold the grade at <em>B</em> and the call at selective, conditional on the capex detail landing and the FCF math clearing. <span class="qtag data">DATA</span>',
+      'B, Selective, 9.0×. Three drags hold it off a pursue. Imaging is out of lane, so the bar rises. It’s capital-intensive, so 9.0× on EBITDA is a steeper multiple on free cash than it reads, since the scanners need replacing whether the model budgets for it or not. And the maintenance-capex and modality detail came in thin. No gate trips. This is judgment, not a disqualifier. I hold the grade at <em>B</em> and the call at selective, conditional on the capex detail landing and the FCF math clearing. <span class="qtag data">DATA</span>',
   },
 
   partner: {

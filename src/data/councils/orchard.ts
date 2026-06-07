@@ -30,7 +30,7 @@ export const orchard: CouncilData = {
       { text: 'out of lane · selective', kind: 'prov' },
     ],
     whatISee:
-      'Pediatric primary and specialty care group. About $10M of adjusted EBITDA on ~$54M of revenue, 31 clinics, asking near 9.5×. <span class="qtag cim">CIM</span> Pediatrics isn’t a named lane, so I’m a selective from the first line. But it’s the closest out-of-lane name I’ve underwritten: recurring, visit-based services, adjacent to the core lanes, nothing facility-heavy or out-of-network. The case has to earn the out-of-lane call, and here the downside does it.',
+      'Pediatric primary and specialty care group. About $10M of adjusted EBITDA on ~$54M of revenue, 31 clinics, asking near 9.5×. <span class="qtag cim">CIM</span> Pediatrics isn’t a named lane, so I’m a selective from the first line. But it’s the closest out-of-lane name I’ve underwritten: recurring, visit-based services, adjacent to the core lanes, nothing facility-heavy or out-of-network. The case has to earn the out-of-lane call, and here the downside does it: children get sick on their own schedule, not the economy’s.',
     screen: {
       label: 'Hard-pass screen',
       clear: true,
