@@ -3,18 +3,20 @@ import type { CouncilData } from '../../data/councilTypes'
 import { CouncilTable } from './CouncilTable'
 import { CouncilRead } from './CouncilRead'
 import { CouncilConverse } from './CouncilConverse'
+import { CouncilMeet } from './CouncilMeet'
 import { Plate } from './parts'
 
-type Mode = 'table' | 'partner' | 'examiner' | 'converse'
+type Mode = 'meet' | 'table' | 'partner' | 'examiner' | 'converse'
 
 const LABEL: Record<Mode, string> = {
+  meet: 'Meet the Council',
   table: 'The Table',
   partner: 'The Partner',
   examiner: 'The Examiner',
   converse: 'Converse',
 }
 
-const MODES: Mode[] = ['table', 'partner', 'examiner', 'converse']
+const MODES: Mode[] = ['meet', 'table', 'partner', 'examiner', 'converse']
 
 /**
  * The Council drawer — the committee room behind a deal's scorecard. Replaces
@@ -84,6 +86,7 @@ export function CouncilDrawer({ data, dealName }: { data: CouncilData; dealName:
         </div>
 
         <div className="cd-body">
+          {mode === 'meet' && <CouncilMeet />}
           {mode === 'table' && <CouncilTable data={data} onVoice={setMode} />}
           {mode === 'partner' && <CouncilRead voice="partner" read={data.partner} />}
           {mode === 'examiner' && <CouncilRead voice="examiner" read={data.examiner} />}
