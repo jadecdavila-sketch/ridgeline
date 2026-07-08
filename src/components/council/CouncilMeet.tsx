@@ -13,12 +13,12 @@ export function CouncilMeet() {
     <div className="cd-meet">
       {/* ── Masthead ── */}
       <header className="cd-meet-mast">
-        <p className="cd-meet-kicker">Ridgeline &middot; The Committee</p>
+        <p className="cd-meet-kicker">Ridgemont &middot; The Committee</p>
         <h1>
           Two councils argue the deal. <em>You</em> make the call.
         </h1>
         <p className="cd-meet-lede">
-          Ridgeline doesn&rsquo;t hand you a number from nowhere. It runs the deliberation of a
+          Ridgemont doesn&rsquo;t hand you a number from nowhere. It runs the deliberation of a
           strong investment committee &mdash; <b>one council building the case, one hunting what
           kills it</b> &mdash; and leaves the decision exactly where it belongs.
         </p>

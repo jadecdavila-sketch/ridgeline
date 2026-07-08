@@ -13,7 +13,7 @@ const FILTERS: Array<{ f: Verdict | 'all'; label: string }> = [
 ]
 
 const TYPED_NOTE =
-  'This prototype answers the four example questions above. In the live product, Ridgeline interprets any question against the framework and the firm’s deal history.'
+  'This prototype answers the four example questions above. In the live product, Ridgemont interprets any question against the framework and the firm’s deal history.'
 
 export function PipelinePage() {
   const navigate = useNavigate()
@@ -224,7 +224,7 @@ export function PipelinePage() {
         </div>
 
         <div className="foot">
-          <span className="lc">Ridgeline · Deal Assistant · Pipeline</span>
+          <span className="lc">Ridgemont · Deal Assistant · Pipeline</span>
           Illustrative prototype on representative data. All companies, figures, and the AI read
           shown here are fictional. Only Pipeline and Deal Scoring are built; the other rail items
           indicate where the product grows.

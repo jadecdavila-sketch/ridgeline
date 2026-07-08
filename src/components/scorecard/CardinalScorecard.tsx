@@ -473,7 +473,7 @@ export function CardinalScorecard() {
       />
 
       <div className="s-foot">
-        <span className="s-lc">Ridgeline · Deal Assistant · Deal Scoring</span>
+        <span className="s-lc">Ridgemont · Deal Assistant · Deal Scoring</span>
         Illustrative prototype. Cardinal Specialty Pharmacy and all figures are fictional. The 1 to
         10 scoring, two-track quality grade and held price ceiling, hard-pass screen, and
         reimbursement-led risk framing follow the REP Healthcare Investment Framework and the

@@ -272,7 +272,7 @@ export function Scorecard({ data: d }: { data: ScorecardData }) {
       />
 
       <div className="s-foot">
-        <span className="s-lc">Ridgeline · Deal Assistant · Deal Scoring</span>
+        <span className="s-lc">Ridgemont · Deal Assistant · Deal Scoring</span>
         {d.footText}
       </div>
     </EvidenceProvider>

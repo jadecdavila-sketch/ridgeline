@@ -23,7 +23,7 @@ export function Sidebar({ onToggle }: { onToggle: () => void }) {
           R
         </span>
         <span className="bword">
-          <span className="mk">Ridgeline</span>
+          <span className="mk">Ridgemont</span>
           <span className="tag">Deal Intelligence</span>
         </span>
       </div>

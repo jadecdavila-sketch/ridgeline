@@ -61,12 +61,12 @@ export function RidgelineAI({
     <>
       {!open && (
         <button className="rai-launch" onClick={() => setOpen(true)}>
-          <Spark /> Ridgeline AI <span className="pulse"></span>
+          <Spark /> Ridgemont AI <span className="pulse"></span>
         </button>
       )}
       <aside
         className={open ? 'rai-drawer open' : 'rai-drawer'}
-        aria-label="Ridgeline AI chat"
+        aria-label="Ridgemont AI chat"
         aria-hidden={!open}
       >
         <div className="rai-hd">
@@ -74,7 +74,7 @@ export function RidgelineAI({
             <Spark />
           </span>
           <div className="t">
-            <div className="n">Ridgeline AI</div>
+            <div className="n">Ridgemont AI</div>
             <div className="s">Grounded in this deal's scoring</div>
           </div>
           <button className="rai-x" title="Close" onClick={() => setOpen(false)}>
