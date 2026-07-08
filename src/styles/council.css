@@ -122,21 +122,35 @@
   appearance: none;
   background: transparent;
   border: 0;
-  cursor: pointer;
-  padding: 10px 0 4px;
+  cursor: ns-resize;
+  touch-action: none;
+  padding: 12px 0 10px;
   display: flex;
   justify-content: center;
   flex-shrink: 0;
+}
+.cd-grip:focus-visible {
+  outline: 2px solid var(--cd-slate);
+  outline-offset: 2px;
+  border-radius: 5px;
 }
 .cd-grip-line {
   width: 46px;
   height: 4px;
   border-radius: 2px;
   background: color-mix(in srgb, var(--cd-slate) 28%, var(--cd-paper-edge));
-  transition: background 0.2s;
+  transition: background 0.2s, width 0.2s;
 }
-.cd-grip:hover .cd-grip-line {
+.cd-grip:hover .cd-grip-line,
+.cd-grip:focus-visible .cd-grip-line {
   background: var(--cd-seam);
+  width: 60px;
+}
+/* while dragging: don't select text, and drop the transform easing so the
+   height tracks the pointer 1:1 */
+.cd-drawer[data-dragging] {
+  user-select: none;
+  transition: none;
 }
 
 /* ── Header bar ── */
@@ -1410,7 +1424,6 @@
   color: var(--cd-ink);
 }
 .cd-meet-stance {
-  font-style: italic;
   font-size: 16px;
   line-height: 1.5;
   color: var(--cd-ink);
@@ -1462,7 +1475,6 @@
 .cd-meet-hunts {
   display: block;
   margin-top: 5px;
-  font-style: italic;
   font-size: 14.5px;
   line-height: 1.5;
   color: var(--cd-ink-soft);
@@ -1551,7 +1563,6 @@
   color: var(--cd-ink);
 }
 .cd-meet-gavel {
-  font-style: italic;
   font-size: clamp(17px, 2vw, 20px);
   line-height: 1.5;
   color: var(--cd-ink);

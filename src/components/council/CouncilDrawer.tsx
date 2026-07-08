@@ -1,4 +1,10 @@
-import { useEffect, useState } from 'react'
+import {
+  useEffect,
+  useRef,
+  useState,
+  type KeyboardEvent as RKeyboardEvent,
+  type PointerEvent as RPointerEvent,
+} from 'react'
 import type { CouncilData } from '../../data/councilTypes'
 import { CouncilTable } from './CouncilTable'
 import { CouncilRead } from './CouncilRead'
@@ -29,6 +35,57 @@ export function CouncilDrawer({ data, dealName }: { data: CouncilData; dealName:
   const [open, setOpen] = useState(false)
   const [mode, setMode] = useState<Mode>('table')
 
+  // Drag-to-resize the drawer height. The grip is a horizontal separator you
+  // drag up (taller) or down (shorter); height is applied imperatively during
+  // the drag so the content tree doesn't reconcile on every pointer move, then
+  // committed to state on release. Clamped to a readable band of the viewport.
+  const MIN_VH = 40
+  const MAX_VH = 96
+  const asideRef = useRef<HTMLElement>(null)
+  const dragRef = useRef<{ y: number; h: number } | null>(null)
+  const [height, setHeight] = useState<number | null>(null)
+  const [dragging, setDragging] = useState(false)
+
+  const clampPx = (px: number) => {
+    const min = (window.innerHeight * MIN_VH) / 100
+    const max = (window.innerHeight * MAX_VH) / 100
+    return Math.max(min, Math.min(max, px))
+  }
+  const currentPx = () => asideRef.current?.getBoundingClientRect().height ?? 0
+
+  const onGripDown = (e: RPointerEvent<HTMLDivElement>) => {
+    dragRef.current = { y: e.clientY, h: currentPx() }
+    setDragging(true)
+    e.currentTarget.setPointerCapture(e.pointerId)
+  }
+  const onGripMove = (e: RPointerEvent<HTMLDivElement>) => {
+    if (!dragRef.current || !asideRef.current) return
+    const next = clampPx(dragRef.current.h + (dragRef.current.y - e.clientY))
+    asideRef.current.style.height = `${next}px`
+  }
+  const onGripUp = (e: RPointerEvent<HTMLDivElement>) => {
+    if (!dragRef.current) return
+    dragRef.current = null
+    setDragging(false)
+    setHeight(currentPx())
+    if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+      e.currentTarget.releasePointerCapture(e.pointerId)
+    }
+  }
+  const onGripKey = (e: RKeyboardEvent<HTMLDivElement>) => {
+    const step = 48
+    if (e.key === 'ArrowUp') setHeight(clampPx(currentPx() + step))
+    else if (e.key === 'ArrowDown') setHeight(clampPx(currentPx() - step))
+    else if (e.key === 'Home') setHeight(clampPx(window.innerHeight))
+    else if (e.key === 'End') setHeight(clampPx(0))
+    else return
+    e.preventDefault()
+  }
+  // Default height mirrors the CSS `min(86vh, 840px)`, so aria-valuenow is
+  // honest on tall viewports where the 840px cap wins over 86vh.
+  const defaultPx = Math.min((window.innerHeight * 86) / 100, 840)
+  const vhNow = Math.round(((height ?? defaultPx) / window.innerHeight) * 100)
+
   useEffect(() => {
     if (!open) return
     const onKey = (e: KeyboardEvent) => {
@@ -52,14 +109,31 @@ export function CouncilDrawer({ data, dealName }: { data: CouncilData; dealName:
       )}
 
       <aside
+        ref={asideRef}
         className={open ? 'cd-drawer open' : 'cd-drawer'}
         data-verdict={data.chair.verdict}
+        data-dragging={dragging || undefined}
+        style={height ? { height: `${height}px` } : undefined}
         aria-label={`The committee · ${dealName}`}
         aria-hidden={!open}
       >
-        <button className="cd-grip" onClick={() => setOpen(false)} aria-label="Close the council">
+        <div
+          className="cd-grip"
+          role="separator"
+          aria-orientation="horizontal"
+          aria-label="Drag to resize the council drawer"
+          aria-valuemin={MIN_VH}
+          aria-valuemax={MAX_VH}
+          aria-valuenow={vhNow}
+          tabIndex={0}
+          onPointerDown={onGripDown}
+          onPointerMove={onGripMove}
+          onPointerUp={onGripUp}
+          onPointerCancel={onGripUp}
+          onKeyDown={onGripKey}
+        >
           <span className="cd-grip-line" />
-        </button>
+        </div>
 
         <div className="cd-bar">
           <div className="cd-bar-id">
